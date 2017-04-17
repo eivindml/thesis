@@ -1,0 +1,80 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c+c1}{sr/bin/ruby}
+
+\PYGdefault{n}{ire\PYGdefaultZus{}relative} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}../utils/string\PYGdefaultZsq{}}
+\PYGdefault{n}{ire\PYGdefaultZus{}relative} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}dictionary\PYGdefaultZsq{}}
+
+\PYGdefault{k}{s} \PYGdefault{n+nc}{CompoundSplitter}
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{initialize}\PYGdefault{p}{(}\PYGdefault{n}{dict}\PYGdefault{p}{)}
+    \PYGdefault{n+nv+vi}{@dictionary} \PYGdefault{o}{=} \PYGdefault{n}{dict}
+\PYGdefault{k}{end}
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{} Returns an array containing all possible decompositions of a given word.}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{split}\PYGdefault{p}{(}\PYGdefault{n}{word}\PYGdefault{p}{)}
+    \PYGdefault{n}{result} \PYGdefault{o}{=} \PYGdefault{n+nb}{Array}\PYGdefault{o}{.}\PYGdefault{n}{new}
+    
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} if word.length \PYGdefaultZlt{} 7 \PYGdefaultZam{}\PYGdefaultZam{} @dictionary.is\PYGdefaultZus{}word?(word)}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{}     result.push(word)}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{}     return result}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} end}
+    
+    \PYGdefault{n}{result} \PYGdefault{o}{=} \PYGdefault{n}{possible\PYGdefaultZus{}splits}\PYGdefault{p}{(}\PYGdefault{n}{word}\PYGdefault{p}{)}
+    
+    \PYGdefault{k}{if} \PYGdefault{n}{result}\PYGdefault{o}{.}\PYGdefault{n}{empty?}
+        \PYGdefault{n}{result}\PYGdefault{o}{.}\PYGdefault{n}{push} \PYGdefault{n}{word}
+    \PYGdefault{k}{end}
+    
+    \PYGdefault{k}{return} \PYGdefault{n}{result}
+\PYGdefault{k}{end}
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{possible\PYGdefaultZus{}splits}\PYGdefault{p}{(}\PYGdefault{n}{word}\PYGdefault{p}{,} \PYGdefault{n}{intermediate} \PYGdefault{o}{=} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{possibilities} \PYGdefault{o}{=} \PYGdefault{n+nb}{Array}\PYGdefault{o}{.}\PYGdefault{n}{new}\PYGdefault{p}{)}
+    \PYGdefault{k}{if} \PYGdefault{n}{word}\PYGdefault{o}{.}\PYGdefault{n}{nil?}
+        \PYGdefault{k}{return}
+    \PYGdefault{k}{end}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Check all substrings of the word}
+    \PYGdefault{k}{for} \PYGdefault{n}{char\PYGdefaultZus{}pos} \PYGdefault{k}{in} \PYGdefault{l+m+mi}{1}\PYGdefault{o}{..}\PYGdefault{n}{word}\PYGdefault{o}{.}\PYGdefault{n}{length}
+        \PYGdefault{n}{prefix} \PYGdefault{o}{=} \PYGdefault{n}{word}\PYGdefault{o}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{o}{..}\PYGdefault{n}{char\PYGdefaultZus{}pos}\PYGdefault{o}{]}
+
+        \PYGdefault{c+c1}{\PYGdefaultZsh{} Is the prefix a legal word?}
+        \PYGdefault{k}{if} \PYGdefault{n+nv+vi}{@dictionary}\PYGdefault{o}{.}\PYGdefault{n}{is\PYGdefaultZus{}word?}\PYGdefault{p}{(}\PYGdefault{n}{prefix}\PYGdefault{p}{)}
+            \PYGdefault{c+c1}{\PYGdefaultZsh{} If we are at the end of the string, we have a possible solution}
+            \PYGdefault{k}{if} \PYGdefault{n}{char\PYGdefaultZus{}pos} \PYGdefault{o}{==} \PYGdefault{n}{word}\PYGdefault{o}{.}\PYGdefault{n}{length}
+                \PYGdefault{n}{possibilities}\PYGdefault{o}{.}\PYGdefault{n}{push} \PYGdefault{n}{intermediate}\PYGdefault{o}{.}\PYGdefault{n}{empty?} \PYGdefault{p}{?} \PYGdefault{n}{prefix} \PYGdefault{p}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{intermediate}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{+}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{prefix}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}
+                \PYGdefault{k}{next}
+            \PYGdefault{k}{end}
+
+            \PYGdefault{c+c1}{\PYGdefaultZsh{} Recursivly check suffix}
+            \PYGdefault{n}{suffix} \PYGdefault{o}{=} \PYGdefault{n}{word}\PYGdefault{o}{[}\PYGdefault{n}{char\PYGdefaultZus{}pos}\PYGdefault{o}{+}\PYGdefault{l+m+mi}{1}\PYGdefault{o}{..\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{o}{]}
+            \PYGdefault{n}{possible\PYGdefaultZus{}splits}\PYGdefault{p}{(}\PYGdefault{n}{suffix}\PYGdefault{p}{,}
+                            \PYGdefault{n}{intermediate}\PYGdefault{o}{.}\PYGdefault{n}{empty?} \PYGdefault{p}{?} \PYGdefault{n}{prefix} \PYGdefault{p}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{intermediate}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{+}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{prefix}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{,}
+                            \PYGdefault{n}{possibilities}\PYGdefault{p}{)}
+
+            \PYGdefault{c+c1}{\PYGdefaultZsh{} Check if word can be analyzed with ephenthetic s or e, recursivly}
+            \PYGdefault{k}{if} \PYGdefault{o}{[}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}s\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s+s1}{\PYGdefaultZsq{}e\PYGdefaultZsq{}}\PYGdefault{o}{].}\PYGdefault{n}{include?} \PYGdefault{n}{suffix}\PYGdefault{o}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{o}{]}
+                \PYGdefault{n}{prefix} \PYGdefault{o}{=} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{prefix}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{+}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{suffix}\PYGdefault{o}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{o}{]}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}
+                \PYGdefault{n}{suffix} \PYGdefault{o}{=} \PYGdefault{n}{word}\PYGdefault{o}{[}\PYGdefault{n}{char\PYGdefaultZus{}pos}\PYGdefault{o}{+}\PYGdefault{l+m+mi}{2}\PYGdefault{o}{..\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{o}{]}
+
+                \PYGdefault{n}{possible\PYGdefaultZus{}splits}\PYGdefault{p}{(}\PYGdefault{n}{suffix}\PYGdefault{p}{,}
+                                \PYGdefault{n}{intermediate}\PYGdefault{o}{.}\PYGdefault{n}{empty?} \PYGdefault{p}{?} \PYGdefault{n}{prefix} \PYGdefault{p}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{intermediate}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{+}\PYGdefault{l+s+si}{\PYGdefaultZsh{}\PYGdefaultZob{}}\PYGdefault{n}{prefix}\PYGdefault{l+s+si}{\PYGdefaultZcb{}}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}}\PYGdefault{p}{,}
+                                \PYGdefault{n}{possibilities}\PYGdefault{p}{)}
+            \PYGdefault{k}{end}
+
+        \PYGdefault{k}{end}
+    \PYGdefault{k}{end}
+
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} Return all possible word interpretations}
+    \PYGdefault{k}{return} \PYGdefault{n}{possibilities}
+\PYGdefault{k}{end}
+
+
+
+\PYGdefault{c+c1}{eck for possible tripple consonant}
+\PYGdefault{c+c1}{ prefix[\PYGdefaultZhy{}1] == prefix[\PYGdefaultZhy{}2]}
+\PYGdefault{c+c1}{                 suffix = word[char\PYGdefaultZus{}pos..\PYGdefaultZhy{}1]}
+\PYGdefault{c+c1}{                 possible\PYGdefaultZus{}splits(suffix,}
+\PYGdefault{c+c1}{                                 intermediate.empty? ? prefix : \PYGdefaultZdq{}\PYGdefaultZsh{}\PYGdefaultZob{}intermediate\PYGdefaultZcb{}+\PYGdefaultZsh{}\PYGdefaultZob{}prefix\PYGdefaultZcb{}\PYGdefaultZdq{},}
+\PYGdefault{c+c1}{                                 possibilities)}
+\PYGdefault{c+c1}{             end}
+\end{Verbatim}

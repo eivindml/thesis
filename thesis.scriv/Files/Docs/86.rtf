@@ -1,0 +1,359 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 TrebuchetMS;
+}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red107\green0\blue216;\red13\green103\blue1;
+\red135\green135\blue135;\red133\green0\blue67;\red107\green0\blue109;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid103\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\b\fs56 \cf0 \\section\{Tidligere arbeid\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs36 \cf0 \\subsection\{Orddeling\}\
+\\label\{sec:tid-arb-orddeling\}\
+\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0
+\b0\fs24 \cf2 Skrive om?: Word hyphenation by neural networks (Pavel og Sojka)\
+{\listtext	\'95	}New hyphenation techniques in omega: Erstatter tex sin hyph modul\
+{\listtext	\'95	}Automatic non-standard hyphenation in {\field{\*\fldinst{HYPERLINK "http://OpenOffice.org"}}{\fldrslt OpenOffice.org}}: generalisering av Tex som tillater non-standard hyph
+\b\fs36 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 \\subsubsection\{Orddelingsalgoritmen i \\TeX\{\}\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf2 Enkel illustrasjon av TeX-systemet.\
+\
+Ord\
+|\
+Tex <- M\'f8nster <- Patgen <- Delte ord\
+|\
+Delt ord
+\b \cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 I dagens \\TeX\{\}-system brukes et m\'f8nsterbasert system for orddeling, utviklet av Franklin Mark Liang\\cite\{liang1983word\}. Algoritmen\\cite[s.~449--450]\{knuth1986texbook\} st\'f8tter seg p\'e5 en liste (trie) med forskjellige m\'f8nstere, spesielt produsert for hvert spr\'e5k. Et eksempel fra den norske m\'f8nsterlisten:\
+\
+.fem5o6g5\
+\
+Punktumet markerer slutt eller start p\'e5 ordet, mens tallene spesifiserer om det er \'f8nskelig med et delepunkt p\'e5 gitt plassering. Ved oddetall sier man at det er \'f8nskelig med delepunkt, mens partall sier det ikke er \'f8nskelig. Jo st\'f8rre tallet er jo mer betydning har det. Hvis vi \'f8nsker \'e5 dele ordet \'abhyphenate\'bb finner vi alle m\'f8nstere som passer helt eller som subset og teller opp den totale summen av vektede punkter for s\'e5 kunne bestemme hvor ordet kan deles:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 he2n\
+hena4\
+hen5at\
+hy3ph\
+1na\
+n2at\
+4te.\
+Input word: hyphenate\
+Hyphenation: hy-phen-ate\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 [TODO: Sette opp norsk eksempel i tabellformat]\
+\
+Slik vil vi f\'e5 vektede tall som beskriver hvor det er \'f8nskelig med delepunkt og hvor det ikke er \'f8nskelig (lov) med delepunkt. Ordet hyphenate blir delt som hy-phen-ate.\
+\
+\\paragraph\{Hvordan genererer \\texttt\{patgen\} m\'f8nstere?\}\
+\
+Ved oppstart trenger patgen tre filer, en translate-fil som definerer alfabetet som skal benyttes, pattern-filen som eventuelt inneholder tidligere m\'f8nstere og dictionary-filen som er orddelingslisten med alle delte ord, som vil ligge til grunne for m\'f8nstergenerereringen. \
+\
+Patgen gj\'f8r flere gjennomkj\'f8ringer av orddelingslisten (\\textit\{niv\'e5er\}). Dette er de samme niv\'e5ene (oddetall -- delepunkt, partall -- ikke delepunkt) beskrevet i avsnittet om \\TeX\{\}. N\'e5r programmet f\'f8rst starter er man p\'e5 niv\'e5 0, siden det enda ikke er generert noen lovlige delepunkter i m\'f8nsterlisten. Ved hver gjennomkj\'f8ring i hvert niv\'e5 m\'e5 man bestemme f\'f8lgende verdier:\
+\
+\\begin\{description\}\
+\\item[hyph\\_start] Minste lengde p\'e5 m\'f8nster som blir behandlet p\'e5 gjeldende niv\'e5\
+\\item[hyph\\_finish] St\'f8rste lengde p\'e5 m\'f8nster som blir behandlet p\'e5 gjeldende niv\'e5\
+\\item[good\\_wt] Vekt som brukes i formel for \'e5 bestemme om et delepunkt skal danne et m\'f8nster\
+\\item[bad\\_wt] Vekt som brukes i formel for \'e5 bestemme om et delepunkt skal danne et m\'f8nster\
+\\item[threshold] Grenseverdi som bestemmer om delepunkt skal danne m\'f8nster\
+\\end\{description\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 Det neste avsnittet her er forklart d\'e5rlig.\cf0 \
+\
+For enkelthets skyld kan vi si at vi setter hyph\\_start og hyph\\_finish begge til 3. Det betyr at ved dette niv\'e5et skal vi kun se p\'e5 m\'f8nstere ved lengde 3. La oss si at patgen l\'f8per gjennom niv\'e5et og teller alle m\'f8nsteret av denne gitte lengden og finner m\'f8nsteret tio 1793 i ordlisten hvor 1773 av tilfellene kan vi f\'e5 delepunkt f\'f8r; -tio, og kun 20 av dem hvor dette ikke er lov. Dette gir verdiene til variablene good (1793) og bad (20). Med dette har vi alle variablene som trengs for \'e5 fylle ut formelen og regne ut om m\'f8nsteret skal med i listen:\
+\
+\\begin\{equation\}\
+\\label\{eq:patgen\}\
+\\textit\{good\} \\times \\textit\{good\\_wt\} - \\textit\{bad\} \\times \\textit\{bad\\_wt\} \\geq \\textit\{threshold\}\
+\\end\{equation\}\
+\
+Ved en uendelig bad\\_wt vil man s\'f8rge for at kun trygge m\'f8nstere blir valgt, der $\\text\{bad\} = 0$. Men de fleste tilfeller velger man en overveielse over de to som virker hensiktsmessig. Men for \'e5 hindre m\'f8nstere i \'e5 \'f8nske \'e5 dele ord p\'e5 d\'e5rlige (bad) punkter kan vi legge til et niv\'e5 (her niv\'e5 to) som fungerer som et unntak til niv\'e5et under. Det vil ofte v\'e6re vanlig \'e5 da velge m\'f8nstere av lengere lengde p\'e5 niv\'e5et over. Slik kan man alternere med niv\'e5er som unntak til unntak, i maks ni niv\'e5er. Et typisk m\'f8nster vil v\'e6re 1en p\'e5 niv\'e5 en, siden det er veldig mange -en-endelser. Men dette m\'f8nsteret vil da dele ordet gren feil som gr-en [TODO: Sjekk om feil]. Vi kan da p\'e5 niv\'e5 to legge inn et unntaksm\'f8nster gr2en som vil hemme algoritmen fra \'e5 dele ordet p\'e5 det gjeldene punktet. Om dette blir et gjeldene m\'f8nster avhenger da av minste og st\'f8rste m\'f8nsterlengde p\'e5 niv\'e5et og vektene og grenseverdien som brukes i formel~\\ref\{eq:patgen\}. \
+\
+Hvordan man velger verdiene som skal brukes ved hvert niv\'e5 er ikke helt lett \'e5 si og bunner ut i mye pr\'f8ving og feiling. Som Liang selv sier i sin avhendling om generrering av m\'f8nstere for amerikansk-engelsk \'abWe do not have any theoretical justification for these parameters; the just seem to work well.\'bb\\cite\{liang1983word\}. \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \\paragraph\{Norske patgen-m\'f8nstere\}\
+\
+Selve orddelingsm\'f8nsterene som ligger til grunne for denne algoritmen i \\TeX\{\} blir produsert av det eksterne programmet \\texttt\{patgen\}, utviklet av Franklin Mark Liang\\cite\{liang1983word\}. \
+\
+Det har v\'e6rt flere iterasjoner med generering av norske orddelingsm\'f8nsteret til bruk i \\TeX\{\}-systemet. F\'f8rste, nohyph.tex ble fremstilt for h\'e5nd av Ivar Aavatsmark, og f\'f8lger norske orddelingsregler slik de var formulert f\'f8r endringene i 1973\\cite\{nohyphbx, thoresen1993virtuelle\}. Fors\'f8k p\'e5 \'e5 dele ord etter dagens regler med denne m\'f8nsterlisten resulterte i  74,99 \\% riktige delte ord, 3,15 \\% feilaktig delte ord og 25,01 \\% ord som ikke ble delt\\cite\{thoresen1993virtuelle\}. nohyph2.tex ble fremstilt av Lars Gunnar Thoresen i forbindelse med hans masteroppgave\\cite\{thoresen1993virtuelle\}. Denne m\'f8nsterlisten ble laget p\'e5 grunnlag av et utvalg av ord fra et korpus av skj\'f8nnlitteratur, nyhetsstoff og faglitteratur som ble kj\'f8rt gjennom programmet patgen. Med dette oppn\'e5dde Thoresen 90,5 \\% korrekt deling, 0,97 \\% feil deling og 9,5 \\% delepunkter som ikke ble funnet. Dagens gjeldene liste er nohyhbx.tex, fremstilt av Rune Kleveland og Ole Michael Selberg\\cite\{nohyphbx\}, og inneholder 27149 m\'f8nstere. Det er ikke tilgjengelig m\'e5linger for n\'f8yaktigheten til disse nye m\'f8nsterlistene. Se tabell~\\ref\{tab:patterns\} for en skjematisk oppstilling.
+\b \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs36 \cf0 \
+\pard\pardeftab720\sl400
+
+\b0\fs28 \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\begin\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 table\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}[\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 h\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 ]\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\centering\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\begin\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tabular\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 |r|l|l|l|\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\multicolumn\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 1\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 |l|\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Navn\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0  & \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 G\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0  & \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 B\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0  & \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 M\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0  \\\\ \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 nohyph.\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tex\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0                  & 74,99 \\%   & 3,15 \\%    & 25,01 \\%   \\\\ \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 nohyph2.\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tex\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0                 & 90,5 \\%    & 0,97 \\%    & 9,5 \\%     \\\\ \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 nohyphbx.\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tex\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0                & --         & --         & --         \\\\ \cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\end\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tabular\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\caption\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 N\'f8yaktigheten til de forskjellige norske orddelingsm\'f8nsterene tilgjengelig for \\TeX\{\}-systemet. 
+\fs24 \cf2 \kerning1\expnd0\expndtw0 \shad0 Kan utf\'f8re nohyhbx.tex test.
+\fs28 \cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\label\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tab:patterns\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\end\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf6 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 table\cf5 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b\fs36 \cf0 \kerning1\expnd0\expndtw0 \shad0 \
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls2\ilvl0
+\b0\fs24 \cf2 {\listtext	\'95	}Skrive mer om nyeste og gjeldene hyph-no.tex\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls2\ilvl1
+\f2\fs32 \cf2 \expnd0\expndtw0\kerning0
+M\'f8nstrene i nohyphb og nohyphbx deler, i samsvar med tradisjonen, ord med tilf\'f8yd b\'f8yningsendelse eller suffiks slik at siste konsonant g\'e5r til neste linje: 
+\i \expnd0\expndtw0\kerning0
+hu-set veg-ge-ne, skor-pe-ne, hes-ter, r\'f8y-ker, kj\'f8-per, lig-ger, lig-gen-de, n\'e6r-v\'e6-ren-de, of-te-re, v\'e6-rel-se, inne-ha-ver, hop-ping, de-mo-kra-tisk. 
+\i0 \expnd0\expndtw0\kerning0
+De \'e5pner vanligvis ikke for deling mellom rot og b\'f8yningsendelse: 
+\i \expnd0\expndtw0\kerning0
+hus-et, vegg-ene, skorp-ene, hest-er, r\'f8yk-er, kj\'f8p-er, ligg-er, ligg-ende, n\'e6r-v\'e6r-ende, oft-ere, inne-hav-er, hopp-ing, de-mo-krat-isk,
+\i0 \expnd0\expndtw0\kerning0
+ selv om en slik deling ogs\'e5 er tillatt etter {\field{\*\fldinst{HYPERLINK "https://web.archive.org/web/20080514212329/http://home.c2i.net/omselberg/pub/norske_orddelingsregler.htm"}}{\fldrslt \expnd0\expndtw0\kerning0
+\ul \ulc7 n\'e5gjeldende regler}}.\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls2\ilvl1
+\f0\fs24 \cf2 \kerning1\expnd0\expndtw0 Mye god ekstrainfo:\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls2\ilvl2\cf2 https://web.archive.org/web/20080704191445/http://home.c2i.net/omselberg/pub/korrigerte\\_delinger.htm\
+https://web.archive.org/web/20080514212329/http://home.c2i.net/omselberg/pub/nohyphbx\\_intro.htm\
+https://web.archive.org/web/20110131212147/http://home.c2i.net/omselberg/\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls2\ilvl0\cf2 https://web.archive.org/web/20080704201758/http://home.c2i.net/omselberg/pub/norske\\_orddelingsregler.htm
+\b\fs36 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 \\input\{content/trie_struktur.tex\}
+\b \
+\
+\\subsubsection\{Orddeling med nevrale nettverk\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 \\label\{sec:tidligere-arbeid\}
+\b\fs36 \
+
+\b0\fs24 \
+[TODO: Beskrive litt resultater fra to papers om nevrale nettverk og orddeling?]
+\b \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs36 \cf0 \
+\\subsubsection\{Sammenligning av \\TeX\{\}-algoritmen og nevrale nettverk\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 Dag Langmyhr og Terje Kristensen \\cite\{kristensen1998two\} har utf\'f8rt en sammenligning av \\TeX\{\}-orddelingsalgoritmen og en metode for orddeling basert p\'e5 nevrale nettverk, utviklet ved H\'f8yskolen i Bergen. Deres resultater viser at \\TeX\{\}-algoritmen er et bedre valg hvis man kan legge til grunne en stor nok ordliste for m\'f8nstergenereringen. Ved en liten ordliste (8000 ord) gj\'f8r nevrale nettverk en mye bedre jobb med 78 \\% av alle lovlige delepunkter funnet (av kjente ord) og 0,0 \\% ulovlige delepunkter funnet. Her gj\'f8r \\TeX\{\} en s\'e6rdeles d\'e5rlig jobb med 70 \\% av lovlige delepunkter funnet, men hele 88 \\% ! ulovlige delepunkter funnet. N\'e5r st\'f8rrelsen p\'e5 ordlisten \'f8kes til 40 000 ord ser vi \\TeX\{\} gj\'f8r en bedre jobb. 90 \\% av alle lovlige delepunkter blir funnet (mot nevrale nettverk sine 94 \\%), og kun 0,3 \\% ulovlige delepunkter blir funnet. Husk; det er ofte bedre \'e5 finne f\'e6rre lovlige delepunkter hvis det reduserer antall ulovlige delepunkter funnet. N\'e5r \\TeX\{\} \'f8ker ordlistest\'f8rrelsen til 67 000 ord minsker prosentandelen ulovlige delepunkter til 0,1 \\%.
+\b \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs36 \cf0 \
+\\subsection\{Analyse av sammensatte ord\}\
+\\label\{sec:sammensatt-analyse\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 Det vanskeligste problemet n\'e5r det kommer til en regelbasert tiln\'e6rming til automatisk orddeling er \'e5 finne den korrekte hovedgrensen i sammensatte ord. Dette problemet kan deles i to deler: f\'f8rst finne alle mulige (lovlige) tolkninger for hvordan ordet kan v\'e6re sammensatt; s\'e5 velge hvem av tolkningene som (h\'f8yst sannsynlig) er korrekt.\
+\
+ Artikkelen \'abFinding the Correct Interpretation of Swedish Compunds \'96 a Statistical Approach\'bb\\cite\{sjobergh2004finding\} ser p\'e5 disse problemene relatert til det svenske spr\'e5k (som har samme produktive ordsammensetning som norsk). Under vil jeg gjengi metoden som ble brukte og hva de fant ut av:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 \\subsubsection\{Finne alle dekomponeringer av et sammensatt ord\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 \
+For \'e5 finne alle tolkninger av et sammensatt ord har forfatterene utviklet en modifisert utgave av analyseprogrammet Stava. Stava er et program for \'e5 finne rotordene som et sammensatt ord er bygget opp av. L\'f8sningen finner kun f\'f8rste og beste mulige l\'f8sning, s\'e5 denne ble utvidet til \'e5 finne alle mulige l\'f8sninger. Modulen fungerer som f\'f8lger: \
+\
+Tre ordlister ligger til grunne: en liste over 
+\i \\textit\{inviduelle ord\} 
+\i0 (inviduell liste), som aldri oppst\'e5r i sammensetninger; en liste over 
+\i \\textit\{avsluttende ord\} 
+\i0 (avsluttende liste), ord som enten kan avslutte et sammensatt ord eller opptre selvstendig; og til sist en liste over 
+\i \\textit\{begynnelsesord\} 
+\i0 (begynnende liste), modifiserte ordstmmer som enten kan forme f\'f8rste eller midtre del av et sammensatt ord.\
+\
+\\begin\{itemize\}\
+\\item Sjekk f\'f8rst inviduell liste: eksisterer hele ordet her, avslutt (treff), hvis ikke g\'e5 til neste trinn.\
+\\item Sjekk etter treff i enden av ordet i avsluttende liste: f\'e5r man treff, g\'e5 til neste trinn.\
+\\item Sjekk etter treff med f\'f8rste del av ordet i begynnende liste: ved treff, vi er en mulig tolkning, ellers, gj\'f8r rekursivt kall da ordet kan ha flere enn to komponenter. \
+\\end\{itemize\}\
+\
+Det gj\'f8res ogs\'e5 et fors\'f8k p\'e5 \'e5 sette inn en binde-s mellom komponenter for \'e5 se om det gir noen treff. \
+\
+Denne metode vil gi mange mange mulige tolkninger som resultat, om flere eksisterer. Neste problem er da \'e5 finne hvilken av disse tolkningene som (h\'f8yst sannsynlig) er den korrekte.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 \\subsubsection\{Valg av riktig tolkning\}\
+\\label\{sec:sjoberg\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 \
+Jonas Sj\'f6berg og Viggo Kann beskriver seks forskjellige metoder, samt en hybridmetode for \'e5 kunne ta mest mulig riktig valg. Alle metodene testes med en liste over flertydige sammensatte ord.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 \\paragraph\{Antall komponenter\}
+\b0 \
+\
+En enkel metode som fungerer overraskende godt: Velg den ordanalysen som gir f\'e6rrest rotord-komponenter. Ved flere tolkninger som gir likt antall komponenter s\'e5 velges tolkningen med det lengste etterleddet. Denne metoden gir korrekt tolkning i 90 \\% av tilfellene. Janne Bondi Johannesen og Helge Hauglin foresl\'e5r dette som eneste metode i deres artikkel \'abAn automatic analysis of Norwegian compounds\'bb\\cite\{johannessen1996automatic\}. \
+\
+
+\b \\paragraph\{Semantisk kontekst\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 Id\'e9en er: ved analyse av ordet bilderamme (n\'e5r vi mener bilde+ramme), er det stor sannsynlighet at ordet bilde eller ramme alene opptrer i avsnittet rundt der ordet opptr\'e5dde. Dette ble implementert ved at man f\'f8rst fant alle komponeneter i det sammensatte ordet. Disse ble s\'e5 g\'e5tt gjennom og talt hvor mange ganger de opptr\'e5dde innenfor en vindusramme av hundre ord. Disse tallene ble s\'e5 igjen vektet mot avstanden fra orginalordet til der det andre ordet opptr\'e5dde. N\'e6rmere ga h\'f8yere vekt. Denne tiln\'e6rmingen ga det d\'e5rligste resultatet med en n\'f8yaktighet p\'e5 72 \\%. Den klarte dog \'e5 finne noen tolkninger som ingen av de andre metodene fant.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 \\paragraph\{Komponent-frekvens\}
+\b0 \
+\
+Denne metoden ser p\'e5 frekvensen til komponentordene (forledd og etterledd) i sammensetninger; hvor ofte de opptrer i en kombinasjon. Det geometriske gjennomsnittet\\footnote\{Verdien man f\'e5r ved \'e5 finne produktet av de n antall tallene, for s\'e5 \'e5 regne ut n-roten av resultatet.\} mellom komponentene i de mulige tolkningene ble s\'e5 regnet ut, og den med st\'f8rst verdi ble valgt. For \'e5 forbedre resultatet ble ogs\'e5 til komponenter i sammensatte ord fra et korpus ogs\'e5 tatt med i beregningen, som ga en n\'f8yaktighet p\'e5 86 \\%.\
+\
+
+\b \\paragraph\{Syntaktisk kontekst\}
+\b0 \
+\
+Denne metoden pr\'f8ver \'e5 se p\'e5 konteksten der det sammensatte ordet opptrer for \'e5 se hvilken ordklasse det sammensatte ordet h\'f8yst sannynlig tilh\'f8rer. I et sammensatt ord vil etterleddet bestemme ordklassen (b\'e5de for svensk og norsk). Hvert av de foresl\'e5tte sammensatte ordene ble analysert for hvilken ordklasse de tilh\'f8rte, s\'e5 ble ordet erstattet med et dummy-ord med samme leksikalske sannsynlighet og setningen tagget p\'e5 nytt. Taggeren analyserer s\'e5 alternativene p\'e5 nytt og velger den som har st\'f8rst sannsynlighet for \'e5 v\'e6re riktig i denne konteksten. En slik l\'f8sning hadde en n\'f8ykatighet p\'e5 86 \\%.\
+\
+
+\b \\paragraph\{Part of Speech of Components\}
+\b0 \
+\
+Enkelte kombinasjoner av ordklasser er mer vanlig en andre. For eksempel substantiv-substantiv er sv\'e6rt vanlig (25\\%), mens pronomen-pronomen-kombinasjoner stort sett aldri oppst\'e5r. Denne metoden tar nytt av dette og tagger forledd og etterledd med tilh\'f8rende ordklasse. Sannsynligheten var s\'e5 beregnet som produktet mellom alle de forskjellige sannsynlighetene, og den h\'f8yeste ble valgt. Denne ble rapportert til \'e5 fungere ganske godt med en n\'f8yaktighet p\'e5 91 \\%.\
+\
+
+\b \\paragraph\{Bokstav-n-grammer\}
+\b0 \
+\
+Enkelte bokstavkombinasjoner opptrer ingen andre steder i et sammensatt ord enn i sammensetningsgrensen. Dette kan brukes til \'e5 dele ord. Ikke alle sammensatte ord har denne karakteristikken, men da kan vi se p\'e5 sannsynlighetsforholdet for at bokstavkombinasjonen opptrer i komposisjongrensen opp mot opptreden innad i komponentordene. Dette ble gjort ved at alle 4-gram bokstavkombinasjoner ble talt opp i sammensatte ord (men ikke overlappende i komposisjonsgrensen), fra et leksikon over sammensatte ord. Frekvenser ble lagt til ved \'e5 telle ordenes opptreden i et tekstkorpus. N\'e5r man s\'e5 skal finne riktig tolkning tar man alle delingsforslagene fra ordsammensetningsanalysen og henter ut frekvensene til alle 4-grammer som g\'e5r over delingspunktene i de forskjellge forslagene. Forslaget med den laveste frekvens blir s\'e5 valgt, siden \'ab[it] has the splits located at the positions most unlikely to not contain a split\'bb\\cite\{sjobergh2004finding\}. Denne metoden fant de ut var den som ga det beste resultatet med en n\'f8ykatighet p\'e5 91 \\%. \
+\
+
+\b \\paragraph\{Hybridmetoder\}
+\b0 \
+\
+Jonas Sj\'f6berg og Viggo Kann s\'e5 at metodene ofte ga forskjellige feil, og at en hybrid l\'f8sning kunne gi h\'f8yere n\'f8yaktighet. De valgte \'e5 kombinere metoden med best treffprosen, bokstav-n-grammer, med Part of Speech of Components-metoden, kombinert med to ad-hoc-regler\\footnote\{Blant annet var det mye feil ved tolkninger hvor det var dobbeltskrevet konsonant som analysen foreslo kunne v\'e6re en sammensl\'e5ing av trippelskrevet konsonant (fotball+lag). Forslag med trippelskrevet konsonant ble sv\'e6rt ofte favorisert p\'e5 feil grunnlag, og de ble valgt \'e5 konsekvent se bort fra dem.\}. Modellen for 4-gram ble stort sett benyttet, med mindre PoS ga et alternativ som hadde en sannsynlighet for korrekthet som var fem ganger st\'f8rre. Denne metoden hadde n\'f8yaktighet p\'e5 94 \\% for flertydige ordsammensetninger og 97 \\% for alle sammensatte ord. }

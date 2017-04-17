@@ -1,0 +1,201 @@
+<html>
+
+<head>
+<title>thesis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	body {background-color: #bac0c7}
+    p.binderItem {margin: 10.0px 0.0px 0.0px 05.0px; font-family:Helvetica, Cochin, Times, Courier, Arial, serif; font-size:14.0px;}
+    .page {border: 1px solid #727272; background: #fff}
+    hr {
+      border-top: 1px dashed #000;
+      border-bottom: 0px solid #fff;
+      color: #fff;
+      background-color: #fff;
+      height: 0px;
+  </style>
+</head>
+
+<body>
+
+<table border="0" width="100%" cellspacing="3">
+<tr>
+<td>
+
+<table class="page" width="100%" cellspacing="10" cellpadding="2">
+<tr>
+<td valign="top">
+
+<ul>
+<li>
+<p class="binderItem"><strong>sammendrag.tex</strong><br/>\section*{Sammendrag}<br/>
+2-4 ord, hva handler det EGENTLIG om?<br/>
+Det finnes flere måter å tilnærme seg orddelingsproblemet på. Ingen har enda løst problemet helt ved å finne alle korrekte delepunkter og eliminere fremkomster av feil delinger. I tillegg har dagens metoder ingen mulighet til å skille mellom de forskjellige reglene for å dele ord: mellom sammensetninger, før/etter avledningsaffikser, før bøyningsendelser eller etter enkonsonantregelen. Denne oppgaven ser på de forskjellige metodene som ...</p>
+</li>
+<li>
+<p class="binderItem"><strong>forord.tex</strong><br/>\section*{Forord}<br/>
+Forord.<br/>
+<br/>
+Skrive om at målet er både mer nøyaktig og ha med mer informasjon om delingen.<br/>
+Analytisk istedenfor mønsterbasert (TeX).<br/>
+<br/>
+- Utvidet om prosjektet<br/>
+- Egentlig et utvidet sammendrag<br/>
+- Kan nevne her at koden er på github<br/>
+- Liste også på github, nevne hvor listene kommer fra og hvordan de er endret<br/>
+<br/>
+Orddeling lett for oss, men vanskelig for datamaskiner.<br/>
+<br/>
+\subsection*{Takksigelser}<br/>
+<br/>
+Jeg vil gjerne takke: Adderal, Metamina, Concerta, Ritalin, Koffein, mamma og pappa.</p>
+</li>
+<li>
+<p class="binderItem"><strong>introduksjon.tex</strong><br/>\section{Introduksjon}<br/>
+<br/>
+Utviklingen av skriftspråket har vært et stort bidrag til fremgangen i vårt samfunn. Det er lett å se den enorme innvirkingen dette har hatt. Vi har gått fra å kun kunne dele idéer og tanker muntlig, eller gjennom enkle billedlige fremstillinger, til å metodisk og strukturert kunne skrive det ned og effektivt og presist kunne spre budskapet videre uten forringelse. Våre idéer vil også kunne nå mange flere mottakere samtidig og mottakere som befinner seg mer geografisk spr...</p>
+</li>
+<li>
+<p class="binderItem"><strong>orddanning.tex</strong><br/>Nevne alltid “Dette er et sammendrag fra kilde X” og “Dette er relevant av årsak Y”.<br/>
+<br/>
+Skrive noe om siblianter?<br/>
+Sibilanten [s] skrives vanligvis som s i norsk, og av og til som c i importord. [rar s fonetisk] skrives vanligvis sj, skj, sk eller rs.<br/>
+<br/>
+Sibilant, vislelyd, tidligere betegnelse på s- og sj-lignende språklyder; sefrikativ.<br/>
+<br/>
+f.eks. f, s, sj, kj, h.<br/>
+<br/>
+\section{Orddanning}<br/>
+\label{sec:orddanning}<br/>
+<br/>
+For å få en god forståelse for de norske reglene for orddeling er det nødvendig med en forstå...</p>
+</li>
+<li>
+<p class="binderItem"><strong>ordklasser_og_boyninger.tex</strong><br/>Leksemer har ulik form og funksjon, som gjør at vi kan dele dem inn i forskjellige \textbf{ordklasser}. Ordklassene gjør det mulig å kunne beskrive grupper av ord på en generell basis, for igjen å kunne gi gramamtiske regler basert på dette. Tre kriterier ligger til grunne for å danne grunnlaget for ordlassene, morfologiske (går på hvilke affiks ordene kan få, spesielt bøyningsendelsen), syntaktiske (funksjonen ordet har i setningen) og semantiske (skiller blant annet mellom leksikalse ord, gram...</p>
+</li>
+<li>
+<p class="binderItem"><strong>regler_for_bindebokstaver.tex</strong><br/>\subsubsection{Regler for bindebokstaver}<br/>
+\label{sec:reg-bind}<br/>
+<br/>
+Bruk av bindebokstaver er vanskelig. Det finnes ingen absolutt regelbruk for dette. Norsk referansegrammatikk\cite{faarlund1997norsk} gir noen regler for hvordan disse brukes og opptrer i det norske språk, men er noe ufullstendig. Janne Bondi Johannessen og Helge Hauglin gir noen ytterligere rettningslinjer for analyse av binde-s og binde-e i sammensatte ord i norsk språk. Disse retningslinjene vil være til stor nytte i algoritmen f...</p>
+</li>
+<li>
+<p class="binderItem"><strong>regler_for_orddeling.tex</strong><br/>\section{Orddeling}<br/>
+\label{sec:orddeling}<br/>
+<br/>
+Påpek eksempel med orangutang/alene-feil i Skriveregler. Velger å tolke annerledes en Gunnar.<br/>
+Nevne endring i regel for deling av navn. Før frabedt, nå tillat: Kilde skriveregler.<br/>
+<br/>
+Orddeling ved linjeskift i det norske språk er regelbasert (i motsats til for eksempel amerikansk-engelsk som er uttalebasert). Reglene for orddeling er en del av det som kalles tekniske skriveregler, som er utviklet over flere år fra mange kilder. Forskjellige komitéarbeid h...</p>
+</li>
+<li>
+<p class="binderItem"><strong>metoder_for_automatisk_orddeling.tex</strong><br/>\section{Automatisk orddeling}<br/>
+\label{sec:automatisk-orddeling}<br/>
+<br/>
+Mye arbeidet har gått med til å skape algoritmer for automatisk orddeling ved hjelp av datamaskiner. Disse metodene kan generelt sett bli delt inn i tre kategorier for tilnærminger; regelbaserte, ordlistebaserte og mønsterbaserte algoritmer. Ofte ser vi at algoritmer bruker en kombinasjon av disse for å kunne oppnå best mulig resultat. I dette kapittelet vil jeg rask gå gjennom disse metodene, gi noen eksempler på deres bruk og ras...</p>
+</li>
+<li>
+<p class="binderItem"><strong>problemer_med_automatisk_orddeling.tex</strong><br/>\subsection{Problemer ved automatisk orddeling}<br/>
+<br/>
+\subsubsection{Orddeling er vanskelig} % Orddeling er prob-lemfylt<br/>
+<br/>
+Vi mennesker opplever stort sett orddeling som et lite vanskelig eller ikke-eksisterende problem. Selv om vi kanskje ikke har full kjennskap til alle de gjeldene reglene for orddeling har vi en viss følelse for hvordan det skal gjøres. Vi har i hvertfall en forståelse for hva som er feil deling av et ord! Vi har kjennskap til konteksten som ordet opptrer i og vil derfor ikke dele ...</p>
+</li>
+<li>
+<p class="binderItem"><strong>tilgang_til_ordlister.tex</strong><br/>\section{Ordlister}<br/>
+<br/>
+Tilgang til ordlister som viser delepunkter i ord, er viktig når man jobber med problemer rundt automatisk orddeling ved linjeskift. De fleste prosedyrer for automatisk orddeling som er i bruk i dag har behov for en tilstrekkelig stor liste med ord og ordenes lovlige delepunkter. Enten som en direkte oppslagsliste til en ordlistebasert algoritme, eller som data til en mønsterbasert algoritme som produserer en mer generell liste over orddelingsmønstere. <br/>
+<br/>
+I det første tilfell...</p>
+</li>
+<li>
+<p class="binderItem"><strong>norsk_ordbank.tex</strong><br/>Norsk ordbank er en ordliste utviklet ved Universitetet i Oslo og finnes både for bokmål og nynorsk, tilgjengelig med en GPLv3-lisens\footnote{Ordbanken er tilgjengelig for nedlasting ved å signere skjemaet her http://www.edd.uio.no/prosjekt/ordbanken/}. Listen er laget ved en grunnordliste og bøyningsmønstere. Informasjonen er fordelt i to filer, \texttt{fullform\_bm.txt} og \texttt{paradigme\_bm.txt}.<br/>
+<br/>
+\paragraph{fullform\_bm.txt}<br/>
+<br/>
+\texttt{fullform\_bm.txt} inneholder seks kolonner for hver op...</p>
+</li>
+<li>
+<p class="binderItem"><strong>frekvens_av_fugebokstaver.tex</strong><br/>\paragraph{Frekvens av fugebokstaver}<br/>
+\label{sec:fuge-frekvens}<br/>
+<br/>
+<br/>
+Det finnes mange fugebokstaver, totalt ni stykk (nullfuge, -s -e, -er, -en, -a, -er, -o og -ium -> -ie-)\cite{faarlund1997norsk,bindebokstaver} av det jeg har kommet over, hvis man også tar med nullfuge som en fugebokstav. Men det er nullfuge, binde-s og binde-e som er de desidert mest brukte og de resterende opptrer i mindre grad. Det vil alikevel være interessant å få noen mer konkrete tall på hyppigheten til de forskjellige bin...</p>
+</li>
+<li>
+<p class="binderItem"><strong>tidligere_arbeid.tex</strong><br/>\section{Tidligere arbeid}<br/>
+<br/>
+\subsection{Orddeling}<br/>
+\label{sec:tid-arb-orddeling}<br/>
+<br/>
+Skrive om?: Word hyphenation by neural networks (Pavel og Sojka)<br/>
+ • New hyphenation techniques in omega: Erstatter tex sin hyph modul<br/>
+ • Automatic non-standard hyphenation in OpenOffice.org: generalisering av Tex som tillater non-standard hyph<br/>
+<br/>
+\subsubsection{Orddelingsalgoritmen i \TeX{}}<br/>
+<br/>
+Enkel illustrasjon av TeX-systemet.<br/>
+<br/>
+Ord<br/>
+|<br/>
+Tex <- Mønster <- Patgen <- Delte ord<br/>
+|<br/>
+Delt ord<br/>
+<br/>
+I dagens \TeX{}-system brukes et ...</p>
+</li>
+<li>
+<p class="binderItem"><strong>trie_struktur.tex</strong><br/>\subsection{Trie}<br/>
+\label{sec:trie}<br/>
+<br/>
+Tekstinnhold hentet fra Data Structures and Algorithms in Java \cite{goodrich2014data}.<br/>
+<br/>
+Trie (uttales som det engelske ordet «try», men stammer fra ordet er\textit{trie}val) er en svært effektiv datastruktur for mønstergjennkjenning. Mens andre algoritmer for mønstergjennkjenning (som KMP-algoritmen) baserer seg på en preprosessering av strengen som skal gjenkjennes i en tekst (for økt hastighet), baserer trie seg på en preprosessering av selve teksten som vi...</p>
+</li>
+<li>
+<p class="binderItem"><strong>nevrale_nettverk.tex</strong><br/>\subsubsection{Kunstige nevrale nettverk}<br/>
+<br/>
+Nevrale nettverk er en annen spennende måte å angripe problemet på, men bør sees på som et spesialtilfelle av de mønsterbaserte tilnærmingene. Nevrale nettverk prøver å bygge en forenklet modell av hjernen -- hvordan nevronene er koblet sammen i synnapser, og introdusere en metode for å kunne lære basert på treningsdata. Jeg vil først generelt forklare hvordan nevrale nettverk fungerer, for så å forklare hvordan de kan brukes til orddelingsproblemet.<br/>
+<br/>
+R...</p>
+</li>
+<li>
+<p class="binderItem"><strong>applikasjon.tex</strong><br/>I denne delen av oppgaven ønsker jeg å se på mulighet for en ny tilnærming til problemet om automatisk orddeling. Metodene som eksisterer i dag er stort sett mønsterbaserte (\TeX{}-algoritmen og de basert på nevrale nettverk). Disse har en ganske god presisjon med henholdsvis X og Y prosent av korrekte delinger funnet og A og B prosent feil delinger (se kapittel \ref{sec:tid-arb-orddeling}). Det er selvfølgelig ønskelig at korrekte delepunkter funnet er større og spesielt at antall feil delepunk...</p>
+</li>
+<li>
+<p class="binderItem"><strong>vurdering_og_konklusjon.tex</strong><br/>Vurdering og konklusjon.<br/>
+<br/>
+Skrive om atj eg brukte trie, raskere, tidene.<br/>
+Fungerte det bedre enn andre?<br/>
+<br/>
+Hva har jeg gjort?<br/>
+Fornuftig algoritme?<br/>
+Tid til alt?<br/>
+Analytisk kritisk blikk på eget arbeid<br/>
+<br/>
+Hva fungerte ikke:<br/>
+ homografer:<br/>
+  å-r-e-ne og å-re-ne, snekker -> snekker<br/>
+<br/>
+Nevne savnet etter orddelingsliste<br/>
+<br/>
+Nevne nye resurser jeg har oppdaget:<br/>
+ http://www.nb.no/Tilbud/Forske/Spraakbanken<br/>
+  Ngram etc.<br/>
+ Scarrie<br/>
+ http://metashare.nb.no/repository/browse/oslo-bergen-tagger/ab605b42395711e2b66e0017085...</p>
+</li>
+</ul>
+
+</td>
+<td width="8">
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

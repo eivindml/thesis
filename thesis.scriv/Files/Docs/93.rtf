@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\b\fs56 \cf0 \\subsubsection\{Regler for bindebokstaver\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 \\label\{sec:reg-bind\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs56 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 Bruk av bindebokstaver er vanskelig. Det finnes ingen absolutt regelbruk for dette. Norsk referansegrammatikk\\cite\{faarlund1997norsk\} gir noen regler for hvordan disse brukes og opptrer i det norske spr\'e5k, men er noe ufullstendig. Janne Bondi Johannessen og Helge Hauglin gir noen ytterligere rettningslinjer for analyse av binde-s og binde-e i sammensatte ord i norsk spr\'e5k. Disse retningslinjene vil v\'e6re til stor nytte i algoritmen for \'e5 dele ord, og jeg vil raskt gjengi disse her\\cite\{johannessen1996automatic\}:\
+\
+\\begin\{enumerate\}\
+	\\item Tolk sammensetningen som en kombinasjon av to rotord, uten fuge om mulig\
+	\\begin\{enumerate\}\
+		\\item l\'f8ve-manke\
+		\\item Ikke: l\'f8v-e-manke\
+	\\end\{enumerate\}\
+	\\item Tolkning som binde-s er foretrukket om det er en tvetydig tolkning der s-en ogs\'e5 kan ing\'e5 som f\'f8rste bokstav i et verbalt etterledd\
+	\\begin\{enumerate\}\
+		\\item aluminium-s-nakke\
+		\\item Ikke: aluminium-snakke\
+	\\end\{enumerate\}\
+	\\item Tolkning som binde-s er foretrukket fremfor nullfuge om forleddet i seg selv er et sammensatt ord\
+	\\begin\{enumerate\}\
+		\\item lesesal-s-turer\
+		\\item Ikke: lesesal-sturer\
+	\\end\{enumerate\}\
+	\\item Binde-s kan aldri f\'f8lge binde-e og visa versa\
+	\\begin\{enumerate\}\
+		\\item hest-e-sal\
+		\\item Ikke: hest-e-s-al\
+	\\end\{enumerate\}\
+	\\item Ved to analyser som gir likt antall medlemmer og ingen bindebokstav er involvert, velg, hvis mulig, analysen som er et substantiv\
+	\\begin\{enumerate\}\
+		\\item hun-dyr (S)\
+		\\item Ikke: hund-yr (V)\
+	\\end\{enumerate\}\
+	\\item Ved to like analyser med tanke p\'e5 bindebokstav og regelen over, og en av dem har et forledd som i seg selv er et sammensatt ord, velg den\
+	\\begin\{enumerate\}\
+		\\item fagplan-arbeid\
+		\\item Ikke: fag-planarbeid\
+	\\end\{enumerate\}\
+	\\item Binde-e kan kun settes sammen med en stamme som har enkelt stavelse\
+	\\begin\{enumerate\}\
+		\\item hest-e-ekvipasje\
+		\\item tre-hest-ekvipasje\
+		\\item Ikke: tre-hest-e-ekvipasje\
+	\\end\{enumerate\}\
+	\\item Stammer kan komme f\'f8r forleddet f\'f8r -e s\'e5 lenge de ikke danner sammensetning med forleddet\
+	\\begin\{enumerate\}\
+		\\item konge-hus-hest-e-ekvipasje\
+		\\item Ikke: konge-hus-hest-ekvipasje\
+	\\end\{enumerate\}\
+	\\item Binde-s opptrer ikke etter en konsonantsekvens med sibilanter, \
+	\\begin\{enumerate\}\
+		\\item busk-spilling\
+		\\item Ikke: busk-s-pilling\
+	\\end\{enumerate\}\
+	\\item med mindre forleddet er sammensatt\
+	\\begin\{enumerate\}\
+		\\item eneb\'e6rbusk-spilling\
+		\\item eneb\'e6rbusk-s-pilling\
+	\\end\{enumerate\}\
+	\\item Hvis forleddet er ukjent, velg analysen med det lengste etterleddet\
+	\\begin\{enumerate\}\
+		\\item Ibsen-stykket\
+		\\item Ikke: Ibsens-tykke\
+	\\end\{enumerate\}\
+\\end\{enumerate\}}

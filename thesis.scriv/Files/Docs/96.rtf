@@ -1,0 +1,135 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\b\fs56 \cf0 \\subsubsection\{Kunstige nevrale nettverk\}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 Nevrale nettverk er en annen spennende m\'e5te \'e5 angripe problemet p\'e5, men b\'f8r sees p\'e5 som et spesialtilfelle av de m\'f8nsterbaserte tiln\'e6rmingene. Nevrale nettverk pr\'f8ver \'e5 bygge en forenklet modell av hjernen -- hvordan nevronene er koblet sammen i synnapser, og introdusere en metode for \'e5 kunne l\'e6re basert p\'e5 treningsdata. Jeg vil f\'f8rst generelt forklare hvordan nevrale nettverk fungerer, for s\'e5 \'e5 forklare hvordan de kan brukes til orddelingsproblemet.\
+\
+Russel og Norvig \\cite\{Russel2010\} gir en god introduksjon til kunstige nevrale nettverk. Dette er en gjengivelse av deres tekst.\
+\
+Med kunstige nevrale nettverk \'f8nsker man \'e5 lage en matematisk modell av hjernens aktivitet. Enkelt forklart best\'e5r det av elektrokjemisk aktivitet i et nettverk av hjerneceller, kalt nevroner. Et nevron avfyres og sender signal videre n\'e5r kombinasjonen av inputverdier g\'e5r over en viss grenseverdi. All funksjonen til dette nettverket avhenger av egenskapene ved nevronene og topologien i nettverket. Slike nettverk viser seg \'e5 ha en god egenskap til \'e5 l\'e6re basert p\'e5 inputdata.\
+\
+Nettverket konstrueres alts\'e5 av noder (nevroner) med rettede kanter mellom seg. $a_i$ representerer \\textbf\{aktiveringsfunksjonen\} fra $i$ til $j$ og har ogs\'e5 en vekt $w_\{i,j\}$ assosiert til seg som forteller styrken (viktigheten) av denne koblingen. Hvis vi har en node $j$ og \'f8nsker \'e5 beregne dens aktivering $a_j$ (ut-verdi), kalkulerer vi f\'f8rst den vektede summen av inn-verdier:\
+\
+\\begin\{equation\}\
+in_\{j\} = \\sum_\{i=0\}^n w_\{i,j\}a_\{i\},\
+\\end\{equation\}\
+\
+for deretter \'e5 beregne aktiveringsfunksjonen $g$ av inn-verdier:\
+\
+\\begin\{equation\}\
+a_\{j\} = g(in_\{j\}) = g(\\sum_\{i=0\}^n w_\{i,j\}a_\{i\}).\
+\\end\{equation\}\
+\
+Aktiveringsfunksjonen $g$ kan v\'e6re en hard grenseverdi eller den ofte brukte \\textbf\{sigmoidal-funksjonen\}:\
+\
+\\begin\{equation\}\
+S(t) = \\frac\{1\}\{1+e^\{-t\}\}.\
+\\end\{equation\}\
+\
+Neste steg er \'e5 bestemme strukturen og sammenkoblingen av nettverket. Det er to hovedkategorier av nettverk. \\textbf\{Feed-forward network\} hvor alle koblingene g\'e5r i en retning uten \'e5 lage l\'f8kker, alts\'e5 asyklisk. Det andre kategorien er da nettverk som tillater sykler og kalles for \\textbf\{recurrent network\} (tilbakeg\'e5ende). Fordelen med et recurrent network er aktiveringsniv\'e5ene i nettverket blir et dynamisk system. Respons p\'e5 en gitt input vil v\'e6re avhengig av den indre tilstanden i nettverket, som igjen kan v\'e6re avhengig av tidligere input. Et slikt nettverk vil derfor kunne f\'e5 egenskaper som korttidshukomelse, noe som et feed forward-nettverk som kun representerer en funksjon av n\'e5v\'e6rende input, ikke vil kunne oppn\'e5. Men feed forward-nettverk er fortsatt veldig spennende og interessant i denne sammenheng.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf0 \\paragraph\{Feed forward-nettverk\}
+\b0 \
+\
+Et feed forward-nettverk kan organiseres i enkelt- (\\textbf\{single layer\}) eller flere lag (\\textbf\{multi layer\}). Ved multi layer-nettverk vil noder i et gitt lag kun motta inn-signaler fra laget under og sende ut-signaler til laget over. Det vil ikke v\'e6re noen interaksjon innad i laget. Unntaket er ved inn- og ut-nodene. Det er ogs\'e5 tillatt med flere output-noder. \
+\
+\\paragraph\{Single layer feed forward\} I et single layer feed forward-nettverk vil alle inn-noder v\'e6re direkte koblet til ut-nodene. I en slik konfigurasjon vil et nettverk med $m$ ut-noder egentlig best\'e5 av $m$ separate nettverk. Vektene i nettverket vil kun p\'e5virke en av ut-nodene. En slik konfigurasjon vil ofte bli noe begrenset -- den vil kun fungere til \'e5 modelere linj\'e6rt separerbare funksjoner. Den vil for eksempel fint kunne l\'e6re AND- og OR-funksjonene, men ikke XOR-funksjonen.\
+\
+\\paragraph\{Multi layer feed forward\} For \'e5 kunne ha nettverk som kan l\'e6re flere og mer avanserte funksjoner kan vi introdusere flere lag mellom inn- og ut-nodene i skjulte lag (\\textbf\{hidden layers\}). Et nettverk med $m$ ut-noder vil ikke lenger best\'e5 av $m$ seperate nettverk, for n\'e5 kan vekter p\'e5virke flere av ut-nodene samtidig. Hvordan kan vi generere mer kompliserte funksjoner med flere lag? Single layer er som beskrevet over kun kapable til \'e5 l\'e6re line\'e6re seperable funksjoner, for eksempel ved aktiveringsfunksjonen ved sigmoidal som gir en myk grenseverdi. Med flere lag s\'e5 har vi muligheten til \'e5 kombinere to slike. Setter vi disse strakt mot hverandre vil de sammen generere en ridge (hump) og vi kan med dette representere \\textit\{alle\} kontinuerlige funksjoner. Setter vi to ridges mot hverandre f\'e5r vi en bump (kul) kan vi til og med representere alle diskontinuerlige funksjoner! S\'e5 ved \'e5 introdusere flere skulte lag kan vi lage flere bumps i forskjellige st\'f8rrelser og forskjellige plasseringer for \'e5 representere mer avansete funksjoner. \
+\
+Hvordan g\'e5r vi fra dette til \'e5 trene opp nettverkene til \'e5 l\'e6re funksjoner? L\'e6ring i single layer-nettverk var enkelt. Det var en direkte kobling mellom inn-noder og ut-noder. N\'e5r treningsdata blir presentert for nettverket har vi referanseverdien for alle noder tilgjengelig. Nettverket f\'e5r servert inn-verdier for inn-nodene og \'f8nskede ut-verdier for ut-nodene. N\'e5r nettverket testes med verdiene kan vi se reel ut-verdi, sammenligne med \'f8nsket ut-verdi, regne ut avviket og justere vektene deretter, for s\'e5 \'e5 repetere. Med et multi layer-nettverk blir dette vanskelig. Vi har ingen refereanseverdi for alle nodene i de skjulte lagene og vi f\'e5r ikke korrigert vektene basert p\'e5 avvik. Men vi kan la feilene fra ut-nodene forplante seg bakover i nettverket gjennom \\textbf\{back propagation\}. Back propagation baserer seg p\'e5 at hver node $j$ er \'abansvarlig\'bb for en del $\\Delta_k$ av feilen til hver av ut-nodene den er knyttet til, kombinert med vekten. Forplantningen foreg\'e5r slik:\
+\
+\\begin\{itemize\}\
+\\item Regn ut $\\Delta$ for ut-noder ved \'e5 se p\'e5 feildistansen fra referanseverdi til reel verdi.\
+\\item Begynn med ut-laget og repeter f\'f8lgende til vi n\'e5r f\'f8rste skjulte laget:\
+\\begin\{itemize\}\
+\\item Forplant $\\Delta$ til forrige lag\
+\\item Oppdater vektene mellom lagene\
+\\end\{itemize\}\
+\\end\{itemize\}\
+\
+For \'e5 regne ut $\\Delta$ for node $j$ er forplantningsregelen slik:\
+\
+\\begin\{equation\}\
+\\Delta_j = g\'92(in_j)\\sum\\limits\{k\}w_\{j,k\}\\Delta_\{k\}.\
+\\end\{equation\}\
+\
+Det siste sp\'f8rsm\'e5let er: hvordan velger vi nettverksstruktur? Hvis vi har et fullt koblet nettverk (hvor alle noder i ett lag er koblet til alle noder i laget over) er det eneste vi har \'e5 velge er antall skjulte lag og st\'f8rrelse p\'e5 disse lagene. Velger vi for stort nettverk kan vi fort overtilpasse problemet og vi ender opp med et veldig stort nettverk som til syvende og sist vil fungere som en oppslagstabell. En m\'e5 derfor pr\'f8ve \'e5 velge en st\'f8rrelse som er passe lite der ikke generaliseringen blir for stor og \'f8nsket funksjon blir modelert d\'e5rlig. En metode for \'e5 velge dette er \'e5 pr\'f8ve flere og velge det beste. Ved et ikke fullstendig koblet nettverk (hvor noder i et lag ikke trenger i v\'e6re koblet til alle andre noder i laget over) kan vi bruke \\textbf\{optimal brain damage\} algorithm: begynn med fult koblet nettverk, fjern enkelte koblinger (kan gj\'f8res etter oppveide kriterier). Hvis nettverket fortsatt gir samme resultat, behold nettverk og repet\'e9r prosess!\
+\
+
+\b \\paragraph\{Hvordan brukes kunstige nevrale nettverk til orddeling?\}
+\b0 \
+\
+Nevrale nettverk er eksepsjonelt gode til \'e5 l\'e6re seg m\'f8nstergjenkjenning bassert p\'e5 l\'e6ringsdata (et sett med inn-data og ut-data som spesifiserer hvilket resultat som er \'f8nsket for gjeldene inn-verdier). Orddelingsproblemet kan da reduseres til lage et kunstig nevralt nettverk som pr\'f8ver \'e5 gjenkjenne m\'f8nster av bokstaver og svare p\'e5 om det sannsynligvis er \'f8nsket med et delepunkt mellom to gitte bokstaver.\
+\
+Et nevralt nettverk vil typisk trenge store mengder med l\'e6ringsdata. I dette tilfellet betyr det at det trengs en stor liste over ord som er korrekt delt opp p\'e5 forh\'e5nd. Hvis vi har dette kan vi presentere ordene for nettverket sammen med \'f8nsket ut-verdi (1 og 0 for \'ab\'f8nsket delepunkt\'bb og \'abintet delepunkt\'bb) for hvert av de mulige delepunktene i ordene. Dette foreg\'e5r at man definerer et vindu for hvor lange m\'f8nstere man \'f8nsker \'e5 se p\'e5 av gangen, eksempelvis fire. Nettverket vil ha like mange inn-noder som vindust\'f8rrelsen (her fire) og to ut-noder for ja eller nei. Ordene vil gli forbi dette vinduet og trenes opp til om det skal v\'e6re et delepunkt mellom det midterste bokstavparet eller ikke (ordene fylles ut med *):\
+\
+[TODO: Eksempel p\'e5 vindu]\
+\
+N\'e5r nettverket er tilstrekkelig oppl\'e6rt kan vi presentere nye ord for nettverket og det vil kunne svare om det sannynligvis er \'f8nsket med et delepunkt. Jo st\'f8rre vindu og st\'f8rre nettverk man velger jo mer n\'f8yaktige svar f\'e5r man, men nettverket vil ogs\'e5 vokse i lagringsst\'f8rrelse. Det vil n\'e6rme seg et oppslagsverk. Riktig vindusst\'f8rrelse og st\'f8rrelse p\'e5 nettverket m\'e5 velges for \'e5 oppn\'e5 den beste oppveiingen. En slik tiln\'e6rming har v\'e6rt studerte tidligere \\cite\{kristensen1998two\} \\cite\{smrvz1996word\}, se kapittel~\\ref\{sec:tidligere-arbeid\}.\
+\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 [TODO: Illustrasjon av nevron-modell? Side 728]\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+Nettverket best\'e5r av noder (nevroner)  linket med rettede kanter, kalt en activation. \
+\
+\\paragraph\{Back-propagation\}\
+\
+[TODO: Husk \'e5 forklare hvor dette kommer fra, kanskje hente fra AI-bok]\
+\
+Prosesseringselementene (nodene?) i et back-propagation-nettverk organiseres i lag, der nevronene i ett lag mottar signaler direkte fra laget under og sender signaler videre til laget direkte over. Det er ikke tillatt med koblinger innad i samme lag, bortsett fra input-laget. Inputverdien til en node $j$ regnes ut fra\
+\
+\\begin\{equation\}\
+S_j = \\sum w_\{ji\}a_i\
+\\end\{equation\}\
+\
+hvor $w(j_i)$ er vekten mellom $j$ til $i$ og $a_i$ er output fra node $i$ i forrige lag. Utverdien fra en node er\
+\
+\\begin\{equation\}\
+a_j = f(S_\{j\})\
+\\end\{equation\}\
+\
+hvor $f(x)$ typisk er sigmoidalfunksjonen\
+\
+\\begin\{equation\}\
+S(t) = \\frac\{1\}\{1+e^\{-t\}\}.\
+\\end\{equation\}\
+\
+\\paragraph\{L\'e6ringsfasen\}\
+\
+Ved f\'f8rste oppstart vil koblingene i nettverket f\'e5 utdelt tilfeldige vekter. For \'e5 l\'e6re opp nettverket mates s\'e5 inn patterns (m\'f8nstere) og vektene justeres deretter. Dette foreg\'e5r ved at en definerer en input (pattern) og en \'f8nsket output (target). S\'e5 kj\'f8rer man input gjennom nettverket, ser p\'e5 hva som faktisk kommer ut av resultat (output), sammenligner output med target, beregner feil og justerer vektene deretter. Det man \'f8nsker \'e5 oppn\'e5 er et sett med vekter s\'e5 nettverket tilfredsstiller alle input og output-par. Feilen i nettverket (dissonansen mellom \'f8nsket output (target -- $t$) og faktisk output (output -- $a$)) regnes ut ved:\
+\
+\\begin\{equation\}\
+E = \\frac\{1\}\{N\}\\frac\{1\}\{2\}\\sum\\limits_\{p\}\\sum\\limits_\{i\}(t_\{pi\}-a_\{pi\})^2\
+\\end\{equation\}\
+\
+\\paragraph\{Orddeling via nevrale nettverk\}\
+\
+Kristensen og Langmyhr \\cite\{kristensen1998two\} presenterer en metode for orddelingsproblemet ved nevrale nettverk. Problemet formuleres som et ja/nei-sp\'f8rsm\'e5l om det er lovlig \'e5 putte inn et delepunkt mellom to bokstaver i et ord. Ved et ord p\'e5 $n$ bokstaver f\'e5r $n-1$ slike sp\'f8rsm\'e5l \'e5 svare p\'e5. Nettverket f\'e5r ikke se hele ordet av gangen, men et vindu av en gitt lengde med bokstaver hvor ordet ruller forbi. Tomme felter i vinduet representeres med asteriks-tegnet \'ab*\'bb. St\'f8rrelsen p\'e5 vinduet kan endres, men generelt har man at st\'f8rre vindu vil generere mindre konflikter og mer n\'f8yaktige resulateter, men resultere i lengere treningstid og st\'f8rre minnebruk. \
+\
+Hver bokstav representeres av ett nevron (alts\'e5 tjueni for norsk) og ett for asterisk-tegnet. Hvert tegn vil derfor ha en lik lengde p\'e5 30 bit. St\'f8rrelsen p\'e5 output-laget vil kun v\'e6re ett nevron (ja eller nei), mens input-laget vil v\'e6re $V$ (st\'f8rrelse p\'e5 vinduet) multiplisert med $\\beta$ (st\'f8rrelse p\'e5 alfabet). Kristensen og Langmyhr velger et vindu p\'e5 8 og antall nevroner i f\'f8rste lag blir da, $8\\times 30 = 240$. Om vi f\'e5r delepunkt i midten av vinduet, mellom de to gitte bokstavene, avgj\'f8res om aktiviteten av output-nevronet er st\'f8rre en grenseverdien $0,5$. \
+\
+Treningsdataen i dette eksemplet vil best\'e5 av ni linjer, \'e5tte til hver bokstav i vinduet og siste til output-refereanseverdi. Treningsm\'f8nsteret ***|SE|KVE, og det at vi ikke \'f8nsker et delepunkt mellom SE representeres som:\
+\
+\\begin\{verbatim\}\
+000000000000000000000000000001\
+000000000000000000000000000001\
+000000000000000000000000000001\
+000000000000000001000000000000\
+000001000000000000000000000000\
+000000000001000000000000000000\
+000000000000000000001000000000\
+000001000000000000000000000000\
+0\
+\\end\{verbatim\}\
+}

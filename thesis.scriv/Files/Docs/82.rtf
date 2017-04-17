@@ -1,0 +1,124 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red13\green103\blue1;\red135\green135\blue135;\red133\green0\blue67;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\b\fs56 \cf0 \\paragraph\{Frekvens av fugebokstaver\}\
+\\label\{sec:fuge-frekvens\}\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 Det finnes mange fugebokstaver, totalt ni stykk (nullfuge, -s -e, -er, -en, -a, -er, -o og -ium 
+\f1 ->
+\f0  -ie-)\\cite\{faarlund1997norsk,bindebokstaver\} av det jeg har kommet over, hvis man ogs\'e5 tar med nullfuge som en fugebokstav. Men det er nullfuge, binde-s og binde-e som er de desidert mest brukte og de resterende opptrer i mindre grad. Det vil alikevel v\'e6re interessant \'e5 f\'e5 noen mer konkrete tall p\'e5 hyppigheten til de forskjellige bindebokstavene, slik at man kan ta stilling til dette n\'e5r man skal programmere en komponent for morfologisk analyse av sammensatte ord, til bruk i en algoritme for orddeling.\
+\
+Det er to analyser av frekvensbruken til bindebokstaver som kan v\'e6re av interesse. Vi kan se p\'e5 frekvensen som bindebokstaver opptrer i et utvalgt tekstkorpus. Da vil vi kunne se hvilke bindebokstaver som opptrer hyppigst i faktisk bruk. Et annet alternativ er \'e5 se p\'e5 frekvensen til de forskjellige fugebokstavene i en ordliste. Jeg har valgt \'e5 ta for meg det siste. Det begrunnes med tidsbruk og kompleksitet ved \'e5 analysere morfologien til ord i et evneutelt tekstkorpus. Databases\'f8ket i Eining for digital dokumentasjon, knyttet til Norsk ordbank, inneholder eget datafelt for informasjon om bindebokstaver, og det vil v\'e6re relativt trivielt \'e5 hente ut disse feltene og telle frekvensen. \
+\
+For \'e5 beregne denne frekvensen gjorde jeg som f\'f8lgende:\
+\
+\\begin\{itemize\}\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 	\\item Det ble gjort et s\'f8k i Norsk ordbank, bokm\'e5l, med leddanalyse\\footnote\{\\url\{{\field{\*\fldinst{HYPERLINK "http://www.edd.uio.no/perl/search/search.cgi?appid=72&tabid=3174"}}{\fldrslt http://www.edd.uio.no/perl/search/search.cgi?appid=72&tabid=3174}}\}\}, med wildcard-tegnet \'91\\%\'92 i feltet for fuger. Det vil gi meg et s\'f8keresultat for alle ord i ordbanken som har informasjon om bindebokstaver. Dette gir et resultat med 
+\f2 \expnd0\expndtw0\kerning0
+29998 treff.\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0
+\f0 \cf0 \kerning1\expnd0\expndtw0 	\\item Resultat pr. side endres til 30000 for \'e5 f\'e5 alle resultatene samlet p\'e5 en side (og f\'e5r \'e5 f\'e5 en lenke som inneholder alle s\'f8kekriteriene som parametere).\
+	\\item Til sist lagde jeg et Ruby-skript som l\'f8per gjennom tabellen, spesifikt kolonne syv, som inneholder informasjon om bindebokstavene, og talte alle opptredene til de forskjellige bindebokstavene. Prosenten blir s\'e5 regnet ut og resultatet vises frem.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \\end\{itemize\}\
+\
+Resultatet av denne kj\'f8ringen vises i tabell \\ref\{tab:fuge-frekvens\}.\
+\
+\pard\pardeftab720\sl400
+
+\fs28 \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\begin\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 table\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}[\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 h\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 ]\
+\\centering\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\begin\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tabular\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 |c|l|\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Bindebokstav\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0  & \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\textbf\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Frekvensprosent\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0  \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'abs\'bb                   & 83.249 \\%                \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'abe\'bb                   & 16.568 \\%                \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'abme\'bb                  & 0.087 \\%                 \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'abes\'bb                  & 0.037 \\%                 \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'aba\'bb                   & 0.047 \\%                 \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'abt\'bb                   & 0.007 \\%                 \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'ab\'e6\'bb                   & 0.003 \\%                 \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\'aben\'bb                  & 0.003 \\%                 \\\\ \cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\hline\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\end\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tabular\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\caption\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Frekvens over bindebokstaver fra Norsk ordbank.\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\label\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 tab:fuge-frekvens\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}\cf0 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+\cf2 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \\end\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \{\cf4 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 table\cf3 \expnd0\expndtw0\kerning0
+\shad\shadx0\shady-20\shadr0\shado255 \shadc0 \}
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \shad0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+Vi ser umiddelbart at binde-s har desidert st\'f8rst hyppighet med binde-e med en ogs\'e5 betydelig prosent. Binde-en og binde-\'e6 gir ett treff hver i databasen hvor binde-\'e6 m\'e5 v\'e6re en feiloppf\'f8ring da ordet er mil\'e6*p\'e6l, som ikke gir treff i ordboka (kun milep\'e6l). Binde-es gir elleve treff hvor alle etterleddene er l\'f8s(het). Binde-me gir tjueseks treff i databasen, her er alle forleddene lamme- bortsett fra to som er domme og dramme.\
+\
+Ut i fra dette kan vi se at det vil v\'e6re en akseptabel forenkling \'e5 kun i f\'f8rste omgang analysere binde-s og binde-e ved en morfologisk analyse av ord som skal deles. I og med at den store majoriteten av de sammensatte ordene med bindebokstaver har en -s eller binde-e vil det ogs\'e5 v\'e6re rimelig \'e5 anta at disse vil ha enda st\'f8rre frekvens i et reelt tekstkorpus.}

@@ -1,0 +1,41 @@
+\documentclass{article}
+%\usepackage[paperwidth=10cm, paperheight=15cm]{geometry}
+\usepackage{charter}
+\usepackage{mdframed}
+\usepackage[norsk]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\makeatletter
+
+\let\old@@children\@@children
+\def\@@children{\futurelet\my@next\my@@children}
+\def\my@@children{%
+\ifx\my@next\missing\else
+\expandafter\@gobble
+\fi
+\expandafter\old@@children}
+
+\makeatother
+
+\newcommand{\missing}{ \edge[draw=none]; {} }
+%intended usage inside tikzpicture enviornment: 
+%\Tree  [.3  1
+%               \missing ]
+%To producce the same result as code below but
+%it gave me an error:
+%! Undefined control sequence.
+%\missing -> \edge 
+%                  [draw=none]; {} 
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\Tree  [.3  1 \missing ]
+\end{tikzpicture}
+\end{document}

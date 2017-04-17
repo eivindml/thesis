@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper,norsk]{uiothesis}
+\usepackage[norsk]{babel}
+\usepackage[section]{placeins}
+\usepackage{pgfplots}
+%\pgfplotsset{width=7cm,compat=1.8}
+\usepackage{pgfplotstable}
+\usepackage{pifont}
+
+% Norwegian parskip
+\setlength{\parindent}{0pt}
+\nonzeroparskip
+
+
+\usepackage{tabto}
+\newenvironment{tabbedenum}[1]
+ {\NumTabs{#1}\inparaenum\let\latexitem\item
+  \def\item{\def\item{\tab\latexitem}\latexitem}}
+ {\endinparaenum}
+
+\usepackage{minted}
+\renewcommand\listingscaption{Kodesnutt}
+\renewcommand\listoflistingscaption{Kodesnutter}
+
+\author{Eivind Mikael Lindbråten}
+\title{Test}
+
+\begin{document} 
+	
+	\chapterstyle{uio} \pagestyle{uio} \maxsecnumdepth{subsection}
+
+	\maketitle
+	\frontmatter 
+	\pagenumbering{alph} \pagenumbering{roman} \clearpage 
+	
+	\nocite{bringhurst1999elements} % Stilsett er basert på denne
+	\include{content/sammendrag} \cleardoublepage
+	
+	\tableofcontents \clearpage 
+	\listoffigures \clearpage 
+	\listoftables \clearpage
+	\listoflistings
+	
+
+	\include{content/forord}
+
+	\mainmatter 
+	
+	\include{content/introduksjon}
+
+	\part{Orddanning og orddeling}
+	\include{content/orddanning}
+	\include{content/regler_for_orddeling}
+	\include{content/metoder_for_automatisk_orddeling}
+	\include{content/problemer_med_automatisk_orddeling}
+	\include{content/tidligere_arbeid}
+	\include{content/tilgang_til_ordlister}
+
+	\part{Regelbasert automatisk orddeling}
+	\include{content/applikasjon}
+	\include{content/test_applikasjon}
+
+	\part{Oppsummering}
+	\include{content/konklusjon}
+
+    \bibliographystyle{plain}
+    \bibliography{bibliography/bibliography}
+    
+    \appendix
+	\chapter{Hyphenator}
+	
+	Filene til prosjektet Hyphenator, inkludert tester og orddelingslister, er fritt tilgjengelig med en GPLv3-lisens på Github. 
+	
+	\url{https://github.com/eivindml/Hyphenator}
+	
+%	\addcontentsline{toc}{part}{\appendixtocname} \appendixpage*
+%	\begin{appendices}
+%
+%	\end{appendices}
+
+\end{document}
