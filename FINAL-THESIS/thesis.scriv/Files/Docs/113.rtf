@@ -1,0 +1,2665 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;\f2\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid3\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid4\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid5\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li3600\lin3600 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0
+\f0\fs24 \cf0 {\listtext	\'95	}CompoundSplitter\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}Sjekker at l\'f8sning, alts\'e5 det som st\'e5r som ord nummer 2 p\'e5 hver linje, er en alternativ av l\'f8sningforslagene\
+{\listtext	\uc0\u8259 	}
+\b Enkel
+\b0 \
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2\cf0 {\listtext	\uc0\u8259 	}Hentet fra:\
+\pard\tx2380\tx2880\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2880\fi-2880\pardirnatural
+\ls1\ilvl3\cf0 {\listtext	\uc0\u8259 	}http://no.wiktionary.org/wiki/Kategori:Sammensatte_ord_i_bokm%C3%A5l\
+{\listtext	\uc0\u8259 	}Og ordbanken\
+{\listtext	\uc0\u8259 	}Og fra Gunnar sin liste\
+{\listtext	\uc0\u8259 	}156 tests took 0.676403 s / 152 passed 4 failed / 156\
+{\listtext	\uc0\u8259 	}97.43589743589743 %\
+\pard\tx3100\tx3600\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li3600\fi-3600\pardirnatural
+\ls1\ilvl4\cf0 {\listtext	\uc0\u8259 	}
+\f1 \uc0\u55357 \u56380 
+\f0   ./test_compound_splitter.rb \
+{\listtext	\uc0\u8259 	}finished in 39.442239 s\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: abortmotstander | Should be: abort+motstander\
+{\listtext	\uc0\u8259 	}Got: ["abort+mot+stan+der", "abort+mot+stand+er", "abort+mot+stander", "abort+mot+s+tan+der", "abort+mot+s+tander", "abort+motstand+er", "abort+motstander", "abortmotstander"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: aborts\'f8ker | Should be: abort+s\'f8ker\
+{\listtext	\uc0\u8259 	}Got: ["abort+s\'f8k+er", "abort+s\'f8ker", "abort+s+\'f8k+er", "abort+s+\'f8ker", "aborts\'f8ker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u10060 
+\f0   Input: acappellasang | Should be: acappella+sang\
+{\listtext	\uc0\u8259 	}Got: ["acappellasang"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: administrasjonsbo | Should be: administrasjon+s+bo\
+{\listtext	\uc0\u8259 	}Got: ["ad+mi+nist+rasjon+s+bo", "administrasjon+s+bo"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: aftensmat | Should be: aften+s+mat\
+{\listtext	\uc0\u8259 	}Got: ["aften+s+mat", "aftens+mat", "aftensmat"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: aleneforelder | Should be: alene+forelder\
+{\listtext	\uc0\u8259 	}Got: ["al+en+efor+el+der", "al+en+efor+eld+er", "al+en+efor+elder", "al+en+e+for+el+der", "al+en+e+for+eld+er", "al+en+e+for+elder", "al+en+e+forelder", "al+ene+for+el+der", "al+ene+for+eld+er", "al+ene+for+elder", "al+ene+forelder", "al+e+ne+for+el+der", "al+e+ne+for+eld+er", "al+e+ne+for+elder", "al+e+ne+forelder", "ale+ne+for+el+der", "ale+ne+for+eld+er", "ale+ne+for+elder", "ale+ne+forelder", "alen+efor+el+der", "alen+efor+eld+er", "alen+efor+elder", "alen+e+for+el+der", "alen+e+for+eld+er", "alen+e+for+elder", "alen+e+forelder", "alene+for+el+der", "alene+for+eld+er", "alene+for+elder", "alene+forelder", "aleneforelder"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u10060 
+\f0   Input: avh\'f8r | Should be: av+h\'f8r\
+{\listtext	\uc0\u8259 	}Got: ["avh\'f8r"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: barnepike | Should be: barn+e+pike\
+{\listtext	\uc0\u8259 	}Got: ["bar+ne+pike", "barn+e+pike", "barnepike"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: beltedyr | Should be: belte+dyr\
+{\listtext	\uc0\u8259 	}Got: ["bel+te+dyr", "belt+ed+yr", "belt+e+dyr", "belte+dyr", "beltedyr"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: benarbeid | Should be: ben+arbeid\
+{\listtext	\uc0\u8259 	}Got: ["ben+ar+be+id", "ben+arbeid", "benarbeid"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: bingovinge | Should be: bingo+vinge\
+{\listtext	\uc0\u8259 	}Got: ["bingo+vinge"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: bjelleklang | Should be: bjelle+klang\
+{\listtext	\uc0\u8259 	}Got: ["bjelle+klang", "bjelleklang"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: blodhevner | Should be: blod+hevner\
+{\listtext	\uc0\u8259 	}Got: ["bl+od+hevn+er", "bl+od+hevner", "blod+hevn+er", "blod+hevner", "blodhevn+er", "blodhevner"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: blodsuger | Should be: blod+suger\
+{\listtext	\uc0\u8259 	}Got: ["bl+od+sug+er", "bl+od+suger", "blod+sug+er", "blod+suger", "blodsuger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: bogstek | Should be: bog+stek\
+{\listtext	\uc0\u8259 	}Got: ["bog+stek", "bog+s+tek"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: brakkvann | Should be: brakk+vann\
+{\listtext	\uc0\u8259 	}Got: ["brak+kvann", "brakk+vann", "brakk+kvann", "brakkvann"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: bryllupsdag | Should be: bryllup+s+dag\
+{\listtext	\uc0\u8259 	}Got: ["bryllup+s+dag", "bryllupsdag"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: b\'e5tf\'f8rer | Should be: b\'e5t+f\'f8rer\
+{\listtext	\uc0\u8259 	}Got: ["b\'e5t+f\'f8+rer", "b\'e5t+f\'f8r+er", "b\'e5t+f\'f8rer", "b\'e5tf\'f8rer"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: desimaltall | Should be: desimal+tall\
+{\listtext	\uc0\u8259 	}Got: ["de+si+mal+tall", "de+si+malt+all", "desim+al+tall", "desim+alt+all", "desimal+tall", "desimalt+all", "desimaltall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: edelsten | Should be: edel+sten\
+{\listtext	\uc0\u8259 	}Got: ["ed+el+sten", "edel+sten", "edelsten"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: entall | Should be: en+tall\
+{\listtext	\uc0\u8259 	}Got: ["en+tall", "ent+all", "entall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: eplekake | Should be: eple+kake\
+{\listtext	\uc0\u8259 	}Got: ["ep+le+kake", "ep+lek+ake", "eple+kake", "eplekake"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: etterforskning | Should be: etter+forskning\
+{\listtext	\uc0\u8259 	}Got: ["et+ter+forskning", "ett+er+forskning", "ett+ter+forskning", "etter+forskning", "etterforskning"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: etternavn | Should be: etter+navn\
+{\listtext	\uc0\u8259 	}Got: ["et+ter+navn", "ett+er+navn", "ett+ter+navn", "etter+navn", "etternavn"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ettertenksom | Should be: etter+tenksom\
+{\listtext	\uc0\u8259 	}Got: ["et+ter+tenk+som", "et+ter+tenk+s+om", "et+ter+tenksom", "ett+er+tenk+som", "ett+er+tenk+s+om", "ett+er+tenksom", "ett+ter+tenk+som", "ett+ter+tenk+s+om", "ett+ter+tenksom", "etter+tenk+som", "etter+tenk+s+om", "etter+tenksom", "ettertenksom"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fagdommer | Should be: fag+dommer\
+{\listtext	\uc0\u8259 	}Got: ["fag+do+mm+er", "fag+do+mm+mer", "fag+dom+mer", "fag+dommer", "fagdommer"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fagforening | Should be: fag+forening\
+{\listtext	\uc0\u8259 	}Got: ["fag+for+ening", "fag+forening", "fagforening"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: femminutter | Should be: fem+minutter\
+{\listtext	\uc0\u8259 	}Got: ["fe+mm+in+ut+ter", "fe+mm+mi+nut+ter", "fe+mm+min+ut+ter", "fe+mm+minutt+er", "fe+mm+minutt+ter", "fe+mm+minutter", "fem+mi+nut+ter", "fem+min+ut+ter", "fem+minutt+er", "fem+minutt+ter", "fem+minutter"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fettrand | Should be: fett+rand\
+{\listtext	\uc0\u8259 	}Got: ["fett+rand", "fettrand"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fettsuging | Should be: fett+suging\
+{\listtext	\uc0\u8259 	}Got: ["fett+suging", "fettsuging"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fjernlys | Should be: fjern+lys\
+{\listtext	\uc0\u8259 	}Got: ["fjern+lys", "fjernlys"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: flatbanker | Should be: flat+banker\
+{\listtext	\uc0\u8259 	}Got: ["flat+bank+er", "flat+banker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: flertall | Should be: fler+tall\
+{\listtext	\uc0\u8259 	}Got: ["fler+tall", "flertall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fliselegger | Should be: flise+legger\
+{\listtext	\uc0\u8259 	}Got: ["fli+se+legg+er", "fli+se+legger", "fli+sel+egg+er", "fli+sel+egger", "fli+s+el+egg+er", "fli+s+el+egger", "flis+el+egg+er", "flis+el+egger", "flis+e+legg+er", "flis+e+legger", "flise+legg+er", "flise+legger", "fliselegg+er", "fliselegger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: flislegger | Should be: flis+legger\
+{\listtext	\uc0\u8259 	}Got: ["fli+slegg+er", "fli+slegger", "fli+s+legg+er", "fli+s+legger", "flis+legg+er", "flis+legger", "flislegg+er", "flislegger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fremmedord | Should be: fremmed+ord\
+{\listtext	\uc0\u8259 	}Got: ["frem+med+ord", "fremmed+ord", "fremmedord"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: frempek | Should be: frem+pek\
+{\listtext	\uc0\u8259 	}Got: ["frem+pek", "frempek"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fremtid | Should be: frem+tid\
+{\listtext	\uc0\u8259 	}Got: ["frem+tid", "fremt+id", "fremtid"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: frikirke | Should be: fri+kirke\
+{\listtext	\uc0\u8259 	}Got: ["fri+kirke", "frikirke"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fylkesvei | Should be: fylke+s+vei\
+{\listtext	\uc0\u8259 	}Got: ["fylk+es+vei", "fylk+e+svei", "fylke+svei", "fylke+s+vei", "fylkes+vei", "fylkesvei"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: f\'f8rstehjelp | Should be: f\'f8rste+hjelp\
+{\listtext	\uc0\u8259 	}Got: ["f\'f8r+ste+hjelp", "f\'f8r+s+te+hjelp", "f\'f8rst+e+hjelp", "f\'f8rste+hjelp", "f\'f8rstehjelp"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: f\'f8rtitall | Should be: f\'f8rti+tall\
+{\listtext	\uc0\u8259 	}Got: ["f\'f8r+ti+tall", "f\'f8r+tit+all", "f\'f8r+titall", "f\'f8rt+it+all", "f\'f8rti+tall", "f\'f8rtitall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: gammelengelsk | Should be: gammel+engelsk\
+{\listtext	\uc0\u8259 	}Got: ["ga+mm+el+eng+elsk", "ga+mm+el+engelsk", "ga+mm+mel+eng+elsk", "ga+mm+mel+engelsk", "gam+mel+eng+elsk", "gam+mel+engelsk", "gamme+leng+elsk", "gammel+eng+elsk", "gammel+engelsk", "gammelengelsk"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: garnfisker | Should be: garn+fisker\
+{\listtext	\uc0\u8259 	}Got: ["garn+fisk+er", "garn+fisker", "garnfisker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: gr\'f8nnsak | Should be: gr\'f8nn+sak\
+{\listtext	\uc0\u8259 	}Got: ["gr\'f8nn+sak", "gr\'f8nnsak"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: heltall | Should be: hel+tall\
+{\listtext	\uc0\u8259 	}Got: ["hel+tall", "helt+all", "heltall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: heteb\'f8lge | Should be: hete+b\'f8lge\
+{\listtext	\uc0\u8259 	}Got: ["he+te+b\'f8lge", "het+e+b\'f8lge", "hete+b\'f8lge", "heteb\'f8lge"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: himmellegeme | Should be: himmel+legeme\
+{\listtext	\uc0\u8259 	}Got: ["hi+mm+el+le+geme", "hi+mm+el+legeme", "hi+mm+ell+le+geme", "hi+mm+ell+legeme", "hi+mm+elle+geme", "hi+mm+mel+le+geme", "hi+mm+mel+legeme", "hi+mm+melle+geme", "himmel+le+geme", "himmel+legeme", "himmellegeme"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: hustak | Should be: hus+tak\
+{\listtext	\uc0\u8259 	}Got: ["hu+stak", "hu+s+tak", "hus+tak", "hust+ak", "hustak"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: hvalku | Should be: hval+ku\
+{\listtext	\uc0\u8259 	}Got: ["hval+ku", "hvalku"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: hverdag | Should be: hver+dag\
+{\listtext	\uc0\u8259 	}Got: ["hver+dag", "hverdag"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u10060 
+\f0   Input: hvitveis | Should be: hvit+veis\
+{\listtext	\uc0\u8259 	}Got: ["hvi+tv+e+is", "hvit+ve+is", "hvitveis"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: h\'e5ndkrem | Should be: h\'e5nd+krem\
+{\listtext	\uc0\u8259 	}Got: ["h\'e5nd+krem"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: h\'e5ndverker | Should be: h\'e5nd+verker\
+{\listtext	\uc0\u8259 	}Got: ["h\'e5nd+verk+er", "h\'e5nd+verker", "h\'e5ndverk+er", "h\'e5ndverker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: h\'f8ydedrag | Should be: h\'f8yde+drag\
+{\listtext	\uc0\u8259 	}Got: ["h\'f8+yd+ed+rag", "h\'f8+yd+e+drag", "h\'f8y+de+drag", "h\'f8yde+drag", "h\'f8ydedrag"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: islender | Should be: is+lender\
+{\listtext	\uc0\u8259 	}Got: ["is+len+der", "is+lend+er", "is+lender", "islender"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: juksemaker | Should be: jukse+maker\
+{\listtext	\uc0\u8259 	}Got: ["juks+e+mak+er", "juks+e+maker", "jukse+mak+er", "jukse+maker", "juksemaker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: julegave | Should be: jule+gave\
+{\listtext	\uc0\u8259 	}Got: ["jul+e+ga+ve", "jul+e+gave", "jule+ga+ve", "jule+gave", "julegave"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: kampsang | Should be: kamp+sang\
+{\listtext	\uc0\u8259 	}Got: ["kam+ps+ang", "kamp+sang", "kamp+s+ang", "kampsang"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: kannest\'f8per | Should be: kanne+st\'f8per\
+{\listtext	\uc0\u8259 	}Got: ["kan+ne+st\'f8+per", "kan+ne+st\'f8p+er", "kan+ne+st\'f8per", "kan+ne+s+t\'f8+per", "kan+nes+t\'f8+per", "kanne+st\'f8+per", "kanne+st\'f8p+er", "kanne+st\'f8per", "kanne+s+t\'f8+per", "kannest\'f8per"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: karnappvindu | Should be: karnapp+vindu\
+{\listtext	\uc0\u8259 	}Got: ["kar+napp+vin+du", "kar+napp+vindu", "karnapp+vin+du", "karnapp+vindu", "karnappvindu"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: kraveben | Should be: krave+ben\
+{\listtext	\uc0\u8259 	}Got: ["kra+ve+ben", "krav+e+ben", "krave+ben", "kraveben"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: leiesoldat | Should be: leie+soldat\
+{\listtext	\uc0\u8259 	}Got: ["lei+e+sold+at", "lei+e+soldat", "leie+sold+at", "leie+soldat", "leiesoldat"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: lovl\'e6rer | Should be: lov+l\'e6rer\
+{\listtext	\uc0\u8259 	}Got: ["lov+l\'e6r+er", "lov+l\'e6rer"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: makthaver | Should be: makt+haver\
+{\listtext	\uc0\u8259 	}Got: ["makt+hav+er", "makt+haver", "makthaver"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: mangekjemper | Should be: mange+kjemper\
+{\listtext	\uc0\u8259 	}Got: ["mang+e+kjem+per", "mang+e+kjemp+er", "mang+e+kjemper", "mange+kjem+per", "mange+kjemp+er", "mange+kjemper", "mangekjemper"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: meddele | Should be: med+dele\
+{\listtext	\uc0\u8259 	}Got: ["med+de+le", "med+dele", "meddele"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: mellomnavn | Should be: mellom+navn\
+{\listtext	\uc0\u8259 	}Got: ["mel+lom+navn", "mellom+navn", "mellomnavn"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: mellomvalg | Should be: mellom+valg\
+{\listtext	\uc0\u8259 	}Got: ["mel+lom+valg", "mellom+valg"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: motorvei | Should be: motor+vei\
+{\listtext	\uc0\u8259 	}Got: ["mo+torv+ei", "mot+or+vei", "mot+orv+ei", "motor+vei", "motorvei"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: nedbryter | Should be: ned+bryter\
+{\listtext	\uc0\u8259 	}Got: ["ned+bry+ter", "ned+bryt+er", "ned+bryter", "nedbryt+er", "nedbryter"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: nervepirrende | Should be: nerve+pirrende\
+{\listtext	\uc0\u8259 	}Got: ["nerve+pir+ren+de", "nerve+pirr+en+de", "nerve+pirr+ende", "nerve+pirr+ren+de", "nerve+pirrende", "nervepirrende"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: nestkommanderende | Should be: nest+kommanderende\
+{\listtext	\uc0\u8259 	}Got: ["nest+kom+man+de+ren+de", "nest+kom+man+der+en+de", "nest+kom+man+der+ende", "nest+kommander+en+de", "nest+kommander+ende", "nest+kommanderende", "nestkommanderende"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: nikkedukke | Should be: nikke+dukke\
+{\listtext	\uc0\u8259 	}Got: ["nikke+dukke", "nikkedukke"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: n\'e5degave | Should be: n\'e5de+gave\
+{\listtext	\uc0\u8259 	}Got: ["n\'e5+de+ga+ve", "n\'e5+de+gave", "n\'e5+deg+ave", "n\'e5de+ga+ve", "n\'e5de+gave", "n\'e5degave"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: n\'e5dest\'f8t | Should be: n\'e5de+st\'f8t\
+{\listtext	\uc0\u8259 	}Got: ["n\'e5+de+st\'f8t", "n\'e5+de+s+t\'f8t", "n\'e5de+st\'f8t", "n\'e5de+s+t\'f8t", "n\'e5dest\'f8t"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: n\'f8drakett | Should be: n\'f8d+rakett\
+{\listtext	\uc0\u8259 	}Got: ["n\'f8d+rak+ett", "n\'f8d+rakett", "n\'f8drakett"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: oddetall | Should be: odde+tall\
+{\listtext	\uc0\u8259 	}Got: ["od+de+tall", "od+det+all", "odd+et+all", "odd+de+tall", "odd+det+all", "odde+tall", "oddetall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ordspill | Should be: ord+spill\
+{\listtext	\uc0\u8259 	}Got: ["ord+spill", "ord+s+pill", "ordspill"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: planteeter | Should be: plante+eter\
+{\listtext	\uc0\u8259 	}Got: ["plan+te+et+er", "plan+te+eter", "plan+te+e+ter", "plan+tee+ter", "plan+tee+et+er", "plan+tee+eter", "plan+tee+e+er", "plant+e+et+er", "plant+e+eter", "plante+et+er", "plante+eter", "plante+e+ter", "planteeter"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: postbud | Should be: post+bud\
+{\listtext	\uc0\u8259 	}Got: ["post+bud", "postbud"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: prekestol | Should be: preke+stol\
+{\listtext	\uc0\u8259 	}Got: ["prek+est+ol", "prek+e+stol", "preke+stol", "prekestol"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: presidentvalg | Should be: president+valg\
+{\listtext	\uc0\u8259 	}Got: ["pre+si+dent+valg", "pre+sid+ent+valg", "pre+s+id+ent+valg", "pre+s+ident+valg", "president+valg", "presidentvalg"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: primtall | Should be: prim+tall\
+{\listtext	\uc0\u8259 	}Got: ["prim+tall", "primt+all", "primtall"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: pr\'f8vespille | Should be: pr\'f8ve+spille\
+{\listtext	\uc0\u8259 	}Got: ["pr\'f8v+es+pil+le", "pr\'f8v+es+pill+le", "pr\'f8v+es+pille", "pr\'f8v+e+spil+le", "pr\'f8v+e+spill+le", "pr\'f8v+e+spille", "pr\'f8ve+spil+le", "pr\'f8ve+spill+le", "pr\'f8ve+spille", "pr\'f8ve+s+pil+le", "pr\'f8ve+s+pill+le", "pr\'f8ve+s+pille", "pr\'f8ves+pil+le", "pr\'f8ves+pill+le", "pr\'f8ves+pille", "pr\'f8vespill+le", "pr\'f8vespille"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: regimekritiker | Should be: regime+kritiker\
+{\listtext	\uc0\u8259 	}Got: ["regime+kri+tik+er", "regime+kri+tiker", "regime+kritiker", "regimekritiker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: regnskau | Should be: regn+skau\
+{\listtext	\uc0\u8259 	}Got: ["regn+skau", "regn+s+kau", "regnskau"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: regnv\'e6r | Should be: regn+v\'e6r\
+{\listtext	\uc0\u8259 	}Got: ["regn+v\'e6r", "regnv\'e6r"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: rullef\'f8rer | Should be: rulle+f\'f8rer\
+{\listtext	\uc0\u8259 	}Got: ["rull+le+f\'f8+rer", "rull+le+f\'f8r+er", "rull+le+f\'f8rer", "rulle+f\'f8+rer", "rulle+f\'f8r+er", "rulle+f\'f8rer", "rullef\'f8r+er", "rullef\'f8rer"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: r\'e5dgiver | Should be: r\'e5d+giver\
+{\listtext	\uc0\u8259 	}Got: ["r\'e5+dg+iver", "r\'e5d+giv+er", "r\'e5d+giver", "r\'e5dgiver"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: r\'f8rlegger | Should be: r\'f8r+legger\
+{\listtext	\uc0\u8259 	}Got: ["r\'f8r+legg+er", "r\'f8r+legger", "r\'f8rlegger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: sentrallegeme | Should be: sentral+legeme\
+{\listtext	\uc0\u8259 	}Got: ["sen+tral+le+geme", "sen+tral+legeme", "sen+trall+le+geme", "sen+trall+legeme", "sen+tralle+geme", "sent+rall+le+geme", "sent+rall+legeme", "sent+ralle+geme", "sentr+al+le+geme", "sentr+al+legeme", "sentr+all+le+geme", "sentr+all+legeme", "sentr+alle+geme", "sentral+le+geme", "sentral+legeme"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: sentralst\'f8vsuger | Should be: sentral+st\'f8vsuger\
+{\listtext	\uc0\u8259 	}Got: ["sen+tral+st\'f8v+sug+er", "sen+tral+st\'f8v+suger", "sen+tral+st\'f8vsug+er", "sen+tral+st\'f8vsuger", "sen+tral+s+t\'f8v+sug+er", "sen+tral+s+t\'f8v+suger", "sentr+al+st\'f8v+sug+er", "sentr+al+st\'f8v+suger", "sentr+al+st\'f8vsug+er", "sentr+al+st\'f8vsuger", "sentr+al+s+t\'f8v+sug+er", "sentr+al+s+t\'f8v+suger", "sentral+st\'f8v+sug+er", "sentral+st\'f8v+suger", "sentral+st\'f8vsug+er", "sentral+st\'f8vsuger", "sentral+s+t\'f8v+sug+er", "sentral+s+t\'f8v+suger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: sjekksvindler | Should be: sjekk+svindler\
+{\listtext	\uc0\u8259 	}Got: ["sjekk+svin+dl+er", "sjekk+svindl+er", "sjekk+svindler", "sjekksvindler"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: sj\'f8r\'f8ver | Should be: sj\'f8+r\'f8ver\
+{\listtext	\uc0\u8259 	}Got: ["sj\'f8+r\'f8v+er", "sj\'f8+r\'f8ver", "sj\'f8r\'f8ver"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: skapdranker | Should be: skap+dranker\
+{\listtext	\uc0\u8259 	}Got: ["skap+drank+er", "skap+dranker", "skapdranker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: skipshandler | Should be: skip+s+handler\
+{\listtext	\uc0\u8259 	}Got: ["ski+ps+han+dl+er", "ski+ps+hand+ler", "ski+ps+handl+er", "ski+ps+handler", "skip+s+han+dl+er", "skip+s+hand+ler", "skip+s+handl+er", "skip+s+handler", "skipshandler"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: skogbruker | Should be: skog+bruker\
+{\listtext	\uc0\u8259 	}Got: ["skog+bruk+er", "skog+bruker", "skogbruk+er", "skogbruker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: skuespiller | Should be: skue+spiller\
+{\listtext	\uc0\u8259 	}Got: ["sku+es+pil+ler", "sku+es+pill+er", "sku+es+pill+ler", "sku+es+piller", "sku+e+spil+ler", "sku+e+spill+er", "sku+e+spill+ler", "sku+e+spiller", "skue+spil+ler", "skue+spill+er", "skue+spill+ler", "skue+spiller", "skue+s+pil+ler", "skue+s+pill+er", "skue+s+pill+ler", "skue+s+piller", "skues+pil+ler", "skues+pill+er", "skues+pill+ler", "skues+piller", "skuespill+er", "skuespill+ler", "skuespiller"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: spekekj\'f8tt | Should be: speke+kj\'f8tt\
+{\listtext	\uc0\u8259 	}Got: ["spek+e+kj\'f8tt", "speke+kj\'f8tt", "spekekj\'f8tt"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: spritsmugler | Should be: sprit+smugler\
+{\listtext	\uc0\u8259 	}Got: ["sprit+smug+ler", "sprit+smugl+er", "sprit+smugler", "sprit+s+mug+ler", "spritsmugler"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: spr\'f8ytemisbruker | Should be: spr\'f8yte+misbruker\
+{\listtext	\uc0\u8259 	}Got: ["spr\'f8+yt+e+mi+s+bruk+er", "spr\'f8+yt+e+mi+s+bruker", "spr\'f8+yt+e+mis+bruk+er", "spr\'f8+yt+e+mis+bruker", "spr\'f8+yt+e+misbruk+er", "spr\'f8+yt+e+misbruker", "spr\'f8+yte+mi+s+bruk+er", "spr\'f8+yte+mi+s+bruker", "spr\'f8+yte+mis+bruk+er", "spr\'f8+yte+mis+bruker", "spr\'f8+yte+misbruk+er", "spr\'f8+yte+misbruker", "spr\'f8yt+e+mi+s+bruk+er", "spr\'f8yt+e+mi+s+bruker", "spr\'f8yt+e+mis+bruk+er", "spr\'f8yt+e+mis+bruker", "spr\'f8yt+e+misbruk+er", "spr\'f8yt+e+misbruker", "spr\'f8yte+mi+s+bruk+er", "spr\'f8yte+mi+s+bruker", "spr\'f8yte+mis+bruk+er", "spr\'f8yte+mis+bruker", "spr\'f8yte+misbruk+er", "spr\'f8yte+misbruker", "spr\'f8ytemisbruker"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: stevnem\'f8te | Should be: stevne+m\'f8te\
+{\listtext	\uc0\u8259 	}Got: ["stev+ne+m\'f8+te", "stev+ne+m\'f8te", "stevn+e+m\'f8+te", "stevn+e+m\'f8te", "stevne+m\'f8+te", "stevne+m\'f8te", "stevnem\'f8te"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: stoppested | Should be: stoppe+sted\
+{\listtext	\uc0\u8259 	}Got: ["stopp+est+ed", "stopp+pest+ed", "stoppe+sted", "stoppested"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: st\'f8rrelsesorden | Should be: st\'f8rrelse+s+orden\
+{\listtext	\uc0\u8259 	}Got: ["st\'f8rrelse+s+or+den", "st\'f8rrelse+s+ord+en", "st\'f8rrelse+s+orden", "st\'f8rrelsesorden"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: st\'f8vsuger | Should be: st\'f8v+suger\
+{\listtext	\uc0\u8259 	}Got: ["st\'f8v+sug+er", "st\'f8v+suger", "st\'f8vsug+er", "st\'f8vsuger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: s\'e6regen | Should be: s\'e6r+egen\
+{\listtext	\uc0\u8259 	}Got: ["s\'e6r+egen", "s\'e6r+e+gen", "s\'e6re+gen", "s\'e6regen"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: tallf\'f8lge | Should be: tall+f\'f8lge\
+{\listtext	\uc0\u8259 	}Got: ["tall+f\'f8lge"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: tempelridder | Should be: tempel+ridder\
+{\listtext	\uc0\u8259 	}Got: ["tem+pel+rid+der", "tem+pel+ridd+er", "tem+pel+ridd+der", "tem+pel+ridder", "temp+el+rid+der", "temp+el+ridd+er", "temp+el+ridd+der", "temp+el+ridder", "tempel+rid+der", "tempel+ridd+er", "tempel+ridd+der", "tempel+ridder"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: tenketank | Should be: tenke+tank\
+{\listtext	\uc0\u8259 	}Got: ["tenk+et+ank", "tenk+e+tank", "tenke+tank"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: troll\'f8ye | Should be: troll+\'f8ye\
+{\listtext	\uc0\u8259 	}Got: ["troll+\'f8ye", "troll+l\'f8ye", "troll\'f8ye"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: trykkb\'f8lge | Should be: trykk+b\'f8lge\
+{\listtext	\uc0\u8259 	}Got: ["trykk+b\'f8lge", "trykkb\'f8lge"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: valgurne | Should be: valg+urne\
+{\listtext	\uc0\u8259 	}Got: ["valg+ur+ne", "valg+urne", "valgurne"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: vannmelon | Should be: vann+melon\
+{\listtext	\uc0\u8259 	}Got: ["vann+melon", "vannmelon"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u10060 
+\f0   Input: vennesex | Should be: venn+e+sex\
+{\listtext	\uc0\u8259 	}Got: ["ven+ne+sex", "ven+ne+s+ex", "ven+nes+ex", "venn+es+ex", "venn+ne+sex", "venn+ne+s+ex", "venn+nes+ex", "venne+sex", "venne+s+ex", "vennes+ex"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ving\'e5rd | Should be: vin+g\'e5rd\
+{\listtext	\uc0\u8259 	}Got: ["vin+g\'e5rd", "ving\'e5rd"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: vinkelskriver | Should be: vinkel+skriver\
+{\listtext	\uc0\u8259 	}Got: ["vink+el+skriv+er", "vink+el+skriver", "vink+elsk+riv+er", "vink+elsk+river", "vinkel+skriv+er", "vinkel+skriver", "vinkelskriver"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: virkemiddel | Should be: virke+middel\
+{\listtext	\uc0\u8259 	}Got: ["virk+e+midd+el", "virk+e+midd+del", "virk+e+middel", "virke+midd+el", "virke+midd+del", "virke+middel", "virkemiddel"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: virussykdom | Should be: virus+sykdom\
+{\listtext	\uc0\u8259 	}Got: ["vi+ru+s+syk+dom", "vi+ru+s+sykdom", "vi+rus+syk+dom", "vi+rus+sykdom", "vi+russ+syk+dom", "vi+russ+sykdom", "vir+uss+syk+dom", "vir+uss+sykdom", "virus+syk+dom", "virus+sykdom", "virussykdom"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: \'e5penbare | Should be: \'e5pen+bare\
+{\listtext	\uc0\u8259 	}Got: ["\'e5pen+ba+re", "\'e5pen+bare", "\'e5penbare"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: \'f8yeblikk | Should be: \'f8ye+blikk\
+{\listtext	\uc0\u8259 	}Got: ["\'f8y+e+blikk", "\'f8ye+blikk", "\'f8yeblikk"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: \'f8yebryn | Should be: \'f8ye+bryn\
+{\listtext	\uc0\u8259 	}Got: ["\'f8y+e+bryn", "\'f8ye+bryn", "\'f8yebryn"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: \'f8yensynlig | Should be: \'f8yen+synlig\
+{\listtext	\uc0\u8259 	}Got: ["\'f8y+en+synlig", "\'f8yen+synlig", "\'f8yensynlig"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fotballag | Should be: fotball+lag\
+{\listtext	\uc0\u8259 	}Got: ["fot+bal+lag", "fot+ball+ag", "fot+ball+lag", "fotball+ag", "fotball+lag", "fotballag"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: eggiver | Should be: egg+giver\
+{\listtext	\uc0\u8259 	}Got: ["egg+iver", "egg+giv+er", "egg+giver"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: madrasselger | Should be: madrass+selger\
+{\listtext	\uc0\u8259 	}Got: ["mad+ra+s+selg+er", "mad+ra+s+selger", "mad+ras+selg+er", "mad+ras+selger", "mad+ras+s+elg+er", "mad+ras+s+elger", "madras+selg+er", "madras+selger", "madras+s+elg+er", "madras+s+elger", "madrass+elg+er", "madrass+elger", "madrass+selg+er", "madrass+selger"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fulladet | Should be: full+ladet\
+{\listtext	\uc0\u8259 	}Got: ["ful+la+det", "ful+lad+et", "ful+ladet", "full+ad+et", "full+la+det", "full+lad+et", "full+ladet", "fulladet"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: det | Should be: det\
+{\listtext	\uc0\u8259 	}Got: ["det"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: som | Should be: som\
+{\listtext	\uc0\u8259 	}Got: ["som"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: til | Should be: til\
+{\listtext	\uc0\u8259 	}Got: ["til"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: for | Should be: for\
+{\listtext	\uc0\u8259 	}Got: ["for"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: med | Should be: med\
+{\listtext	\uc0\u8259 	}Got: ["med"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: har | Should be: har\
+{\listtext	\uc0\u8259 	}Got: ["har"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: den | Should be: den\
+{\listtext	\uc0\u8259 	}Got: ["den"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ikke | Should be: ikke\
+{\listtext	\uc0\u8259 	}Got: ["ikke"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: han | Should be: han\
+{\listtext	\uc0\u8259 	}Got: ["han"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: var | Should be: var\
+{\listtext	\uc0\u8259 	}Got: ["var"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: jeg | Should be: jeg\
+{\listtext	\uc0\u8259 	}Got: ["jeg"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: fra | Should be: fra\
+{\listtext	\uc0\u8259 	}Got: ["fra"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: men | Should be: men\
+{\listtext	\uc0\u8259 	}Got: ["men"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: seg | Should be: seg\
+{\listtext	\uc0\u8259 	}Got: ["seg"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: kan | Should be: kan\
+{\listtext	\uc0\u8259 	}Got: ["kan"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: vil | Should be: vil\
+{\listtext	\uc0\u8259 	}Got: ["vil"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ble | Should be: ble\
+{\listtext	\uc0\u8259 	}Got: ["ble"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: skal | Should be: skal\
+{\listtext	\uc0\u8259 	}Got: ["skal"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: hun | Should be: hun\
+{\listtext	\uc0\u8259 	}Got: ["hun"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ntb | Should be: ntb\
+{\listtext	\uc0\u8259 	}Got: ["ntb"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ved | Should be: ved\
+{\listtext	\uc0\u8259 	}Got: ["ved"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: hadde | Should be: hadde\
+{\listtext	\uc0\u8259 	}Got: ["hadde"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: etter | Should be: etter\
+{\listtext	\uc0\u8259 	}Got: ["et+ter", "ett+er", "ett+ter", "etter"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: ogs\'e5 | Should be: ogs\'e5\
+{\listtext	\uc0\u8259 	}Got: ["og+s\'e5", "ogs\'e5"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: v\'e6re | Should be: v\'e6re\
+{\listtext	\uc0\u8259 	}Got: ["v\'e6re"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: sier | Should be: sier\
+{\listtext	\uc0\u8259 	}Got: ["si+er", "sier"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: nasjonalforsamlingen | Should be: nasjonal+forsamlingen\
+{\listtext	\uc0\u8259 	}Got: ["nasjon+al+for+sa+ml+in+gen", "nasjon+al+for+sa+ml+ingen", "nasjon+al+for+saml+in+gen", "nasjon+al+for+saml+ingen", "nasjon+al+for+samling+en", "nasjon+al+for+samlingen", "nasjon+al+for+s+am+lin+gen", "nasjon+al+forsaml+in+gen", "nasjon+al+forsaml+ingen", "nasjon+al+forsamling+en", "nasjon+al+forsamlingen", "nasjonal+for+sa+ml+in+gen", "nasjonal+for+sa+ml+ingen", "nasjonal+for+saml+in+gen", "nasjonal+for+saml+ingen", "nasjonal+for+samling+en", "nasjonal+for+samlingen", "nasjonal+for+s+am+lin+gen", "nasjonal+forsaml+in+gen", "nasjonal+forsaml+ingen", "nasjonal+forsamling+en", "nasjonal+forsamlingen", "nasjonalforsamling+en", "nasjonalforsamlingen"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: statsminister | Should be: stat+s+minister\
+{\listtext	\uc0\u8259 	}Got: ["stat+smi+ni+ster", "stat+smi+ni+s+ter", "stat+smi+nist+er", "stat+smi+nister", "stat+s+mi+ni+ster", "stat+s+mi+ni+s+ter", "stat+s+mi+nist+er", "stat+s+mi+nister", "stat+s+min+is+ter", "stat+s+min+ister", "stat+s+mini+ster", "stat+s+mini+s+ter", "stat+s+minister", "statsminister"]\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u9989 
+\f0   Input: forhandlingene | Should be: for+handlingene\
+{\listtext	\uc0\u8259 	}Got: ["for+handling+ene", "for+handling+e+ne", "for+handlingene", "forhandling+ene", "forhandling+e+ne", "forhandlingene"]\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}
+\b Kompleks\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2
+\b0 \cf0 {\listtext	\uc0\u8259 	}Hentet fra Hauglin og Johanneson, alle eksempler (2006).\
+{\listtext	\uc0\u8259 	}La ogs\'e5 inn trippelkonsonanteksempeler: fotball+lag, madrass+selger etc.\
+{\listtext	\uc0\u8259 	}27 tests took 0.189908 s\
+{\listtext	\uc0\u8259 	}26 passed 1 failed / 27\
+{\listtext	\uc0\u8259 	}96.29629629629629 %\
+{\listtext	\uc0\u8259 	}Siden noen av disse har flere tolkninger, s\'e5 overgenererer noen enormt:\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2
+\b \cf0 {\listtext	\uc0\u8259 	}
+\f1\b0 \uc0\u55357 \u56380 
+\f0   ./test_compound_splitter.rb \
+{\listtext	\uc0\u8259 	}finished in 34.866735 s\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2
+\f1 \cf0 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: kulturforskeren | Should be: kultur+forskeren\
+{\listtext	\uc0\u8259 	}Got: ["kul+tur+forsk+er+en", "kul+tur+forsk+e+ren", "kul+tur+forske+ren", "kul+tur+forsker+en", "kul+tur+forskeren", "kult+ur+forsk+er+en", "kult+ur+forsk+e+ren", "kult+ur+forske+ren", "kult+ur+forsker+en", "kult+ur+forskeren", "kultur+forsk+er+en", "kultur+forsk+e+ren", "kultur+forske+ren", "kultur+forsker+en", "kultur+forskeren"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: melkeforretning | Should be: melk+e+forretning\
+{\listtext	\uc0\u8259 	}Got: ["melk+efor+retning", "melk+e+for+retning", "melk+e+forretning", "melke+for+retning", "melke+forretning"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: slottsvinduene | Should be: slott+s+vinduene\
+{\listtext	\uc0\u8259 	}Got: ["slott+svin+du+ene", "slott+svin+du+e+ne", "slott+svin+due+ne", "slott+svin+duene", "slottsvin+du+ene", "slottsvin+du+e+ne", "slottsvin+due+ne", "slottsvin+duene"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: verdenscupseiere | Should be: verdenscup+seiere\
+{\listtext	\uc0\u8259 	}Got: ["verd+en+s+cup+sei+e+re", "verd+en+s+cup+seiere", "verd+en+s+cup+s+ei+e+re", "verd+en+s+cup+s+eie+re", "verd+en+s+cup+s+eiere", "verd+en+s+cupseiere", "verd+ens+cup+sei+e+re", "verd+ens+cup+seiere", "verd+ens+cup+s+ei+e+re", "verd+ens+cup+s+eie+re", "verd+ens+cup+s+eiere", "verd+ens+cupseiere", "verden+s+cup+sei+e+re", "verden+s+cup+seiere", "verden+s+cup+s+ei+e+re", "verden+s+cup+s+eie+re", "verden+s+cup+s+eiere", "verden+s+cupseiere", "verdenscup+sei+e+re", "verdenscup+seiere", "verdenscup+s+ei+e+re", "verdenscup+s+eie+re", "verdenscup+s+eiere", "verdenscupseiere"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: vinduskitt | Should be: vindu+s+kitt\
+{\listtext	\uc0\u8259 	}Got: ["vin+du+skitt", "vin+du+s+kitt", "vin+dus+kitt", "vindu+skitt", "vindu+s+kitt"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: heleide | Should be: hel+eide\
+{\listtext	\uc0\u8259 	}Got: ["he+le+ide", "he+lei+de", "he+leide", "hel+ei+de", "hel+eide", "hel+e+ide", "hele+ide"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: tilsynsorgan | Should be: tilsyn+s+organ\
+{\listtext	\uc0\u8259 	}Got: ["til+syn+sorg+an", "til+syn+s+or+gan", "til+syn+s+org+an", "til+syn+s+organ", "til+syns+or+gan", "til+syns+org+an", "til+syns+organ", "til+synsorgan", "tilsyn+sorg+an", "tilsyn+s+or+gan", "tilsyn+s+org+an", "tilsyn+s+organ"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: takkformatentaler | Should be: takk+for+maten+taler\
+{\listtext	\uc0\u8259 	}Got: ["takk+for+mat+en+ta+ler", "takk+for+mat+en+tal+er", "takk+for+mat+en+taler", "takk+for+mat+ent+al+er", "takk+for+mat+ent+aler", "takk+for+maten+ta+ler", "takk+for+maten+tal+er", "takk+for+maten+taler", "takk+form+at+en+ta+ler", "takk+form+at+en+tal+er", "takk+form+at+en+taler", "takk+form+at+ent+al+er", "takk+form+at+ent+aler", "takk+forma+tent+al+er", "takk+forma+tent+aler", "takk+format+en+ta+ler", "takk+format+en+tal+er", "takk+format+en+taler", "takk+format+ent+al+er", "takk+format+ent+aler"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: lysmaskinen | Should be: lys+maskinen\
+{\listtext	\uc0\u8259 	}Got: ["ly+smask+in+en", "ly+s+mask+in+en", "ly+s+maskin+en", "ly+s+maskinen", "lys+mask+in+en", "lys+maskin+en", "lys+maskinen"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: l\'f8vemanke | Should be: l\'f8ve+manke\
+{\listtext	\uc0\u8259 	}Got: ["l\'f8+ve+manke", "l\'f8v+e+manke", "l\'f8ve+manke", "l\'f8vemanke"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: \'f8lskum | Should be: \'f8l+skum\
+{\listtext	\uc0\u8259 	}Got: ["\'f8l+skum", "\'f8l+s+kum"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: krigsmaske | Should be: krig+s+maske\
+{\listtext	\uc0\u8259 	}Got: ["krig+smaske", "krig+s+maske"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: aluminiumsnakke | Should be: aluminium+s+nakke\
+{\listtext	\uc0\u8259 	}Got: ["aluminium+snakke", "aluminium+s+nakke"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: oppslag | Should be: opp+slag\
+{\listtext	\uc0\u8259 	}Got: ["opp+slag", "opp+ps+lag", "oppslag"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: lesesalsturer | Should be: lesesal+s+turer\
+{\listtext	\uc0\u8259 	}Got: ["le+se+sal+stu+rer", "le+se+sal+stur+er", "le+se+sal+sturer", "le+se+sal+s+tu+rer", "le+se+sal+s+tur+er", "le+se+sal+s+turer", "le+se+s+al+stu+rer", "le+se+s+al+stur+er", "le+se+s+al+sturer", "le+se+s+al+s+tu+rer", "le+se+s+al+s+tur+er", "le+se+s+al+s+turer", "le+ses+al+stu+rer", "le+ses+al+stur+er", "le+ses+al+sturer", "le+ses+al+s+tu+rer", "le+ses+al+s+tur+er", "le+ses+al+s+turer", "le+s+es+al+stu+rer", "le+s+es+al+stur+er", "le+s+es+al+sturer", "le+s+es+al+s+tu+rer", "le+s+es+al+s+tur+er", "le+s+es+al+s+turer", "les+es+al+stu+rer", "les+es+al+stur+er", "les+es+al+sturer", "les+es+al+s+tu+rer", "les+es+al+s+tur+er", "les+es+al+s+turer", "les+e+sal+stu+rer", "les+e+sal+stur+er", "les+e+sal+sturer", "les+e+sal+s+tu+rer", "les+e+sal+s+tur+er", "les+e+sal+s+turer", "lese+sal+stu+rer", "lese+sal+stur+er", "lese+sal+sturer", "lese+sal+s+tu+rer", "lese+sal+s+tur+er", "lese+sal+s+turer", "lese+s+al+stu+rer", "lese+s+al+stur+er", "lese+s+al+sturer", "lese+s+al+s+tu+rer", "lese+s+al+s+tur+er", "lese+s+al+s+turer", "leses+al+stu+rer", "leses+al+stur+er", "leses+al+sturer", "leses+al+s+tu+rer", "leses+al+s+tur+er", "leses+al+s+turer", "lesesal+stu+rer", "lesesal+stur+er", "lesesal+sturer", "lesesal+s+tu+rer", "lesesal+s+tur+er", "lesesal+s+turer"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: storhavstang | Should be: storhav+s+tang\
+{\listtext	\uc0\u8259 	}Got: ["stor+hav+stang", "stor+hav+s+tang", "storhav+stang", "storhav+s+tang"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: barneskje | Should be: barn+e+skje\
+{\listtext	\uc0\u8259 	}Got: ["bar+ne+skje", "bar+ne+s+kje", "bar+nes+kje", "barn+es+kje", "barn+e+skje", "barneskje"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: blomsterholder | Should be: blomster+holder\
+{\listtext	\uc0\u8259 	}Got: ["bl+om+ster+hol+der", "bl+om+ster+hold+er", "bl+om+ster+holder", "bl+om+s+ter+hol+der", "bl+om+s+ter+hold+er", "bl+om+s+ter+holder", "bl+oms+ter+hol+der", "bl+oms+ter+hold+er", "bl+oms+ter+holder", "blom+ster+hol+der", "blom+ster+hold+er", "blom+ster+holder", "blom+s+ter+hol+der", "blom+s+ter+hold+er", "blom+s+ter+holder", "blomst+er+hol+der", "blomst+er+hold+er", "blomst+er+holder", "blomst+erhold+er", "blomst+erholder", "blomster+hol+der", "blomster+hold+er", "blomster+holder"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: hundyr | Should be: hun+dyr\
+{\listtext	\uc0\u8259 	}Got: ["hun+dyr", "hund+yr"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: spisestueur | Should be: spisestue+ur\
+{\listtext	\uc0\u8259 	}Got: ["spis+es+tu+e+ur", "spis+es+tue+ur", "spis+e+stu+e+ur", "spis+e+stue+ur", "spis+e+stueur", "spise+stu+e+ur", "spise+stue+ur", "spise+stueur", "spise+s+tu+e+ur", "spise+s+tue+ur", "spises+tu+e+ur", "spises+tue+ur", "spisestue+ur"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: fagplanarbeid | Should be: fagplan+arbeid\
+{\listtext	\uc0\u8259 	}Got: ["fag+plan+ar+be+id", "fag+plan+arbeid", "fagplan+ar+be+id", "fagplan+arbeid"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: hesteekvipasje | Should be: hest+e+ekvipasje\
+{\listtext	\uc0\u8259 	}Got: ["he+ste+ekvi+pasje", "he+ste+ekvipasje", "he+ste+e+kvi+pasje", "he+s+te+ekvi+pasje", "he+s+te+ekvipasje", "he+s+te+e+kvi+pasje", "he+s+tee+kvi+pasje", "he+s+tee+ekvi+pasje", "he+s+tee+ekvipasje", "he+s+tee+e+vi+pasje", "hes+te+ekvi+pasje", "hes+te+ekvipasje", "hes+te+e+kvi+pasje", "hes+tee+kvi+pasje", "hes+tee+ekvi+pasje", "hes+tee+ekvipasje", "hes+tee+e+vi+pasje", "hest+e+ekvi+pasje", "hest+e+ekvipasje"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: trehestekvipasje | Should be: tre+hest+ekvipasje\
+{\listtext	\uc0\u8259 	}Got: ["tre+he+ste+kvi+pasje", "tre+he+stek+vi+pasje", "tre+he+s+te+kvi+pasje", "tre+he+s+tek+vi+pasje", "tre+hes+te+kvi+pasje", "tre+hes+tek+vi+pasje", "tre+hest+ekvi+pasje", "tre+hest+ekvipasje", "tre+hest+e+kvi+pasje", "trehest+ekvi+pasje", "trehest+ekvipasje", "trehest+e+kvi+pasje"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: kongehushesteekvipasje | Should be: konge+hus+hest+e+ekvipasje\
+{\listtext	\uc0\u8259 	}Got: ["kong+e+hu+s+he+ste+ekvi+pasje", "kong+e+hu+s+he+ste+ekvipasje", "kong+e+hu+s+he+ste+e+kvi+pasje", "kong+e+hu+s+he+s+te+ekvi+pasje", "kong+e+hu+s+he+s+te+ekvipasje", "kong+e+hu+s+he+s+te+e+kvi+pasje", "kong+e+hu+s+he+s+tee+kvi+pasje", "kong+e+hu+s+he+s+tee+ekvi+pasje", "kong+e+hu+s+he+s+tee+ekvipasje", "kong+e+hu+s+he+s+tee+e+vi+pasje", "kong+e+hu+s+hes+te+ekvi+pasje", "kong+e+hu+s+hes+te+ekvipasje", "kong+e+hu+s+hes+te+e+kvi+pasje", "kong+e+hu+s+hes+tee+kvi+pasje", "kong+e+hu+s+hes+tee+ekvi+pasje", "kong+e+hu+s+hes+tee+ekvipasje", "kong+e+hu+s+hes+tee+e+vi+pasje", "kong+e+hu+s+hest+e+ekvi+pasje", "kong+e+hu+s+hest+e+ekvipasje", "kong+e+hus+he+ste+ekvi+pasje", "kong+e+hus+he+ste+ekvipasje", "kong+e+hus+he+ste+e+kvi+pasje", "kong+e+hus+he+s+te+ekvi+pasje", "kong+e+hus+he+s+te+ekvipasje", "kong+e+hus+he+s+te+e+kvi+pasje", "kong+e+hus+he+s+tee+kvi+pasje", "kong+e+hus+he+s+tee+ekvi+pasje", "kong+e+hus+he+s+tee+ekvipasje", "kong+e+hus+he+s+tee+e+vi+pasje", "kong+e+hus+hes+te+ekvi+pasje", "kong+e+hus+hes+te+ekvipasje", "kong+e+hus+hes+te+e+kvi+pasje", "kong+e+hus+hes+tee+kvi+pasje", "kong+e+hus+hes+tee+ekvi+pasje", "kong+e+hus+hes+tee+ekvipasje", "kong+e+hus+hes+tee+e+vi+pasje", "kong+e+hus+hest+e+ekvi+pasje", "kong+e+hus+hest+e+ekvipasje", "konge+hu+s+he+ste+ekvi+pasje", "konge+hu+s+he+ste+ekvipasje", "konge+hu+s+he+ste+e+kvi+pasje", "konge+hu+s+he+s+te+ekvi+pasje", "konge+hu+s+he+s+te+ekvipasje", "konge+hu+s+he+s+te+e+kvi+pasje", "konge+hu+s+he+s+tee+kvi+pasje", "konge+hu+s+he+s+tee+ekvi+pasje", "konge+hu+s+he+s+tee+ekvipasje", "konge+hu+s+he+s+tee+e+vi+pasje", "konge+hu+s+hes+te+ekvi+pasje", "konge+hu+s+hes+te+ekvipasje", "konge+hu+s+hes+te+e+kvi+pasje", "konge+hu+s+hes+tee+kvi+pasje", "konge+hu+s+hes+tee+ekvi+pasje", "konge+hu+s+hes+tee+ekvipasje", "konge+hu+s+hes+tee+e+vi+pasje", "konge+hu+s+hest+e+ekvi+pasje", "konge+hu+s+hest+e+ekvipasje", "konge+hus+he+ste+ekvi+pasje", "konge+hus+he+ste+ekvipasje", "konge+hus+he+ste+e+kvi+pasje", "konge+hus+he+s+te+ekvi+pasje", "konge+hus+he+s+te+ekvipasje", "konge+hus+he+s+te+e+kvi+pasje", "konge+hus+he+s+tee+kvi+pasje", "konge+hus+he+s+tee+ekvi+pasje", "konge+hus+he+s+tee+ekvipasje", "konge+hus+he+s+tee+e+vi+pasje", "konge+hus+hes+te+ekvi+pasje", "konge+hus+hes+te+ekvipasje", "konge+hus+hes+te+e+kvi+pasje", "konge+hus+hes+tee+kvi+pasje", "konge+hus+hes+tee+ekvi+pasje", "konge+hus+hes+tee+ekvipasje", "konge+hus+hes+tee+e+vi+pasje", "konge+hus+hest+e+ekvi+pasje", "konge+hus+hest+e+ekvipasje", "kongehus+he+ste+ekvi+pasje", "kongehus+he+ste+ekvipasje", "kongehus+he+ste+e+kvi+pasje", "kongehus+he+s+te+ekvi+pasje", "kongehus+he+s+te+ekvipasje", "kongehus+he+s+te+e+kvi+pasje", "kongehus+he+s+tee+kvi+pasje", "kongehus+he+s+tee+ekvi+pasje", "kongehus+he+s+tee+ekvipasje", "kongehus+he+s+tee+e+vi+pasje", "kongehus+hes+te+ekvi+pasje", "kongehus+hes+te+ekvipasje", "kongehus+hes+te+e+kvi+pasje", "kongehus+hes+tee+kvi+pasje", "kongehus+hes+tee+ekvi+pasje", "kongehus+hes+tee+ekvipasje", "kongehus+hes+tee+e+vi+pasje", "kongehus+hest+e+ekvi+pasje", "kongehus+hest+e+ekvipasje"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: buskspilling | Should be: busk+spilling\
+{\listtext	\uc0\u8259 	}Got: ["busk+spilling", "busk+s+pilling"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: eineb\'e6rbuskspilling | Should be: eineb\'e6r+busk+s+pilling\
+{\listtext	\uc0\u8259 	}Got: ["ei+ne+b\'e6r+busk+spilling", "ei+ne+b\'e6r+busk+s+pilling", "ei+ne+b\'e6rbusk+spilling", "ei+ne+b\'e6rbusk+s+pilling", "eineb\'e6r+busk+spilling", "eineb\'e6r+busk+s+pilling"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: lavast\'f8vet | Should be: lava+st\'f8vet\
+{\listtext	\uc0\u8259 	}Got: ["la+va+st\'f8+vet", "la+va+st\'f8v+et", "la+va+st\'f8vet", "la+va+s+t\'f8+vet", "la+va+s+t\'f8v+et", "la+va+s+t\'f8vet", "la+vas+t\'f8+vet", "la+vas+t\'f8v+et", "la+vas+t\'f8vet", "la+vast+\'f8v+et", "la+vast+\'f8vet", "lav+as+t\'f8+vet", "lav+as+t\'f8v+et", "lav+as+t\'f8vet", "lav+ast+\'f8v+et", "lav+ast+\'f8vet", "lava+st\'f8+vet", "lava+st\'f8v+et", "lava+st\'f8vet", "lava+s+t\'f8+vet", "lava+s+t\'f8v+et", "lava+s+t\'f8vet"]
+\b \
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls1\ilvl1
+\b0 \cf0 {\listtext	\uc0\u8259 	}Tid:\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2\cf0 {\listtext	\uc0\u8259 	}Gammel\
+\pard\tx2380\tx2880\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2880\fi-2880\pardirnatural
+\ls1\ilvl3\cf0 {\listtext	\uc0\u8259 	}Time to load dictionary: 16.033755 s\
+{\listtext	\uc0\u8259 	}Enkel: 123 tests took 2032.462653 s\
+{\listtext	\uc0\u8259 	}Kompleks: 30 tests took 1822.210908 s\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}CompoundInterpreter:\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}Enkel\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2\cf0 {\listtext	\uc0\u8259 	}Fjerner alle som har tolkninger med fuge-bokstav, de g\'e5r til kompleks\
+{\listtext	\uc0\u8259 	}F\'f8rste kj\'f8ring uten trippelkonsonant i testliste, ga kun to feil hvor begge var feilgenererte trippelkonsonanter. \
+{\listtext	\uc0\u8259 	}La til alle eksempler med trippelkonsonant, de ga riktig resultatet. Kanskje ikke ha med trippelkonsonant-tolkning siden det kan generere mer feil? Eller bare ha hvis det ikke finnes noen andre l\'f8sninger? Hauglin velger \'e5 ikke ta med trippelkonsonant, siden det overgenererer.\
+{\listtext	\uc0\u8259 	}Time: 0.008419 s, failed: 8, passed: 99 of 107\
+{\listtext	\uc0\u8259 	}92.5233644859813 %\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u55357 \u56380 
+\f0   ./test_compound_interpreter.rb \
+{\listtext	\uc0\u8259 	}finished in 40.088953 s\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2
+\f1 \cf0 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ben+arbeid | Got: ben+arbeid\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: bingo+vinge | Got: bingo+vinge\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: bjelle+klang | Got: bjelle+klang\
+{\listtext	\uc0\u8259 	}[["blod", "hevner"], ["blodhevn", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: blod+hevner | Got: blod+hevner\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: blod+suger | Got: blod+suger\
+{\listtext	\uc0\u8259 	}[["brak", "kvann"], ["brakk", "kvann"], ["brakk", "vann"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: brakk+vann | Got: brak+kvann\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: b\'e5t+f\'f8rer | Got: b\'e5t+f\'f8rer\
+{\listtext	\uc0\u8259 	}[["desimal", "tall"], ["desimalt", "all"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: desimal+tall | Got: desimal+tall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: edel+sten | Got: edel+sten\
+{\listtext	\uc0\u8259 	}[["en", "tall"], ["ent", "all"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: en+tall | Got: en+tall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: eple+kake | Got: eple+kake\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: etter+forskning | Got: etter+forskning\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: etter+navn | Got: etter+navn\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fag+dommer | Got: fag+dommer\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fag+forening | Got: fag+forening\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fem+minutter | Got: fem+minutter\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fett+rand | Got: fett+rand\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fett+suging | Got: fett+suging\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fjern+lys | Got: fjern+lys\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: flat+banker | Got: flat+banker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fler+tall | Got: fler+tall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fremmed+ord | Got: fremmed+ord\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: frem+pek | Got: frem+pek\
+{\listtext	\uc0\u8259 	}[["frem", "tid"], ["fremt", "id"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: frem+tid | Got: frem+tid\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fri+kirke | Got: fri+kirke\
+{\listtext	\uc0\u8259 	}[["f\'f8r", "titall"], ["f\'f8rti", "tall"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: f\'f8rti+tall | Got: f\'f8r+titall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: gammel+engelsk | Got: gammel+engelsk\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: garn+fisker | Got: garn+fisker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: gr\'f8nn+sak | Got: gr\'f8nn+sak\
+{\listtext	\uc0\u8259 	}[["hel", "tall"], ["helt", "all"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hel+tall | Got: hel+tall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: himmel+legeme | Got: himmel+legeme\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hval+ku | Got: hval+ku\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hver+dag | Got: hver+dag\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: h\'e5nd+krem | Got: h\'e5nd+krem\
+{\listtext	\uc0\u8259 	}[["h\'e5nd", "verker"], ["h\'e5ndverk", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: h\'e5nd+verker | Got: h\'e5nd+verker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: is+lender | Got: is+lender\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: karnapp+vindu | Got: karnapp+vindu\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: lov+l\'e6rer | Got: lov+l\'e6rer\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: makt+haver | Got: makt+haver\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: med+dele | Got: med+dele\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: mellom+navn | Got: mellom+navn\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: mellom+valg | Got: mellom+valg\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: motor+vei | Got: motor+vei\
+{\listtext	\uc0\u8259 	}[["ned", "bryter"], ["nedbryt", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ned+bryter | Got: ned+bryter\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: nerve+pirrende | Got: nerve+pirrende\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: nest+kommanderende | Got: nest+kommanderende\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: nikke+dukke | Got: nikke+dukke\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: n\'e5de+gave | Got: n\'e5de+gave\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: n\'f8d+rakett | Got: n\'f8d+rakett\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: odde+tall | Got: odde+tall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: post+bud | Got: post+bud\
+{\listtext	\uc0\u8259 	}[["prim", "tall"], ["primt", "all"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: prim+tall | Got: prim+tall\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: regime+kritiker | Got: regime+kritiker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: regn+v\'e6r | Got: regn+v\'e6r\
+{\listtext	\uc0\u8259 	}[["rulle", "f\'f8rer"], ["rullef\'f8r", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: rulle+f\'f8rer | Got: rulle+f\'f8rer\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: r\'e5d+giver | Got: r\'e5d+giver\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: r\'f8r+legger | Got: r\'f8r+legger\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: sentral+legeme | Got: sentral+legeme\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: sjekk+svindler | Got: sjekk+svindler\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: sj\'f8+r\'f8ver | Got: sj\'f8+r\'f8ver\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: skap+dranker | Got: skap+dranker\
+{\listtext	\uc0\u8259 	}[["skog", "bruker"], ["skogbruk", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: skog+bruker | Got: skog+bruker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: stoppe+sted | Got: stoppe+sted\
+{\listtext	\uc0\u8259 	}[["st\'f8v", "suger"], ["st\'f8vsug", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: st\'f8v+suger | Got: st\'f8v+suger\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: tall+f\'f8lge | Got: tall+f\'f8lge\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: tempel+ridder | Got: tempel+ridder\
+{\listtext	\uc0\u8259 	}[["troll", "l\'f8ye"], ["troll", "\'f8ye"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: troll+\'f8ye | Got: troll+l\'f8ye\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: trykk+b\'f8lge | Got: trykk+b\'f8lge\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: valg+urne | Got: valg+urne\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: vann+melon | Got: vann+melon\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: vin+g\'e5rd | Got: vin+g\'e5rd\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: vinkel+skriver | Got: vinkel+skriver\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: \'e5pen+bare | Got: \'e5pen+bare\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: \'f8yen+synlig | Got: \'f8yen+synlig\
+{\listtext	\uc0\u8259 	}[["fotball", "lag"], ["fotball", "ag"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fotball+lag | Got: fotball+lag\
+{\listtext	\uc0\u8259 	}[["egg", "giver"], ["egg", "iver"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: egg+giver | Got: egg+giver\
+{\listtext	\uc0\u8259 	}[["ful", "ladet"], ["full", "ladet"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: full+ladet | Got: ful+ladet\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: det | Got: det\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: som | Got: som\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: til | Got: til\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: for | Got: for\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: med | Got: med\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: har | Got: har\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: den | Got: den\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ikke | Got: ikke\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: han | Got: han\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: var | Got: var\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: jeg | Got: jeg\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fra | Got: fra\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: men | Got: men\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: seg | Got: seg\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: kan | Got: kan\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: vil | Got: vil\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ble | Got: ble\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: skal | Got: skal\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hun | Got: hun\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ntb | Got: ntb\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ved | Got: ved\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hadde | Got: hadde\
+{\listtext	\uc0\u8259 	}[["et", "ter"], ["ett", "ter"], ["ett", "er"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: etter | Got: ett+ter\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: ogs\'e5 | Got: og+s\'e5\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: v\'e6re | Got: v\'e6re\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: sier | Got: si+er\
+{\listtext	\uc0\u8259 	}[["takk", "format", "en", "taler"], ["takk", "for", "maten", "taler"], ["takk", "forma", "tent", "aler"], ["takk", "format", "ent", "aler"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: takk+for+maten+taler | Got: takk+format+en+taler\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: opp+slag | Got: opp+slag\
+{\listtext	\uc0\u8259 	}[["hun", "dyr"], ["hund", "yr"]]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hun+dyr | Got: hun+dyr\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: fagplan+arbeid | Got: fagplan+arbeid\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}Kompleks\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2\cf0 {\listtext	\uc0\u8259 	}Time: 0.100291 s, failed: 11, passed: 60 of 71\
+{\listtext	\uc0\u8259 	}
+\f1 \uc0\u55357 \u56380 
+\f0   ./test_compound_interpreter.rb \
+{\listtext	\uc0\u8259 	}finished in 54.754272 s\
+\pard\tx1660\tx2160\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2160\fi-2160\pardirnatural
+\ls1\ilvl2
+\f1 \cf0 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: abort+motstander | Got: abort+motstander\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: abort+s\'f8ker | Got: abort+s\'f8ker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: administrasjons+bo | Got: administrasjons+bo\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: aftens+mat | Got: aftens+mat\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: alene+forelder | Got: alene+forelder\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: barne+pike | Got: barne+pike\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: belte+dyr | Got: belte+dyr\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: bog+stek | Got: bog+stek\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: bryllups+dag | Got: bryllups+dag\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: etter+tenksom | Got: etter+tenksom\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: flise+legger | Got: flise+legger\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: flis+legger | Got: fli+slegger\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: fylkes+vei | Got: fylke+svei\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: f\'f8rste+hjelp | Got: f\'f8rste+hjelp\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hete+b\'f8lge | Got: hete+b\'f8lge\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: hus+tak | Got: hu+stak\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: h\'f8yde+drag | Got: h\'f8yde+drag\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: jukse+maker | Got: jukse+maker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: jule+gave | Got: jule+gave\
+{\listtext	\uc0\u8259 	}Compounds rsult: ["kamp"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: kamp+sang | Got: kamps+ang\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: kanne+st\'f8per | Got: kanne+st\'f8per\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: krave+ben | Got: krave+ben\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: leie+soldat | Got: leie+soldat\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: mange+kjemper | Got: mange+kjemper\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: n\'e5de+st\'f8t | Got: n\'e5de+st\'f8t\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: ord+spill | Got: ord+spill\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: plante+eter | Got: plante+eter\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: preke+stol | Got: preke+stol\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: president+valg | Got: president+valg\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: pr\'f8ve+spille | Got: pr\'f8ve+spille\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: regn+skau | Got: regn+skau\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: sentral+st\'f8vsuger | Got: sentral+st\'f8vsuger\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: skips+handler | Got: skips+handler\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: skue+spiller | Got: skue+spiller\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: speke+kj\'f8tt | Got: speke+kj\'f8tt\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: sprit+smugler | Got: sprit+smugler\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: spr\'f8yte+misbruker | Got: spr\'f8yte+misbruker\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: stevne+m\'f8te | Got: stevne+m\'f8te\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: st\'f8rrelses+orden | Got: st\'f8rrelses+orden\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: s\'e6r+egen | Got: s\'e6r+egen\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: tenke+tank | Got: tenke+tank\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: virke+middel | Got: virke+middel\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: virus+sykdom | Got: virus+sykdom\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: \'f8ye+blikk | Got: \'f8ye+blikk\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: \'f8ye+bryn | Got: \'f8ye+bryn\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: madrass+selger | Got: madrass+selger\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: nasjonal+forsamlingen | Got: nasjonal+forsamlingen\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: stats+minister | Got: stats+minister\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: for+handlingene | Got: for+handlingene\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: kultur+forskeren | Got: kultur+forskeren\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: melke+forretning | Got: melke+forretning\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: verdenscup+seiere | Got: verdens+cupseiere\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: vindus+kitt | Got: vindu+skitt\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: hel+eide | Got: hel+eide\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: tilsyn+s+organ | Got: til+synsorgan\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: lys+maskinen | Got: lys+maskinen\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: l\'f8ve+manke | Got: l\'f8ve+manke\
+{\listtext	\uc0\u8259 	}Compounds rsult: ["\'f8l"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: \'f8l+skum | Got: \'f8ls+kum\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: krigs+maske | Got: krig+smaske\
+{\listtext	\uc0\u8259 	}Compounds rsult: ["aluminium"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: aluminiums+nakke | Got: aluminiums+nakke\
+{\listtext	\uc0\u8259 	}Compounds rsult: ["le+se+sal", "le+se+s+al", "le+ses+al", "le+s+es+al", "les+es+al", "les+e+sal", "lese+sal", "lese+s+al", "leses+al", "lesesal"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: lesesals+turer | Got: lesesals+turer\
+{\listtext	\uc0\u8259 	}Compounds rsult: ["stor+hav", "storhav"]\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: storhavs+tang | Got: storhavs+tang\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: barne+skje | Got: barne+skje\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: blomster+holder | Got: blomster+holder\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: spisestue+ur | Got: spise+stueur\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: heste+ekvipasje | Got: heste+ekvipasje\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: trehest+ekvipasje | Got: trehest+ekvipasje\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: kongehus+heste+ekvipasje | Got: kongehus+heste+ekvipasje\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: busk+spilling | Got: busk+spilling\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Should be: eineb\'e6rbusks+pilling | Got: eineb\'e6r+busk+spilling\
+\ls1\ilvl2
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Should be: lava+st\'f8vet | Got: lava+st\'f8vet\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}HyphenationRules\
+\pard\tx940\tx1440\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1440\fi-1440\pardirnatural
+\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}finished in 44.991368 s\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: seks\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: seks | Should be: seks\
+{\listtext	\uc0\u8259 	}Got: seks\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: funnet\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: net\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 funnet\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: et\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: funnet | Should be: fun-n-et\
+{\listtext	\uc0\u8259 	}Got: fun-n-et\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: l\'f8p\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: l\'f8p | Should be: l\'f8p\
+{\listtext	\uc0\u8259 	}Got: l\'f8p\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: dagen\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: gen\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 dagen\
+{\listtext	\uc0\u8259 	}["", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: en\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: dagen | Should be: da-g-en\
+{\listtext	\uc0\u8259 	}Got: da-g-en\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: drept\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: t\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: drept | Should be: drept\
+{\listtext	\uc0\u8259 	}Got: drept\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: melder\
+{\listtext	\uc0\u8259 	}SUFFIX: er\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}Last part: der\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 melder\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: melder | Should be: mel-d-er\
+{\listtext	\uc0\u8259 	}Got: mel-d-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: prosesser\
+{\listtext	\uc0\u8259 	}PREFIX: pro\
+{\listtext	\uc0\u8259 	}SUFFIX: er\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "-", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}Last part: ser\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 sesser\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: er\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: prosesser | Should be: pro-ses-s-er\
+{\listtext	\uc0\u8259 	}Got: pro-s-ess-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: hvem\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: hvem | Should be: hvem\
+{\listtext	\uc0\u8259 	}Got: hvem\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: september\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: tember\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 september\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ber\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 6 september\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: september | Should be: sep-tem-ber\
+{\listtext	\uc0\u8259 	}Got: sep-tem-ber\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: fant\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: a+t\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: fant | Should be: fant\
+{\listtext	\uc0\u8259 	}Got: fant\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: s\'f8r\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: s\'f8r | Should be: s\'f8r\
+{\listtext	\uc0\u8259 	}Got: s\'f8r\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: deler\
+{\listtext	\uc0\u8259 	}PREFIX: de\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: er\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: deler | Should be: de-l-er\
+{\listtext	\uc0\u8259 	}Got: d-e-ler\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: hjem\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: m\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: hjem | Should be: hjem\
+{\listtext	\uc0\u8259 	}Got: hjem\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: dager\
+{\listtext	\uc0\u8259 	}SUFFIX: er\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}Last part: ger\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 dager\
+{\listtext	\uc0\u8259 	}["", "", "-", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: er\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: dager | Should be: da-g-er\
+{\listtext	\uc0\u8259 	}Got: da-g-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: skjer\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: r\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: skjer | Should be: skjer\
+{\listtext	\uc0\u8259 	}Got: skjer\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: bruker\
+{\listtext	\uc0\u8259 	}SUFFIX: er\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}Last part: ker\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 bruker\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: bruker | Should be: bru-k-er\
+{\listtext	\uc0\u8259 	}Got: bru-k-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: hvite\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: te\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 hvite\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: hvite | Should be: hvi-te\
+{\listtext	\uc0\u8259 	}Got: hvi-te\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: figur\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: gur\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 figur\
+{\listtext	\uc0\u8259 	}["", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: figur | Should be: fi-gur\
+{\listtext	\uc0\u8259 	}Got: fi-gur\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: mente\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: te\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 mente\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: mente | Should be: men-te\
+{\listtext	\uc0\u8259 	}Got: men-te\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: stedet\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: det\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 stedet\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: et\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: stedet | Should be: ste-d-et\
+{\listtext	\uc0\u8259 	}Got: ste-d-et\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: brukt\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: brukt | Should be: brukt\
+{\listtext	\uc0\u8259 	}Got: brukt\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: hvorfor\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: for\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 hvorfor\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: hvorfor | Should be: hvor-for\
+{\listtext	\uc0\u8259 	}Got: hvor-for\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: bergen\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: gen\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 bergen\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: bergen | Should be: ber-gen\
+{\listtext	\uc0\u8259 	}Got: ber-gen\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: gammel\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: mel\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 gammel\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: gammel\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: gammel | Should be: gam-mel\
+{\listtext	\uc0\u8259 	}Got: gam-mel\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: rekke\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ke\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 rekke\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e++e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: rekke | Should be: rek-ke\
+{\listtext	\uc0\u8259 	}Got: rek-ke\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: lederen\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: deren\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 lederen\
+{\listtext	\uc0\u8259 	}["", "", "-", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ren\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 lederen\
+{\listtext	\uc0\u8259 	}["", "", "-", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: en\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: lederen | Should be: le-de-r-en\
+{\listtext	\uc0\u8259 	}Got: le-de-r-en\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: kommune\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: mune\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 kommune\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ne\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 5 kommune\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: kommune | Should be: kom-mu-ne\
+{\listtext	\uc0\u8259 	}Got: kom-mu-ne\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: data\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ta\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 data\
+{\listtext	\uc0\u8259 	}["", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: a\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: data | Should be: da-ta\
+{\listtext	\uc0\u8259 	}Got: da-ta\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: bra\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: bra | Should be: bra\
+{\listtext	\uc0\u8259 	}Got: bra\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: stille\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: le\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 stille\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: ++e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: stille | Should be: stil-le\
+{\listtext	\uc0\u8259 	}Got: stil-le\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: vist\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: vist | Should be: vist\
+{\listtext	\uc0\u8259 	}Got: vist\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: vanlig\
+{\listtext	\uc0\u8259 	}SUFFIX: lig\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: vanlig | Should be: van-lig\
+{\listtext	\uc0\u8259 	}Got: van-lig\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: kjente\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: te\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 kjente\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: kjente | Should be: kjen-te\
+{\listtext	\uc0\u8259 	}Got: kjen-te\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: \'e5rene\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}true\
+{\listtext	\uc0\u8259 	}false\
+{\listtext	\uc0\u8259 	}Last part: rene\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 1 \'e5rene\
+{\listtext	\uc0\u8259 	}["", "-", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ne\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 \'e5rene\
+{\listtext	\uc0\u8259 	}["", "-", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: ene\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: \'e5rene | Should be: \'e5re-ne\
+{\listtext	\uc0\u8259 	}Got: \'e5-r-e-ne\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: system\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: tem\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 system\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: system | Should be: sys-tem\
+{\listtext	\uc0\u8259 	}Got: sys-tem\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: riktig\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: tig\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 riktig\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: riktig | Should be: rik-t-ig\
+{\listtext	\uc0\u8259 	}Got: rik-tig\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: mor\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: mor | Should be: mor\
+{\listtext	\uc0\u8259 	}Got: mor\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: gode\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: de\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 gode\
+{\listtext	\uc0\u8259 	}["", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: gode | Should be: go-de\
+{\listtext	\uc0\u8259 	}Got: go-de\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: tro\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: tro\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: tro | Should be: tro\
+{\listtext	\uc0\u8259 	}Got: tro\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: innen\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: nen\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 innen\
+{\listtext	\uc0\u8259 	}["", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: innen | Should be: in-nen\
+{\listtext	\uc0\u8259 	}Got: in-nen\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: arbeid\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: beid\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 arbeid\
+{\listtext	\uc0\u8259 	}["", "", "-", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: eid\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 arbeid\
+{\listtext	\uc0\u8259 	}["", "", "-", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: arbeid | Should be: ar-be-id\
+{\listtext	\uc0\u8259 	}Got: ar-b-eid\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: enkelt\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: kelt\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 enkelt\
+{\listtext	\uc0\u8259 	}["", "", "-", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: enkelt | Should be: en-kelt\
+{\listtext	\uc0\u8259 	}Got: en-kelt\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: vite\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: te\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 vite\
+{\listtext	\uc0\u8259 	}["", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: i+e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: vite | Should be: vi-te\
+{\listtext	\uc0\u8259 	}Got: vi-te\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: fall\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: ++\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: fall | Should be: fall\
+{\listtext	\uc0\u8259 	}Got: fall\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: sterkt\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: sterkt | Should be: sterkt\
+{\listtext	\uc0\u8259 	}Got: sterkt\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: gruppe\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: pe\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 gruppe\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: gruppe | Should be: grup-pe\
+{\listtext	\uc0\u8259 	}Got: grup-pe\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: synes\
+{\listtext	\uc0\u8259 	}PREFIX: syn\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: synes | Should be: sy-n-es\
+{\listtext	\uc0\u8259 	}Got: syn-es\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: kvinner\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ner\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 kvinner\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: er\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: kvinner | Should be: kvin-n-er\
+{\listtext	\uc0\u8259 	}Got: kvin-n-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: \'f8nsket\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ket\
+{\listtext	\uc0\u8259 	}ONE CONS EX: index 3 \'f8nsket sk\
+{\listtext	\uc0\u8259 	}["", "", "-", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: et\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: \'f8nsket | Should be: \'f8ns-k-et\
+{\listtext	\uc0\u8259 	}Got: \'f8n-sk-et\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: trekke\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ke\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 trekke\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e++e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: trekke | Should be: trek-ke\
+{\listtext	\uc0\u8259 	}Got: trek-ke\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: penger\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ger\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 penger\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: er\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: penger | Should be: pen-g-er\
+{\listtext	\uc0\u8259 	}Got: pen-g-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: l\'f8sning\
+{\listtext	\uc0\u8259 	}SUFFIX: ing\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ning\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 l\'f8sning\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: l\'f8sning | Should be: l\'f8s-ning\
+{\listtext	\uc0\u8259 	}Got: l\'f8s-n-ing\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: visste\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: te\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 visste\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: iss+e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u10060 
+\f0   Input: visste | Should be: vis-s-te\
+{\listtext	\uc0\u8259 	}Got: viss-te\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: venstre\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: re\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 5 venstre\
+{\listtext	\uc0\u8259 	}["", "", "", "", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: venstre | Should be: venst-re\
+{\listtext	\uc0\u8259 	}Got: venst-re\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: holder\
+{\listtext	\uc0\u8259 	}SUFFIX: er\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}Last part: der\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 holder\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: holder | Should be: hol-d-er\
+{\listtext	\uc0\u8259 	}Got: hol-d-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: f\'f8lger\
+{\listtext	\uc0\u8259 	}SUFFIX: er\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}Last part: ger\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 f\'f8lger\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: \'f8+%er\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: f\'f8lger | Should be: f\'f8l-g-er\
+{\listtext	\uc0\u8259 	}Got: f\'f8l-g-er\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: ventet\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: tet\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 ventet\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: et\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: ventet | Should be: ven-t-et\
+{\listtext	\uc0\u8259 	}Got: ven-t-et\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: gjerne\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ne\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 4 gjerne\
+{\listtext	\uc0\u8259 	}["", "", "", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: gjerne | Should be: gjer-ne\
+{\listtext	\uc0\u8259 	}Got: gjer-ne\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: endelig\
+{\listtext	\uc0\u8259 	}SUFFIX: lig\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: de\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 ende\
+{\listtext	\uc0\u8259 	}["", "", "-", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: endelig | Should be: en-de-lig\
+{\listtext	\uc0\u8259 	}Got: en-de-lig\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: behov\
+{\listtext	\uc0\u8259 	}PREFIX: be\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: behov | Should be: be-hov\
+{\listtext	\uc0\u8259 	}Got: be-hov\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: mine\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ne\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 2 mine\
+{\listtext	\uc0\u8259 	}["", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: mine | Should be: mi-ne\
+{\listtext	\uc0\u8259 	}Got: mi-ne\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: klare\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: re\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 klare\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: klare | Should be: kla-re\
+{\listtext	\uc0\u8259 	}Got: kla-re\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: bjugn\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: bjugn | Should be: bjugn\
+{\listtext	\uc0\u8259 	}Got: bjugn\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: best\'e5r\
+{\listtext	\uc0\u8259 	}PREFIX: be\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "-", "", "", ""]\
+{\listtext	\uc0\u8259 	}true\
+{\listtext	\uc0\u8259 	}true\
+{\listtext	\uc0\u8259 	}B\'d8YNING: \'e5r\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: best\'e5r | Should be: be-st\'e5r\
+{\listtext	\uc0\u8259 	}Got: be-st\'e5r\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: sju\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: sju | Should be: sju\
+{\listtext	\uc0\u8259 	}Got: sju\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: verdi\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: di\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 verdi\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: verdi | Should be: ver-di\
+{\listtext	\uc0\u8259 	}Got: ver-di\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: helst\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: helst | Should be: helst\
+{\listtext	\uc0\u8259 	}Got: helst\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: gro\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: o\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: gro | Should be: gro\
+{\listtext	\uc0\u8259 	}Got: gro\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: best\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: best\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: best | Should be: best\
+{\listtext	\uc0\u8259 	}Got: best\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: stand\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: a+%\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: stand | Should be: stand\
+{\listtext	\uc0\u8259 	}Got: stand\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: kj\'f8re\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: re\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 kj\'f8re\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: kj\'f8re | Should be: kj\'f8-re\
+{\listtext	\uc0\u8259 	}Got: kj\'f8-re\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: fullt\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: t\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: fullt | Should be: fullt\
+{\listtext	\uc0\u8259 	}Got: fullt\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: bedt\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: bedt\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: bedt | Should be: bedt\
+{\listtext	\uc0\u8259 	}Got: bedt\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: parti\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: ti\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 parti\
+{\listtext	\uc0\u8259 	}["", "", "", "-", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: parti | Should be: par-ti\
+{\listtext	\uc0\u8259 	}Got: par-ti\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: betro\
+{\listtext	\uc0\u8259 	}PREFIX: be\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: tro\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: betro | Should be: be-tro\
+{\listtext	\uc0\u8259 	}Got: be-tro\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: geh\'f8r\
+{\listtext	\uc0\u8259 	}PREFIX: ge\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "-", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: geh\'f8r | Should be: ge-h\'f8r\
+{\listtext	\uc0\u8259 	}Got: ge-h\'f8r\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: bifall\
+{\listtext	\uc0\u8259 	}PREFIX: bi\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "-", "", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: ++\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: bifall | Should be: bi-fall\
+{\listtext	\uc0\u8259 	}Got: bi-fall\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: farlig\
+{\listtext	\uc0\u8259 	}SUFFIX: lig\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: a+\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: farlig | Should be: far-lig\
+{\listtext	\uc0\u8259 	}Got: far-lig\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: regnskap\
+{\listtext	\uc0\u8259 	}SUFFIX: skap\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "-", "", "", ""]\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: regnskap | Should be: regn-skap\
+{\listtext	\uc0\u8259 	}Got: regn-skap\
+{\listtext	\uc0\u8259 	}ORIGINAL WORD: fredelig\
+{\listtext	\uc0\u8259 	}SUFFIX: lig\
+{\listtext	\uc0\u8259 	}Hyphen before one cosnonant: ["", "", "", "", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}Last part: de\
+{\listtext	\uc0\u8259 	}INSERT HYPHEN: index: 3 frede\
+{\listtext	\uc0\u8259 	}["", "", "", "-", "", "-", "", ""]\
+{\listtext	\uc0\u8259 	}B\'d8YNING: e\
+\ls1\ilvl1
+\f1 {\listtext	
+\f2 \uc0\u8259 
+\f1 	}\uc0\u9989 
+\f0   Input: fredelig | Should be: fre-de-lig\
+{\listtext	\uc0\u8259 	}Got: fre-de-lig\
+{\listtext	\uc0\u8259 	}80 tests took 0.196683 s\
+{\listtext	\uc0\u8259 	}71 passed 9 failed / 80\
+{\listtext	\uc0\u8259 	}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+Forslag til forbedringer:\
+\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls2\ilvl0\cf0 {\listtext	\'95	}Der hvor den ikke finner l\'f8sning, eller kun enkeltord som l\'f8sning kan den finne l\'f8sning med lengste kjente pre eller postfiks\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+Endringer som m\'e5 skrives om:\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls3\ilvl0\cf0 {\listtext	\'95	}Endret til triestruktur for veldig mye raskere oppslag i ordbok, ble lengere tid for innlesning av ordbok, lagret trie-struktur i fil som leses inn om filen eksisterer.\
+{\listtext	\'95	}Skrive om hvordan man setter opp og kj\'f8rer programmet.\
+}

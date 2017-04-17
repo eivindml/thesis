@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: /Users/eivindml/Documents/FINAL-THESIS/.texpadtmp/thesis.aux
+A level-1 auxiliary file: content/sammendrag.aux
+A level-1 auxiliary file: content/forord.aux
+A level-1 auxiliary file: content/introduksjon.aux
+A level-1 auxiliary file: content/orddanning.aux
+A level-1 auxiliary file: content/regler_for_orddeling.aux
+A level-1 auxiliary file: content/metoder_for_automatisk_orddeling.aux
+A level-1 auxiliary file: content/problemer_med_automatisk_orddeling.aux
+A level-1 auxiliary file: content/tidligere_arbeid.aux
+A level-1 auxiliary file: content/tilgang_til_ordlister.aux
+A level-1 auxiliary file: content/applikasjon.aux
+A level-1 auxiliary file: content/test_applikasjon.aux
+A level-1 auxiliary file: content/konklusjon.aux
+The style file: plain.bst
+Database file #1: ../bibliography/bibliography.bib
+Warning--I didn't find a database entry for "de2013norsk"
+Warning--I didn't find a database entry for "jan-engh"
+Warning--empty journal in kristensen1998two
+Warning--empty journal in thoresen1993virtuelle
+You've used 30 entries,
+            2118 wiz_defined-function locations,
+            656 strings with 7600 characters,
+and the built_in function-call counts, 7318 in all, are:
+= -- 696
+> -- 291
+< -- 1
++ -- 121
+- -- 88
+* -- 371
+:= -- 1258
+add.period$ -- 91
+call.type$ -- 30
+change.case$ -- 126
+chr.to.int$ -- 0
+cite$ -- 32
+duplicate$ -- 287
+empty$ -- 679
+format.name$ -- 88
+if$ -- 1548
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 23
+newline$ -- 153
+num.names$ -- 60
+pop$ -- 210
+preamble$ -- 1
+purify$ -- 102
+quote$ -- 0
+skip$ -- 211
+stack$ -- 0
+substring$ -- 271
+swap$ -- 31
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 106
+warning$ -- 2
+while$ -- 69
+width$ -- 32
+write$ -- 309
+(There were 4 warnings)

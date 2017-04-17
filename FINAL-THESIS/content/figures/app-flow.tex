@@ -1,0 +1,31 @@
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!10, 
+    text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=green!10, text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{curve} = [draw, -latex', bend left=60]
+\tikzstyle{word} = [node distance=3cm]
+    
+\begin{tikzpicture}[node distance = 2cm, auto, font=\footnotesize]
+    % Place nodes
+    \node [word] (ord) {Inputord};
+    \node [decision, below of=ord] (sammensatt) {Er ordet sammensatt?};
+    \node [block, right of=sammensatt, node distance=4cm] (regler) {HyphenationRules};
+    \node [block, below of=sammensatt, node distance=2.5cm] (split) {CompoundSplitter};
+    \node [block, left of=split, node distance=4cm] (dic) {Dictionary};
+    \node [decision, below of=split, node distance=2.5cm] (flere) {Flere mulige delinger?};
+    \node [block, below of=flere, node distance=3cm] (pick) {CompoundInterpreter};
+    \node [block, left of=pick, node distance=4cm] (eph) {EphenthesisAnalyser};
+    
+    \path [line] (ord) -- (sammensatt);
+    \path [line] (sammensatt) -- node {Nei}(regler);
+	\path [line] (sammensatt) -- node [left] {Ja}(split);
+	\path [line] (split) -- (flere);
+    \draw[curve] (flere) to[bend right=20] node[left=.6em] {Nei} (regler);
+    \path [line] (flere) -- node [left] {Ja} (pick);
+    \path [line,dashed] (eph) -- (pick);
+	\draw[curve] (pick) to[bend right=20] (regler);
+
+
+\end{tikzpicture}

@@ -1,0 +1,314 @@
+\chapter{Implementasjon av en regelbasert orddeler}
+
+I denne delen av oppgaven ønsker jeg å se på muligheten for en ny tilnærming til problemet om automatisk orddeling. Metodene som eksisterer i dag er stort sett mønsterbaserte (\TeX{}-algoritmen og de basert på nevrale nettverk). Disse har god presisjon med henholdsvis 90 og 96 prosent av korrekte delinger funnet, og 0,3 og 6,8 prosent feil delinger (se kapittel \ref{sec:tid-arb-orddeling}). Det er selvfølgelig ønskelig at korrekte delepunkter funnet er større, og spesielt at antall feil delepunkter ytterligere reduseres. En enda større mangel ved de eksisterende metodene for orddeling, er mangelen for å kunne skille på de forskjellige typer av orddeling vi har i norsk (se kapittel \ref{sec:orddelingsreglene}). Eksempelvis sier Finn-Erik Vinje i boka Skriveregler at sammensatte ord «… deles primært mellom de ordene de består av» og at «i sammensetninger med mer enn to ord (ledd) bør man dele der hovedgrensen går» \cite{vinje}. Dette er delinger de gjeldene metodene ikke har mulighet til å skille mellom. De vil generere, så langt de klarer, alle mulige delepunkter, men uten informasjon om hvilken regel som ga opphav til de forskjellige delepunktene. Derfor ser jeg det ønskelig å finne en ny tilnærming til orddelingsproblemet, som løser dette ved å gi kontroll over hvilke regler som benyttes for orddelingen, og ønskelig gir en høyere presisjon i funn av delepunkter.
+
+I kapittel \ref{sec:automatisk-orddeling} presenterte jeg de tre hovedkategoriene av metoder for automatisk orddeling: \textit{ordlistebaserte}, \textit{mønsterbaserte} og \textit{regelbaserte}. Historisk har vi sett at ordlistebaserte tilnærminger har vært brukt, eksempelvis Aftenpostens liste over 1,2 millioner ferdigdelte ord, brukt i deres system for tekstsetting, på nittitallet. Denne metoden har åpenbare svakheter: nyord som introduseres til språket må kontinuerlig markers med delepunkter og legges til listen, og den vil ha problemer med den produktive ordsammensetningen vi har i norsk språk. Former for mønsterbaserte algoritmer er det vi i all hovedsak ser i bruk i dagens systemer for tekstsetting, som \TeX{}, OpenOffice og InDesign, og er alle basert på Donald Knuth og Frank Liangs algoritme \cite{smrvz1996word, knuth1986texbook, wiki-tex}. Også i mer akademisk sammenhenger er de fleste mønsterbaserte (nevrale nettverk) \cite{nemeth2006automatic, kristensen1998two}. De mønsterbaserte algoritmene forsøker å danne delemønstere som generaliserer større lister over korrekte delte ord. En mønsterliste som deler ord perfekt, vil i all praktisk forstand være identisk med en komplett ordliste over delepunkter. Så, for at en mønsterliste skal ha noe for seg er det nødt til å generalisere, og med en generalisering fører det til unntak hvor ord blir delt feil. Dagens mønsterbaserte algoritmer tilbyr heller ingen mulighet for økt kontroll over delepunktene, gjennom valg av orddelingsregler som skal benyttes. Den siste kategorien av orddelingsalgoritmer, de regelbaserte, har jeg ikke sett vært forsøkt rettet mot norsk språk med våre orddelingsregler. Slike tilnærminger har vært kritisert, blant annet av Fran Liang, for å være lite generelle — de må utvikles spesifikt rettet mot hvert skriftspråk med sine unike regler \cite{liang1983word}. Dette ser jeg heller som en styrke. Ved en analytisk fremgangsmåte har vi mulighet til å øke presisjonen rettet mot de gjeldene reglene for orddeling, og vi kan bevare informasjonen om reglene som gir opphav til de forskjellige delepunktene. Noe som kan gi bruker og applikasjoner kontroll til å selv bestemme hvilke regler som skal benyttes, for eksempel kun deling mellom hovedfugen i sammensatte ord, som kan sies å være deling av høyere kvalitet en for eksempel deling med enkonsonantregelen. Jeg vil derfor benytte meg av sistnevnte tilnærming.
+
+\section{Arkitektur}
+
+Ved å se på reglene for orddeling (kapittel \ref{sec:orddelingsreglene}), har jeg identifisert en hovedflyt for programmet (figur \ref{fig:app-flow}). Før man kan påføre orddelingsreglene på et ord (HyphenationRules), må man først identifisere om ordet er sammensatt. Hvis det ikke er det, så skal orddelingsreglene påføres på ordet. Om ordet er sammensatt, må det deles i komponentene det er sammensatt av. Dette foregår i to steg, løst basert på metoden til Sjöberg og Kann, beskrevet i kapittel \ref{sec:sammensatt-analyse}. Først blir ordet dekomponert ved hjelp av en ordliste i CompoundSplitter til alle lovlige dekomponeringer. Deretter, om det finnes fler enn én dekomponeringsmuligheter, blir det forsøkt valgt ut den dekomponeringen som mest sannsynlig er den korrekte eller ønskede. Informasjon om binde-s og binde-e tas med i betraktningen, via EphenthesisAnalyser, basert på funnene til Johannesen og Hauglin, beskrevet i kapittel \ref{sec:reg-bind}. Videre vil jeg gi en mer detaljert beskrivelse av hver modul (fremhevet i grønt i figur \ref{fig:app-flow}) i programflyten.
+
+\begin{SCfigure}[h]
+\centering
+\input{content/figures/app-flow.tex}
+\label{fig:app-flow}
+\caption[Programflyt for Hyphenator]{Viser programflyten til Hyphenator. Moduler er fremhevet i grønt.}
+\end{SCfigure}
+
+\subsection{Dictionary}
+\label{sec:dictionary}
+
+Dictionary-modulen fungerer som et grensesnitt mot en ordbank. Alle modulene vil ha behov for å kunne gjøre oppslag i en ordbok, og hente ut relevant informasjon, som både oppslag om ordet er representert i ordboken, og om ordenes morfologiske beskrivelse. For ordliste som ligger til grunn for denne modulen vil jeg benytte Norsk ordbank, utviklet og vedlikeholdt av Språkrådet og Institutt for lingvistiske og nordiske studier ved Universitetet i Oslo. Den er tilgjengelig som eksportert data i råtekstformat, og fritt tilgjengelig med en GPL-lisens\footnote{\url{http://www.edd.uio.no/prosjekt/ordbanken/}}. Dette er den mest omfattende ordbanken tilgjengelig, med over 1,2 millioner ord, og inkludert ordenes bøyning og morfologiske beskrivelse.
+
+Med en stor ordliste er det viktig at ordspørringene utføres tilstrekkelig raskt. Spesielt CompoundSplitter vil gjøre en stor mengde spørringer etter ord med en øvre grense på $O(n!)$, hvor $n$ er lengden på strengen som forsøkes deles. En naiv løsning med et array vil være uakseptabel. Det vi ser er at listen over ord vil være statisk for hver kjøring, ingen nye ord vil legges til – vi trenger kun å gjøre raske oppslag. Trie-strukturen, beskrevet i kapittel \ref{sec:trie}, har rask søketid for oppslag, med øvre grense $O(m\cdot |\sum|)$ eller $O(m)$ med ytterligere optimalisering, dog noe på bekostning av oppstartstid når ordlisten skal lastes inn i trestrukturen. Men dette vil være en god oppveiing med tanke på den store mengden spørringer som må gjøres for hver kjøring. Jeg vil derfor implementere Dictionary som en trie-struktur.
+
+Innlastningstiden til ordlisten har blitt noe optimalisert. Ved første oppstart vil ordbanken leses som vanlig fra fil, og satt inn i en trie-struktur. Denne objektstrukturen skrives så direkte til fil, som gjør at ved etterfølgende oppstart av programmet leses objektstrukturen direkte inn i minnet.
+
+Hovedfunksjonene i grensesnittet til modulen er: 
+\begin{items}
+\item Utføre spørringer og hente ut ord fra ordlisten (om ordet ikke eksisterer returneres nil). Spørringer etter forkortelser (markert som fork i ordlisten) vil også returnere nil da forkortelser ikke skal deles. 
+\item Hente paradigmebeskrivelsen til et ord (spesielt ordklasse og bøyningsendelse). 
+\item Hente (om tilfelle) prefiks eller sufiks av et ord. Dette gjøres ved et oppslag i arrayer som inneholder prefikser og suffikser (beskrevet i kapittel \ref{sec:orddanning}) og en sjekk om noen av disse er er prefikser eller suffikser av det angitte ordet. Videre gjøres det også et oppslag om resten av strengen er et gyldig ord i ordbanken. 
+\item Svare om en streng inneholder én eller fler stavelser (returnerer true eller false). Dette gjøres noe naivt ved en sjekk om strengen inneholder mer enn én vokalgruppe adskilt av konsonanter, noe som gjør at ord som «reelt» (to stavelser) blir feilaktig antatt til å ha én stavelse.
+\end{items}
+
+\subsection{CompoundSplitter}
+
+For å kunne dele sammensatte ord etter ordleddsregelen (se kapittel \ref{sec:orddeling}) trenger vi å finne leddene som ordet består av. Dette gjøres, som beskrevet over, i to steg. CompoundSplitter gjør første steg steg i denne prosessen ved å finne flest mulige lovlige dekomponeringer av et ord.
+
+Dette gjøres ved at strengen dekomponeres i alle mulige kombinasjoner av substrenger, hvor det så gjøres et oppslag i Dictionary-modulen om hver substreng er et gyldig ord. Hvis hver substreng-oppdeling resulterer i et gyldig ord, legges dekomponeringen til en liste over mulige løsninger. Hvis den møter på en «s» eller «e» i strengen testes det for om dette kan være en binde-bokstav (se kapittel \ref{sec:ord-bind1}). Det vil si at substreng før bindebokstav og substreng etter bindebokstav i seg selv må være gyldige dekomponeringer. Hvis dette er tilfelle legges oppdelingen til listen over mulige løsninger. Når alle oppdelinger er funnet og testet returneres listen. Jeg har valgt en noe naiv rekursiv implementasjon av denne algoritmen (blant annet kunne den inkludert memoisering for å unngå forsøk på dekomponering av samme substrenger), da jeg ser på tidsoptimalisering som en sekundær prioritert i denne oppgaven. Den rekursive funksjonen fungerer som følger (se også kodesnutt \ref{listing:compound-splitter}):
+
+\begin{items}
+\item Løp gjennom ordet fra venstre til høyre og slå opp substringen i ordlisten, hvis det ikke gir treff, fortsett, ellers;
+\item hvis vi er på enden av stringen, da har vi en løsning som legges til en liste over mulige tolkninger og vi returnerer. Ellers;
+\item gjør et rekursivt kall med resten av stringen (suffikset) som parameter til funksjonen.
+\end{items}
+
+\begin{listing}
+\inputminted[firstline=30,lastline=68,gobble=4,linenos=true,breaklines=true,bgcolor=bar!10,fontsize=\footnotesize]{ruby}{project/hyphenator/lib/hyphenator/compound_splitter.rb}
+\caption[Rekursiv dekomponeringsfunksjon for ord]{Rekursiv funksjon som deler sammensatte ord inn i alle mulige dekomponeringer.}
+\label{listing:compound-splitter}
+\end{listing}
+\clearpage
+
+Det ble også gjort et forsøk på å implementere tolkning av trippelskrevet konsonant (fotballag som delt skal stå som fotball+lag).  Det fungerer ved: når vi møter dobbeltskrevet konsonant hvor disse både kan tilhøre forleddet (fotball) \textit{og} hvor en kan tilhøre etterledd (fotbal[l]+lag), vil et en ekstra konsonant settes inn og et ekstra tolkningsalternativ genereres: \textit{fotball+lag}. Dette måtte jeg gå bort fra (kommentert ut i kodesnutt), da den genererte flere feil tolkninger en den løste problemer. Dette er samme konklusjon trukket av Sjöberg og Kann \cite{sjobergh2004finding}. Se kapittel \ref{sec:konklusjon} for mer detaljert diskusjon.
+
+Resultatet fra CompoundSplitter returneres som et array med én eller fler dekomponerte strenger på formen “eple+tre” eller “hest+e+sal” ved tilfelle av bindebokstav.
+
+\subsection{CoumpoundInterpreter}
+\label{sec:comp-int}
+
+CompoundInterpreter har som oppgave å velge ut dekomponeringen som mest sannsynlig er den korrekte eller den ønskede, når det finnes fler enn én mulig dekomponering. Dette er en kompleks prosess og ikke lett å få til helt korrekt Eksempelvis, hvordan skiller vi mellom hviken dekomponering av “førti+tall” og “før+titall” som er den korrekte? Sjöberg og Kann presenterer seks forskjellige metoder for dette, inkludert en hybridløsning (se kapittel \ref{sec:sammensatt-analyse}). Av tidshensyn velger jeg i første omgang å implementere teknikken som ser på \textit{antall komponenter} i ordet. Den har en enkel implementasjon og gir tilfredstillende med korrekte tolkninger, 90 \%. Johannesen og Hauglin presenterer også denne metoden i artikkelen «An automatic analysis of Norwegian compounds»\cite{johannessen1996automatic}. I tillegg vil jeg benytte informasjon om tolkning av fugebokstaver fra sistnevnte artikkel. Dette beskrives nærmere i kapittel \ref{sec:eph}.
+
+\subsubsection{Valg av korrekt tolkning}
+%Når det eksisterer mer en én mulig dekomponering av et ord vil den eller de tolkningene som har færrest og likt antall ledd bli valgt ut. Om det eksisterer flere tolkninger med likt antall ledd (som ofte er tilfelle) vil de bli videre analysert. Om dekomponeringen inneholder en fugebokstav vil EphenthesisAnalyser analysere ordet videre (se neste kapittel). Om ikke det er tilfellet vil tolkningen med det lengste etterleddet bli valgt og returnert som et svar. Eksempelvis er “hus+vinduene” foretrukket fremfor “husvin+duene”. 
+%
+%\begin{center}
+%{\huge\color{gray!50}{\decofourleft}}
+%\end{center}
+
+Modulen vil motta en liste med to eller flere mulige dekomponeringer av et ord i en liste (fra CompoundSplitter). De vil da komme inn som et array. 
+
+\ex{[“lese+sal+sturer”, “lese+sal+s+turer”]}{} 
+
+Når en enkelt \textit{s} eller enkelt \textit{e} står alene betyr det alltid at det er en bindebokstav, siden de ikke er selvstendige ord på egenhånd, og det er ingen annen tolkning enn bindebokstav som er en lovlig tolkning hvor disse bokstavene står alene. Modulen vil gå gjennom hver og en tolkning og analysere dem. 
+
+Det første som sjekkes er om dekomponeringen inneholder en bindebokstav, hvis den gjør det vil den bli sendt til modulen EphenthesisAnalyser (se sekjson~\ref{sec:eph}) for videre analyse. Hvis ikke dette er tilfellet går vi videre til en analyse. I første omgang vil jeg kun fokusere på å benytte meg av metoden presentert av Sjöberg og Kann \cite{sjobergh2004finding} som ser på \textit{antall komponenter} i ordet. Denne metoden er svært enkelt å implementere, men gir overraskende gode resultater (90 \% korrekt ved tvetydig input).
+
+Metoden for å se på antall komponenter fungerer som følgende: 
+\begin{inparaenum}[\itshape a\upshape)]
+\item velg den av analysene som har færrest komponenter i analysen; og
+\item ved tolkninger med likt antall komponenter, velg den med det lengste etterleddet
+\end{inparaenum}\sidenote{Dette er også metoden Johannesen og Hauglin \cite{johannessen1996automatic} presenterer når man skal velge mellom flere mulige tolkninger. Dog nevner de ikke punkt \textit{b)}.}. Eksempelvis vil det sammensatte ordet \textit{lavastøvet}, bli dekomponert av CompoundSplitter, og sendt til CompoundInterpreter som:
+
+\ex{lava+støvet}{}\newline
+\exx{lavastøv+et}{}\newline
+\exx{lava+s+tøvet}{}\newline
+\exx{la+va+støvet}{}\newline
+\exx{la+vas+tøvet}{}\newline
+\exx{lav+as+tøvet}{}\newline
+\exx{lava+stø+vet}{}\newline
+\exx{lava+støv+et}{}\newline
+\exx{lava+s+tø+vet}{}\newline
+\exx{la+va+støv+et}{}\newline
+\exx{lav+as+tøv+et}{}\newline
+\exx{…}
+
+Ved å velge alternativene med færrest antall komponenter (\textit{a)}) sitter vi igjen med to alternativer, \textit{lava+støvet} og \textit{lavastøv+et}, og ved å videre velge alternativet med lengst etterledd (\textit{b)}) sitter vi igjen med \textit{lava+støvet} -- som i de fleste tilfeller vil være den korrekte tolkningen.
+
+Når denne modulen har valgt ut den tolkning som har den høyeste sannsynligheten for å være den korrekte, vil denne tolkningen bli sendt videre til modulen HyphenationRules, for å påføres reglenene for orddeling.
+
+\subsection{EphenthesisAnalyser}
+\label{sec:eph}
+
+I mange tilfeller vil det være tvil om en bokstav er en bindebokstav og tilhører forleddet, eller ikke en bindebokstav og tilhører etterleddet. 
+
+\ex{fylke\textit{s}+vei}{(bindebokstav)}\newline
+\exx{øl+\textit{s}kum}{(til etterleddet)}
+
+Det finnes mange former for fuger i norsk språk, totalt ni som jeg har identifisert (se kapittel \ref{sec:fuge-bokstav}). Ved å generere tolkninger som tar høyde for alle disse variantene av fugebokstaver kan en risikere å overgenerere antall tolkninger som til slutt fører til flere feiltolkninger en hva den løser. I følge Munthe (1972, i Johannesen og Hauglins artikkel «An automatic analysis of Norwegian compounds» \cite{johannessen1996automatic}) er 10,4 \% av alle ord i norske tekster sammensatte. Av disse er omtrent 75 \% av ordene satt sammen med en nullfuge; hvor leddene er satt sammen uten en bindebokstav. Eksempelvis “troll+øye” \cite{johannessen1996automatic}. Det betyr at rundt 25 \% av alle sammensatte ord i norsk inneholder en bindebokstav. For å kunne ta stilling til hvilke bindebokstaver jeg vil ta høyde for i både genereringen av tolkninger med bindebokstav (i CompoundSplitter) og i modulen for tolkning av bindebokstaver (EphenthesisAnalyser) så jeg det ønskelig å finne ut av en videre prosentvis fordeling av frekvensen til de forskjellge bindebokstavene (se neste kapittel, \ref{sec:fuge-frekvens}). 
+
+\subsubsection{Frekvens av fugebokstaver}
+\label{sec:fuge-frekvens}
+
+Det finnes mange fugebokstaver, totalt åtte stykk (-s -e, -er, -en, -a, -er, -o og -ium → -ie-)  av de meg bekjent \cite{faarlund1997norsk,bindebokstaver}. Men det er nullfuge, binde-s og binde-e som er de desidert mest brukte og de resterende opptrer i mindre grad. Det vil alikevel være interessant å få noen mer konkrete tall på hyppigheten til de forskjellige bindebokstavene, slik at man kan ta stilling til dette når man skal programmere en komponent for morfologisk analyse av sammensatte ord, til bruk i en algoritme for orddeling.
+
+Det er to analyser av frekvensbruken til bindebokstaver som kan være av interesse. Vi kan se på frekvensen som bindebokstaver opptrer i et utvalgt tekstkorpus. Da vil vi kunne se hvilke bindebokstaver som opptrer hyppigst i faktisk bruk. Et annet alternativ er å se på frekvensen til de forskjellige fugebokstavene i en ordliste. Jeg har valgt å ta for meg det siste. Det begrunnes med tidsbruk og kompleksitet ved å analysere morfologien til ord i et evneutelt tekstkorpus. Databasesøket i Eining for digital dokumentasjon, knyttet til Norsk ordbank, inneholder eget datafelt for informasjon om bindebokstaver, og det vil være relativt trivielt å hente ut disse feltene og telle frekvensen. 
+
+For å beregne denne frekvensen gjorde jeg som følgende:
+
+\begin{items}
+	\item Det ble gjort et søk i Norsk ordbank, bokmål, med leddanalyse\footnote{\url{http://www.edd.uio.no/perl/search/search.cgi?appid=72&tabid=3174}}, med wildcard-tegnet ‘\%’ i feltet for fuger. Det vil gi meg et søkeresultat for alle ord i ordbanken som har informasjon om bindebokstaver. Dette gir et resultat med 29998 treff.
+	\item Resultat pr. side endres til 30000 for å få alle resultatene samlet på en side (og får å få en lenke som inneholder alle søkekriteriene som parametere).
+	\item Til sist lagde jeg et Ruby-skript som løper gjennom tabellen, spesifikt kolonne syv, som inneholder informasjon om bindebokstavene, og talte alle opptredene til de forskjellige bindebokstavene. Prosenten blir så regnet ut og resultatet vises frem.
+\end{items}
+
+Resultatet av denne kjøringen vises i tabell \ref{tab:fuge-frekvens}.
+
+\sidetable[Frekvens over bindebokstaver]{%
+Resultat som viser frekvens over bindebokstaver fra Norsk ordbank.
+\label{tab:fuge-frekvens}}{%
+
+\begin{tabular}{cr}
+\toprule
+\textbf{Bindebokstav} & \textbf{Frekvens} \\ \toprule
+\textit{-s}                   & 83.249 \%                \\ \hline
+\textit{-e}                   & 16.568 \%                \\ \hline
+\textit{-me}                  & 0.087 \%                 \\ \hline
+\textit{-es}                  & 0.037 \%                 \\ \hline
+\textit{-a}                   & 0.047 \%                 \\ \hline
+\textit{-t}                   & 0.007 \%                 \\ \hline
+\textit{-æ}                   & 0.003 \%                 \\ \hline
+\textit{-en}                  & 0.003 \%                 \\ \bottomrule
+\end{tabular}
+}
+
+Vi ser umiddelbart at binde-s har desidert størst hyppighet med binde-e med en også betydelig prosent. Binde-en og binde-æ gir ett treff hver i databasen hvor binde-æ må være en feiloppføring da ordet er milæ*pæl, som ikke gir treff i ordboka (kun milepæl). Binde-es gir elleve treff hvor alle etterleddene er løs(het). Binde-me gir tjueseks treff i databasen, her er alle forleddene lamme- bortsett fra to som er domme og dramme.
+
+Ut i fra dette kan vi se at det vil være en akseptabel forenkling å kun i første omgang analysere binde-s og binde-e ved en morfologisk analyse av ord som skal deles. I og med at den store majoriteten av de sammensatte ordene med bindebokstaver har en -s eller binde-e vil det også være rimelig å anta at disse vil ha enda større frekvens i et reelt tekstkorpus.
+
+\begin{center}
+{\huge\color{gray!50}{\decofourleft}}
+\end{center}
+
+\subsubsection{Hvordan fungerer modulen?}
+
+Tolkning av bindebokstaver i sammensatte ord er et komplekst problem og det finnes ingen entydige regler for hvordan bindebokstavene opptrer. Men noen regler for binde-e og binde-s er gitt av Johannesen og Hauglin \cite{johannessen1996automatic} (beskrevet i kapittel \ref{sec:reg-bind}). Jeg vil støtte meg til disse reglene og implementere dem så langt det lar seg gjøre. For referanse gjengir jeg reglene her:
+
+\begin{enum}
+	\item Tolk sammensetningen som en kombinasjon av to rotord, uten fuge om mulig.
+	
+		\ex{løve-manke}{}\newline
+		\exx{Ikke: løv-e-manke}{}
+	
+	\item Tolkning som binde-s er foretrukket om det er en tvetydig tolkning der s-en også kan ingå som første bokstav i et verbalt etterledd.
+	
+		\ex{aluminium-s-nakke}{}\newline
+		\exx{Ikke: aluminium-snakke}{}
+	
+	\item Tolkning som binde-s er foretrukket fremfor nullfuge om forleddet i seg selv er et sammensatt ord.
+	
+		\ex{lesesal-s-turer}{}\newline
+		\exx{Ikke: lesesal-sturer}{}
+	
+	\item Binde-s kan aldri følge binde-e og visa versa.
+		
+		\ex{hest-e-sal}{}\newline
+		\exx{Ikke: hest-e-s-al}{}
+	
+	\item Ved to analyser som gir likt antall medlemmer og ingen bindebokstav er involvert, velg, hvis mulig, analysen som er et substantiv.
+		
+		\ex{hun-dyr}{(S)}\newline
+		\exx{Ikke: hund-yr}{(V)}
+	
+	\item Ved to like analyser med tanke på bindebokstav og regelen over, og en av dem har et forledd som i seg selv er et sammensatt ord, velg den.
+		
+		\ex{fagplan-arbeid}{}\newline
+		\exx{Ikke: fag-planarbeid}{}
+	
+	\item Binde-e kan kun settes sammen med en stamme som har enkelt stavelse.
+		
+		\ex{hest-e-ekvipasje}{}\newline
+		\exx{tre-hest-ekvipasje}{}\newline
+		\exx{Ikke: tre-hest-e-ekvipasje}{}
+	
+	\item Stammer kan komme før forleddet før -e så lenge de ikke danner sammensetning med forleddet.
+		
+		\ex{konge-hus-hest-e-ekvipasje}{}\newline
+		\exx{Ikke: konge-hus-hest-ekvipasje}{}
+	
+	\item Binde-s opptrer ikke etter en konsonantsekvens med sibilanter … 
+		
+		\ex{busk-spilling}{}\newline
+		\exx{Ikke: busk-s-pilling}{}
+	
+	\item … med mindre forleddet er sammensatt.
+		
+		\ex{enebærbusk-spilling}{}\newline
+		\exx{enebærbusk-s-pilling}{}
+	
+	\item Hvis forleddet er ukjent, velg analysen med det lengste etterleddet.
+		
+		\ex{Ibsen-stykket}{}\newline
+		\exx{Ikke: Ibsens-tykke}{}
+	
+\end{enum}
+
+Videre vil jeg gi en kort beskrivelse for hvordan hver av reglene håndteres i EphenthesisAnalyser-modulen: 
+\begin{inparaenum}[ 1)]
+\item Tolkes indirekte ved at CompoundSplitter vil generere begge alternativer og CompoundInterpreter velge alternativ (a) om tolkningene har likt antall ledd og like langt eller lenger etterledd.
+\item Avgjøres ved at fugebokstav tilføres etterleddet og det gjøres et oppslag i Dictionary om ordklassen er et verb. 
+\item Er ikke implementert da det ble et problem med å finne ut om et ord videre er sammensatt. Det finnes svært mange korte ord i norsk, eksempelvis «le» og «se» som gjør at selv korte ord som «lese» kan tolkes som en sammensetning av «le+se» (se kapittel~\ref{sec:konklusjon} for videre diskusjon). 
+\item Slik CompoundSplitter er implementert vil det aldri bli tolket to sekvente fugebokstaver. 
+\item Denne regelen angår ikke binde-s og binde-e som modulen analyserer og er ikke tatt i betrakting (dog kunne den vært inkorporert i CompoundInterpreter, se kapittel~\ref{sec:konklusjon}). 
+\item Regelen angår ikke bindebokstaver og er ikke tatt med i betraktningen. Den strider også i mot regelen om å velge tolkningen med lengste etterledd beskrevet i kapittel \ref{sec:comp-int} (se kapittel~\ref{sec:konklusjon} for nærmere diskusjon). 
+\item Forleddet blir sjekket om det inneholder én eller fler stavelser. Hvis det er flere stavelser går bindebokstaven til etterleddet. 
+\item Regelen er problematisk å tolke programatisk, da det er vanskelig å skille om ledet danner en sammensetning med forleddet før binde-e eller ikke. Regelen vil ikke bli tatt høyde for. 
+\item Regelen tolkes på en noe naiv måte: den eventuelle rekken av konsonanter før binde-s blir sjekket for å inkorporere eventuell «s» eller «c». 
+\item Denne regelen tolkes ikke av samme grunn som regel tre og problemet med overgenerering av sammensatte ord. 
+\item Systemet håndterer kun ord oppført eller satt sammen av ord oppført i ordboken.
+\end{inparaenum}
+
+Modulen mottar et array med én enkelt tolkning (inkludert eventuell binde-s eller binde-e) på formen [“øl”, “s”, “kum”], der en «s» eller «e» som opptrer alene er kandidat til en bindebokstav. Modulen returnerer etter tolkningsprosessen et array med leddene hvor kandidaten til bindebokstav enten er ført til forleddet eller til etterleddet: [“øl”, “skum”]. 
+
+\subsection{HyphenationRules}
+
+Siste leddet i kjeden (og den viktigste) er modulen for å dele ord. Reglene som benyttes er de gitt i Finn-Erik Vinjes Skriveregler \cite{vinje}, beskrevet i kapittel \ref{sec:orddeling}. 
+
+HyphenationRules-modulen forventer å motta et array av ett ord i én eller flere komponenter som: [“eple”] eller [“eple”, “kake”], avhengig av om det er sammensatt eller ikke. For hvert av  leddene i ordet vil reglene for orddeling på påført (untatt ordleddsregelen for sammensatte ord som påføres til slutt). Delepunktene blir ikke direkte satt inn i ordet, men posisjonen for delepunktet blir lagret i et array. Reglene påføres på følgende måte (og rekkefølge): 
+\begin{description}
+\item[Unntak] Ord med tilknyttede tall (som årstall og ordenstall) skal ikke deles. Programmet antar at input er en sammenhengende streng bestående av bokstaver fra det norske alfabetet. Av den grunn trenger vi ikke ta høyde for dette. Videre skal ikke enstavelsesord deles, dette sjekkes ved hjelp av Dictionary-modulen sin funksjon som sjekker etter én eller fler stavelser. Til sist skal ikke forkortelser (eksempelvis ADHD) deles. Dette gjøres igjen ved et oppslag i Dictionary, som inneholder informasjon om ordet er en forkortelse. Hvis noen av disse kriteriene oppfylles vil ordet returneres uten delepunkter.
+\item[Avledningsprefiks] Ved oppslag i Dictionary blir det sjekket om ordet er dannet med et avledningsprefiks. Hvis så er tilfelle blir posisjonen for delepunktet lagret, og prefikset fjernet fra ordet, slik at det kan bli analysert videre.
+\item[Avledningssuffiks] Først sjekkes Dictionary for et eventuelt avledningssuffiks. Videre, hvis dette er tilfellet, blir det sjekket om suffikset starter på vokal eller konsonant. Hvis det starter på konsonant deler vi forran suffikset (posisjonen lagres i et array). Ved konsonant kan ikke ordet inkludert suffiks deles etter enkonsonantregelen, og suffikset fjernes derfor fra ordet, for videre analyse. Ved vokal deler vi også foran suffiks (posisjon av delepunkt lagres). Men i dette tilfellet kan hele ordet, inkludert suffiks, også deles etter enkonsonantregelen, og ordet i sin helhet kan analyseres videre.
+\item[Bøyningsendelser] Ord med bøyningsendelse deles før endelsen. Dette gjøres ved et oppslag i Dictionary som inneholder informasjon om ordenes bøyning. I tilfeller med bøyningsendelse kan vi også dele etter enkonsonantregelen, så ordet returneres i sin helhet for å analyseres videre. Når stammen ender på vokal kan vi kun dele før endelse om den også starter på en vokal.
+\item[Enkonsonantregelen] Til slutt påføres enkonsonantregelen på strengen som er igjen (etter eventuelle prefikser og suffikser er fjernet). Dette gjøres mekanisk ved å sørge for at det minst er en vokal per linje (før og etter hvert delepunkt) og at det kun går én konsonant til ny linje. Det betyr at når en streng prosesseres sekvensielt må vi ha sett minst én vokal og etter et eventuelt delepunkt må vi ha én konsonant etterfulgt av en vokal. Unntaket er ved enkelte konsonantforbindelser som gjengir én og samme lyd og tilhører samme stavelse, beskrevet i kapittel~\ref{sec:enkons-untak}. Da får vi delepunktet før disse forbindelsene. Dette tilfredstilles ved at det gjøres et oppslag i et array med unntakene ved hver kandidat for et delepunkt. Bokstaven «x» skal også alltid høre til foregående stavelse, og tilfredstilles ved en ekstra sjekk. Det er også lov å dele mellom vokaler som hører til hver sin stavelse (re-elt), men dette er komplisert å løse problematisk. Se kapittel~\ref{sec:konklusjon} for ytterligere diskusjon.
+\end{description}
+
+Når alle reglene er gått gjennom returneres et array som viser posisjonen til alle delepunktene funnet i ordet, og delepunktene blir satt inn i ordleddet. Dette gjøres for alle leddene som ordet er satt sammen av. Til slutt vil de delte leddene bli satt sammen, med delepunkt (bindestrek) mellom leddene, til en sammenhengende streng. Eksempelvis vil ordet «eplekake», representert som [“eple”, “kake”] bli delt individuelt av reglene over slik at vi sitter med [“ep-le”, “ka-“ke”] for det hele blir satt sammen til strengen “ep-le-ka-ke” og returnert som endelig resultat.
+
+Vi ønsker i denne modulen å finne \textit{alle} mulige delepunkter for et gitt ord. Det vil si at for eksempel ordet \textit{utvetydighetene} skal returneres som \textit{u-t-ve-ty-dig-he-t-e-ne}:
+
+\ex{utve-tydighetene}{(deler mellom sammensetningene)}\newline
+\exx{u-tve-tydighetene}{(deler etter prefiks)}\newline
+\exx{u-tve-tydig-hetene}{(deler før suffiks)}\newline
+\exx{u-tve-tydig-het-ene}{(deler før endelse)}\newline
+\exx{u-t-ve-ty-dig-he-t-e-ne (enkonsonantregelen)}{}
+
+
+\section{Ytelse}
+
+Det har ikke blitt tatt nevneverdig hensyn til ytelse og eksekveringstid i denne implementasjonen. Prosjektet er ment i første omgang som et «proof of concept» for å se om en slik tilnærming til automatisk orddeling lar seg gjennomføre. Eksempelvis kunne implementasjonen vært utført i et kompilert programmeringsspråk for økt ytelse. Se kapittel \ref{sec:kildekode} for ytterligere diskusjon av valg av implementasjonsspråk. Videre er implemetasjonen av CompoundSplitter noe naiv i sin rekursive virkemåte. Ved å introdusere memoisering\sidenote{Memoisering er en optimaliseringsteknikk for å mellomlagre resultater fra kostbare funksjonskall, slik at det lagrede resultatet kan returners ved ny, identisk inndata \cite{wiki-memo}.} til funksjonen kan eksponentiell kjøretid reduseres til polynomisk kjøretid.
+
+En optimalisering har dog blitt gjort. Ved første implementasjon av Dictionary-modulen ble ordlisten på 1,2 millioner ord lagret i et array. Dette gjorde at CompoundSplitter fikk en svært høy eksekveringstid (spesielt på grunn av manglende memoisering), på opptil 25 minutter minutter for en listen på omtrent 150 ord. Ved å gå over til en trie-struktur gikk eksekveringstiden for CompoundSplitter ned til 0,26 sekunder for en tilsvarende liste. Dog økte innlastingstiden for ordlisten fra rundt 15 sekunder til omtrent ett minutt. Dette er tålelig da listen kun lastes inn én gang ved oppstart av programmet. Ved å lagre trie-objektet direkte til fil, for så å lese objektet direkte inn i minnet, ble innlastingstiden ytterligere redusert til rundt 45 sekunder.
+
+
+\section{Kildekode}
+\label{sec:kildekode}
+
+Selve Hyphenator-applikasjonen består av 888 linjer kode fordelt på fem filer (se mappen \texttt{lib/hyphenator/} i figur \ref{fig:source-code}). Moduler og alle tester er programmert i programmeringsspråket Ruby\sidenote{Ruby er et dynamisk, objektorientert og generelt programmeringsspråk \cite{wiki-ruby}.}. Valget ble gjort på grunnlag av de mange bibliotekene som er tilgjengelig, spesielt for håndtering og manipulering av strenger, for å få en mest mulig effektiv implementasjonsfase. Dynamiske språk, som Ruby, har noen negative egenskaper, spesielt knyttet til eksekveringstid, da koden tolkes og utføres i kjøringen. Egenskapen om enkel og effektiv implementsajon ble valgt fremfor lavere eksekveringstid da dette prosjektet, som nevnt over, er et «proof of concept».
+
+\begin{figure}
+\begin{verbatim}
+|-hyphenator/
+  |-data/
+  |  |-ordbank_bm
+  |  |  |-dataformat.txt
+  |  |  |-fullform_bm-utf8.txt
+  |  |  |-fullform_bm.txt
+  |  |  |-fullform_bm_trie.txt
+  |  |  |-gpl.txt
+  |  |  |-opphavsrett.txt
+  |  |  |-paradigme_bm-utf8.txt
+  |  |  |-paradigme_bm.txt
+  |  |-tests
+  |  |  |-complex-interpreted-compounds.txt
+  |  |  |-complex-splitted-compounds.txt
+  |  |  |-hyphenated-non-compounds.txt
+  |  |  |-hyphenated-words.txt
+  |  |  |-simple-interpreted-compounds.txt
+  |  |  |-simple-splitted-compounds.txt
+  |-lib
+  |  |-hyphenator
+  |  |  |-compound_interpretor.rb
+  |  |  |-compound_splitter.rb
+  |  |  |-dictionary.rb
+  |  |  |-ephenthesis_analyser.rb
+  |  |  |-hyphenation_rules.rb
+  |  |-hyphenator.rb
+  |  |-utils
+  |  |  |-string.rb
+  |-tests
+  |  |-1.txt
+  |  |-2.txt
+  |  |-3.txt
+  |  |-4.txt
+  |  |-5.txt
+  |  |-6.txt
+  |  |-test_all.rb
+  |  |-test_compound_interpreter.rb
+  |  |-test_compound_splitter.rb
+  |  |-test_hyphenation_rules.rb
+\end{verbatim}
+\caption[Filstrukturen i Hyphenator-prosjektet]{Figuren viser en oversikt over mappestrukturen og filene i prosjektet. Mappen \texttt{data/} inneholder datasettet fra Norsk Ordbank samt testordlister, i \texttt{lib/} finner vi implementasjon av modulene, og til sist, i mappen \texttt{tests/} ligger resultater og programkode for å teste implementasjonen.}
+\label{fig:source-code}
+\end{figure}

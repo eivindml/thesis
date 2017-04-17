@@ -1,0 +1,25 @@
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered},
+  arn_n/.style = {treenode},% arbre rouge noir, noeud noir
+  arn_r/.style = {treenode, red},% arbre rouge noir, noeud rouge
+}
+\begin{tikzpicture}[->,>=stealth',level/.style={sibling distance = 2.4cm/#1,
+  level distance = 1.1cm,   text height=1.5ex,
+    text depth=.25ex},font=\footnotesize\sffamily] 
+\node [arn_r] {umuligheten}
+    child{ node [arn_n] {stamme} 
+            child{ node [arn_n] {prefiks} 
+							child{ node (1) [arn_r] {u}}
+            }
+            child{ node [arn_n] {rot}
+							child{ node (2) [arn_r] {mulig}}
+            } 
+            child{ node [arn_n] {avledning}
+							child{ node (3) [arn_r] {het}}
+            } 
+    }
+    child{ node [arn_n] {bøyningsendelse}
+            child{ node [arn_r, below=2.7em] {en} }
+		}
+; 
+\end{tikzpicture}

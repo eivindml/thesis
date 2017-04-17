@@ -1,0 +1,163 @@
+\chapter{Tidligere arbeid}
+
+I dette kapittelet vil vi se nærmere på tidligere arbeid, som er relevant for problemstillingen. Dessverre er det mye hemmelighetskremmeri i forbindelse med de komersielle verktøyene for tekstsetting, som Adobe InDesign, Microsoft Word og QuarkXPress, og hvordan de løser problemer som orddeling ved linjeskift. Det kunne vært interessant å kunne sett nærmere på hvordan disse verktøyene løser problemene for norsk språk, men det lar seg ikke gjøre. Av tilgjengelig materiale som ser på orddeling for norsk eller nordisk språk, finnes det ikke veldig mye. Men jeg vil presentere to publiserte metoder, først \TeX{}-algoritmen med norske orddelingsmønstere, og en algoritme for orddeling basert på nevrale nettverk.
+
+Videre ser jeg nærmere på datastrukturen trie, som blant annet er en viktig del av av \TeX{}-algoritmen for raske oppslag av delingsmønstere, og som vil benyttes i implementasjonen beskrevet senere i oppgaven.
+
+Til slutt ser vi på en artikkel som beskriver metoder for å dele sammensatte ord i rotord. Dette vil være relevant for implementasjon av en regelbasert orddeler.
+
+\section{Orddeling}
+\label{sec:tid-arb-orddeling}
+
+I denne seksjonen ser vi nærmere på \TeX{}-algoritmen, mønstergenerering med patgen og de norske orddelingsmønsterene som er tilgjengelig. Til slutt ser vi på en sammenligning av resultatene fra orddeling med \TeX{} opp mot et løsning basert på nevrale nettverk (beskrevet i kapittel~\ref{sec:nevrale-nettverk}).
+
+\subsection{Orddelingsalgoritmen i \TeX{}}
+
+I dagens \TeX{}-system brukes et mønsterbasert system for orddeling, utviklet av Franklin Mark Liang \cite{liang1983word}. Algoritmen \cite[s.~449--450]{knuth1986texbook} støtter seg på en liste (trie, se kapittel~\ref{sec:trie}) med forskjellige mønstere, unikt tilpasset hvert språk. Et eksempel fra den norske mønsterlisten:
+
+\ex{.fem5o6g5}{}
+
+Punktum markerer slutt eller start på et ord, mens tallene spesifiserer om det er ønskelig med et delepunkt på gitt plassering. Oddetall betyr at det er ønskelig med delepunkt, mens partall sier det ikke er ønskelig. Ved større tall, vektes disse høyere. Hvis vi ønsker å dele ordet «hyphenate» finner vi alle mønstre som passer helt eller som er en substreng av ordet, og teller opp den totale summen av vektede punkter for så kunne bestemme hvor ordet kan deles.
+
+\ex{\texttt{he2n}}{}\newline
+\exx{\texttt{hena4}}{}\newline
+\exx{\texttt{hen5at}}{}\newline
+\exx{\texttt{hy3ph}}{}\newline
+\exx{\texttt{1na}}{}\newline
+\exx{\texttt{n2at}}{}\newline
+\exx{\texttt{4te.}}{}\newline
+\exx{Ord: hyphenate}{}\newline
+\exx{Orddeling: hy-phen-ate}{}
+
+Slik vil vi få vektede tall som beskriver hvor det er ønskelig med delepunkt og hvor det ikke er ønskelig (ikke lov) med delepunkt. Ordet hyphenate blir delt som hy-phen-ate, som er korrekt i følge amerikansk-engelsk orddeling.
+
+\subsubsection{Mønstergenerering}
+
+For at \TeX{}-algoritmen skal kunne dele ord, trenger den en mønsterliste over orddelinger for hvert språk. Frank Liang har utviklet programmet patgen som utfører denne jobben \cite{liang1983word}.
+
+Ved oppstart trenger patgen tre filer: en translate-fil som definerer alfabetet som skal benyttes, pattern-filen som eventuelt inneholder tidligere mønstere og dictionary-filen som er orddelingslisten med alle delte ord, som vil ligge til grunne for mønstergenerereringen. 
+
+Patgen gjør flere gjennomkjøringer av orddelingslisten. Hver gjennomkjøring kalles et nivå. Dette er de samme nivåene (oddetall -- delepunkt, og partall -- ikke delepunkt) beskrevet i avsnittet om \TeX{}. Når programmet først starter er man på nivå null, siden det enda ikke er generert noen lovlige delepunkter i mønsterlisten. Ved hver gjennomkjøring i hvert nivå må man bestemme følgende verdier:
+
+\begin{description}
+\item[hyph\_start] Minste lengde på mønster som blir behandlet på gjeldende nivå.
+\item[hyph\_finish] Største lengde på mønster som blir behandlet på gjeldende nivå.
+\item[good\_wt] Vekt som brukes i formel for å bestemme om et delepunkt skal danne et mønster.
+\item[bad\_wt] Vekt som brukes i formel for å bestemme om et delepunkt skal danne et mønster.
+\item[threshold] Grenseverdi som bestemmer om delepunkt skal danne mønster.
+\end{description}
+
+For enkelthets skyld kan vi si at vi setter hyph\_start og hyph\_finish begge til tre. Det betyr at ved dette nivået skal vi kun se på mønster ved lengde tre. Når patgen løper gjennom listen for dette nivået, vil den eksempelvis telle alle tilfellene av substrengen \textit{tio}. La oss si at dette resulterte i funn av $1793$ like mønstere, hvor det i $1793$ av tilfellene var tillatt med et delepunkt før \textit{-tio}, mens i de resterende $20$, ikke var tillatt. Disse tallene vil da gi verdiene til variablene \texttt{good} og \texttt{bad}. Når vi har talt og funnet dette for alle mulige mønstere for orddelingslisten har vi det vi trenger for å regne ut om mønsteret skal med i den endelig listen eller ikke, ved hjelp av formelen:
+
+\begin{equation}
+\label{eq:patgen}
+\textit{good} \times \textit{good\_wt} - \textit{bad} \times \textit{bad\_wt} \geq \textit{threshold}
+\end{equation}
+
+Ved en uendelig bad\_wt vil man sørge for at kun trygge mønstere blir valgt, der $\text{bad} = 0$. Men de fleste tilfeller velger man en overveielse over de to som virker hensiktsmessig. Men for å forhindre mønstre i å ønske å dele ord på unøskede (bad) steder, kan vi legge til et nivå (her nivå to) som fungerer som et unntak til nivået under. Det vil ofte være vanlig å da velge mønstre av lengre lengde på nivået over. Slik kan man alternere med nivåer som unntak til unntak, i maks ni nivåer. Et typisk mønster vil være \textit{1en} på nivå én, siden det er veldig mange -en-endelser. Men dette mønsteret vil da dele ordet \textit{gren} feil som \textit{gr-en}. Vi kan da på nivå to legge inn et unntaksmønster \textit{gr2en}, som vil forhindre algoritmen fra å dele ordet på dette punktet. Om dette blir et gjeldene mønster avhenger da av minste og største mønsterlengde på nivået og vektene og grenseverdien som brukes i formel~\ref{eq:patgen}. 
+
+Hvordan man velger verdiene som skal brukes ved hvert nivå er ikke helt lett å si, og bunner ut i mye prøving og feiling. Som Liang selv sier i sin avhandling om generering av mønstre for amerikansk-engelsk, «We do not have any theoretical justification for these parameters; they just seem to work well» \cite{liang1983word}. 
+
+\subsubsection{Norske mønsterlister}
+
+Det har vært flere iterasjoner med generering av norske orddelingsmønsteret til bruk i \TeX{}-systemet. De tre viktigste kan vi se oppstilt i tabell~\ref{tab:patterns}. Første, \textit{nohyph.tex}, ble fremstilt for hånd av Ivar Aavatsmark, og følger norske orddelingsregler slik de var formulert før endringene i 1973 \cite{nohyphbx, thoresen1993virtuelle}. Forsøk på å dele ord etter dagens regler med denne mønsterlisten resulterte i  74,99 \% riktige delte ord, 3,15 \% feilaktig delte ord og 25,01 \% ord som ikke ble delt \cite{thoresen1993virtuelle}. \textit{nohyph2.tex} ble fremstilt av Lars Gunnar Thoresen i forbindelse med hans masteroppgave i 1993 \cite{thoresen1993virtuelle}. Denne mønsterlisten ble laget på grunnlag av et utvalg av ord fra et tekstkorpus av skjønnlitteratur, nyhetsstoff og faglitteratur som ble kjørt gjennom programmet patgen. Med dette oppnådde Thoresen 90,5 \% korrekt deling, 0,97 \% feil deling og 9,5 \% delepunkter som ikke ble funnet. Dagens gjeldene liste er \textit{nohyhbx.tex}, fremstilt av Rune Kleveland og Ole Michael Selberg \cite{nohyphbx}, og inneholder 27149 mønstere. Det er ikke tilgjengelig målinger for nøyaktigheten til disse nye mønsterlistene, og jeg har forsøkt å komme i kontakt med dem for å oppdrive dette, men det har ikke lykkes. 
+
+\begin{table}
+\centering
+\begin{tabular}{rlll}
+\hline
+\multicolumn{1}{l}{\textbf{Navn}} & \textbf{G} & \textbf{B} & \textbf{M} \\ \hline
+\textbf{nohyph.tex}                 & 74,99 \%   & 3,15 \%    & 25,01 \%   \\ \hline
+\textbf{nohyph2.tex}                & 90,5 \%    & 0,97 \%    & 9,5 \%     \\ \hline
+\textbf{nohyphbx.tex}               & --         & --         & --         \\ \hline
+\end{tabular}
+\caption[Oversikt over orddelingsmønstere for \TeX{}]{Nøyaktigheten til de forskjellige norske orddelingsmønsterene tilgjengelig for \TeX{}-systemet. nohyphbx.tex er de nyeste norske mønstrene tilgjengelig for \TeX{}, og vi kan anta at de har noe bedre resultater en nohyphbx.tex. Mønstrene i nohyphb og nohyphbx deler, i samsvar med tradisjonen, ord med tilføyd bøyningsendelse eller suffiks slik at siste konsonant går til neste linje (hu-set), men åpner vanligvis ikke for deling mellom rot og bøyningsendelse (hus-et). \cite{nohyphbx}}
+\label{tab:patterns}
+\end{table}
+
+\subsection{Sammenligning av \TeX{}-algoritmen og nevrale nettverk}
+\label{sec:dag-tex}
+
+Dag Langmyhr og Terje Kristensen \cite{kristensen1998two} har utført en sammenligning av \TeX{}-orddelingsalgoritmen og en metode for orddeling basert på nevrale nettverk, utviklet ved Høyskolen i Bergen. Deres resultater viser at \TeX{}-algoritmen er et bedre valg hvis man kan legge til grunne en stor nok ordliste for mønstergenereringen. Ved en liten ordliste (8000 ord), med ord kjent for algoritmene gjennom treningsprosessen, gjør nevrale nettverk en mye bedre jobb med 78 \% av alle lovlige delepunkter funnet (av kjente ord) og 0,0 \% ulovlige delepunkter funnet, enn hva \TeX{} gjør. \TeX{} gjør en særdeles dårlig jobb med 70 \% av lovlige delepunkter funnet, og hele 88 \% ! ulovlige delepunkter. Når størrelsen på ordlisten økes til 40 000 ord ser vi \TeX{} gjør en bedre jobb. 90 \% av alle lovlige delepunkter blir funnet (mot det nevrale nettverket sine 94 \%), og kun 0,3 \% ulovlige delepunkter blir funnet (mot det nevrale nettverket sine 6,8 \%). Det viktigste er å redusere gale delepunkter funnet.
+ 
+\section{Trie}
+\label{sec:trie}
+
+Trie-strukturen\sidenote{Trie uttales som det engelske ordet «try», men stammer fra ordet re\textit{trie}val.} er en viktig del av implementasjonen av den mønsterbaserte \TeX{}-algoritmen for orddeling, både for hastighet og for plassbesparing. Den vil også være en viktig del av implementasjonen beskrevet senere, for rask søk i ordlister. Derfor gis det en introduksjon til denne datastrukturen. Teksten er basert på innholdet i boken \textit{Data Structures and Algorithms in Java} \cite{goodrich2014data}.
+
+Trie er en svært effektiv datastruktur for mønstergjennkjenning. Mens andre algoritmer for mønstergjennkjenning (som KMP-algoritmen) baserer seg på en preprosessering av strengen som skal gjenkjennes i en tekst (for økt hastighet), baserer trie seg på en preprosessering av selve teksten som vi ønsker å søke etter strenger i. Det betyr at en trie-struktur vil ha en dyr oppstarstkost, men som kompenseres med svært effektive oppslag. Dette gjør at strukturen egner seg godt i tilfeller med en fast tekstmengde der man har behov for å gjøre mange og raske oppslag av strenger og uttak av informasjon.
+
+\subsection{Oppbygning av en trie-struktur}
+
+En trie representerer et sett $S$ med strenger $s$ fra et definert alfabet $\sum$. Den bygges opp som en trestruktur $T$ der alle noder, untatt rotnoden, er markert med en bokstav fra alfabetet $\sum$. Hver barnenode til en intern node av $T$ er markert med en unik bokstav fra $\sum$. Det er altså ikke lov med noder på samme nivå representert av en lik bokstav. Treet $T$ har $s$ antall bladnoder, hver assosiert med en streng fra $S$, slik at vi ved å kjede sammen alle bokstavene fra nodene langs stien fra rotnoden til bladnoden $v$ danner den orginale stringen fra $S$ assosiert med bladnoden $v$. Si illustrasjon \ref{fig:trie} for et eksempel. 
+
+\begin{SCfigure}[H]
+\centering
+\input{content/figures/trie.tex}
+\label{fig:trie}
+\caption[Eksempel på triestruktur]{Triestruktur som representerer ordene «and», «ane», «okse», «oktan», «oktav», «os», «ost» og «oster». Bladnoder er indikert ved en firkant.}
+\end{SCfigure}
+
+Et krav for en trie er at ingen strenger er substrenger av andre strenger i $S$. For å kunne tillate dette, at strukturen skal kunne representere for eksempel både «os» og «ost», kan vi legge til en bokstav som bladnode som ikke eksisterer i $\sum$. Slik vil vi kunne representere substringer, men fortsatt tilfredstillet kravet. I figuren over er dette representert med tomme bladnoder. Se for eksempel «os» og «ost», som begge er substrenger av «oster».
+
+\subsubsection{Kompleksitet}
+
+Ved søk etter en streng i en triestruktur traverserer vi nedover i nodene etter bokstavene som representerer vår streng $x$. Hvis traveseringen av streng $x$ ender i en bladnode (indikert ved en firkantnode i illustrasjonen over) har vi et treff. Ut i fra dette kan vi se at søketiden for en streng med lengde $m$ gir en øvre grense på $O(m\cdot |\sum|)$. Altså, for hver bokstav i streng $x$ av lengde $m$, må vi se gjennom alle barnenodene til en gitt node i stien, som i værste tilfelle kan være $|\sum|$ antall noder, på hvert nivå. Ved optimalisering av søk i barnenoder, for eksempel via en hashtabell, kan søk på hver nivå reduseres til $O(1)$, og den totale kompleksiteten blir $O(m)$. 
+
+\section{Analyse av sammensatte ord}
+\label{sec:sammensatt-analyse}
+
+Det vanskeligste problemet når det kommer til en regelbasert tilnærming til automatisk orddeling er å finne den korrekte hovedgrensen i sammensatte ord. Dette problemet kan deles i to deler: først finne alle mulige (lovlige) tolkninger for hvordan ordet kan være sammensatt; så velge hvem av tolkningene som (høyst sannsynlig) er korrekt.
+
+ Artikkelen «Finding the Correct Interpretation of Swedish Compunds – a Statistical Approach» \cite{sjobergh2004finding} ser på disse problemene relatert til det svenske språk (som har samme produktive ordsammensetning som norsk). Under vil jeg gjengi metoden som ble brukte og hva de fant ut av.
+
+\subsection{Finne alle dekomponeringer av et sammensatt ord}
+
+For å finne alle tolkninger av et sammensatt ord har forfatterene utviklet en modifisert utgave av analyseprogrammet Stava\sidenote{Stava er et program for å finne rotordene som et sammensatt ord er bygget opp av.}. Løsningen finner kun første og beste mulige løsning, så denne ble utvidet til å finne alle mulige løsninger. Modulen fungerer som følger: 
+
+Tre ordlister ligger til grunn: én liste over \textit{inviduelle ord} (inviduell liste) som aldri oppstår i sammensetninger; én liste over \textit{avsluttende ord} (avsluttende liste), ord som enten kan avslutte et sammensatt ord eller opptre selvstendig; og til sist en liste over \textit{begynnelsesord} (begynnende liste), med modifiserte ordstammer som enten kan forme første eller midtre del av et sammensatt ord.
+
+For å dekomponere et sammensatte ord, gjøres da følgende:
+
+\begin{itemize}
+\item Sjekk først inviduell liste: eksisterer hele ordet her, avslutt (treff), hvis ikke gå til neste trinn.
+\item Sjekk etter treff i enden av ordet i avsluttende liste: får man treff, gå til neste trinn.
+\item Sjekk etter treff med første del av ordet i begynnende liste: ved treff, vi er en mulig tolkning, ellers, gjør rekursivt kall da ordet kan ha flere enn to komponenter. 
+\end{itemize}
+
+Det gjøres også et forsøk på å sette inn en binde-s mellom komponenter for å se om det gir noen treff. 
+
+Denne metode vil gi mange mulige tolkninger som resultat, om flere eksisterer. Neste problem er da å finne hvilken av disse tolkningene som (høyst sannsynlig) er den korrekte.
+
+\subsection{Valg av riktig tolkning}
+\label{sec:sjoberg}
+
+Jonas Sjöberg og Viggo Kann beskriver seks forskjellige metoder, samt en hybridmetode, for å velge én tolkning, som mest sannsynlig er korrekt/ønsket, ut fra flere tolkninger. Alle metodene testes med en liste over flertydige sammensatte ord.
+
+\subsubsection{Antall komponenter}
+
+En enkel metode som fungerer overraskende godt: Velg den ordanalysen som gir færrest rotord-komponenter. Ved flere tolkninger som gir likt antall komponenter så velges tolkningen med det lengste etterleddet. Denne metoden gir korrekt tolkning i 90 \% av tilfellene. Janne Bondi Johannesen og Helge Hauglin foreslår dette som eneste metode i deres artikkel «An automatic analysis of Norwegian compounds»\cite{johannessen1996automatic}. 
+
+\subsubsection{Semantisk kontekst}
+
+Idéen er: ved analyse av ordet bilderamme (når vi mener bilde+ramme), er det stor sannsynlighet at ordet bilde eller ramme alene opptrer i avsnittet rundt der ordet opptrådde. Dette ble implementert ved at man først fant alle komponeneter i det sammensatte ordet. Disse ble så gått gjennom og talt hvor mange ganger de opptrådde innenfor en vindusramme av hundre ord. Disse tallene ble så igjen vektet mot avstanden fra orginalordet til der det andre ordet opptrådde. Nærmere ga høyere vekt. Denne tilnærmingen ga det dårligste resultatet med en nøyaktighet på 72 \%. Den klarte dog å finne noen tolkninger som ingen av de andre metodene fant.
+
+\subsubsection{Komponent-frekvens}
+
+Denne metoden ser på frekvensen til komponentordene (forledd og etterledd) i sammensetninger; hvor ofte de opptrer i en kombinasjon. Det geometriske gjennomsnittet\sidenote{Verdien man får ved å finne produktet av de n antall tallene, for så å regne ut n-roten av resultatet.} mellom komponentene i de mulige tolkningene ble så regnet ut, og den med størst verdi ble valgt. For å forbedre resultatet ble også frekvensen til komponenter i sammensatte ord fra et korpus også tatt med i beregningen, som ga en nøyaktighet på 86 \%.
+
+\subsubsection{Syntaktisk kontekst}
+
+Denne metoden prøver å se på konteksten der det sammensatte ordet opptrer for å se hvilken ordklasse det sammensatte ordet høyst sannynlig tilhører. I et sammensatt ord vil etterleddet bestemme ordklassen (både for svensk og norsk). Hvert av de foreslåtte sammensatte ordene ble analysert for hvilken ordklasse de tilhørte, så ble ordet erstattet med et dummy-ord med samme leksikalske sannsynlighet og setningen tagget på nytt. Taggeren analyserer så alternativene på nytt og velger den som har størst sannsynlighet for å være riktig i denne konteksten. En slik løsning hadde en nøykatighet på 86 \%.
+
+\subsubsection{Part of Speech of Components}
+
+Enkelte kombinasjoner av ordklasser er mer vanlig enn andre. For eksempel substantiv-substantiv er svært vanlig (25\%), mens pronomen-pronomen-kombinasjoner stort sett aldri oppstår. Denne metoden tar nytt av dette og tagger forledd og etterledd med tilhørende ordklasse. Sannsynligheten var så beregnet som produktet mellom alle de forskjellige sannsynlighetene, og den høyeste ble valgt. Denne ble rapportert til å fungere ganske godt med en nøyaktighet på 91 \%.
+
+\subsubsection{Bokstav-n-grammer}
+
+Enkelte bokstavkombinasjoner opptrer ingen andre steder i et sammensatt ord enn i sammensetningsgrensen. Dette kan brukes til å dele ord. Ikke alle sammensatte ord har denne karakteristikken, men da kan vi se på sannsynlighetsforholdet for at bokstavkombinasjonen opptrer i komposisjongrensen opp mot opptreden innad i komponentordene. Dette ble gjort ved at alle 4-gram bokstavkombinasjoner ble talt opp i sammensatte ord (men ikke overlappende i komposisjonsgrensen), fra et leksikon over sammensatte ord. Frekvenser ble lagt til ved å telle ordenes opptreden i et tekstkorpus. Når man så skal finne riktig tolkning tar man alle delingsforslagene fra ordsammensetningsanalysen og henter ut frekvensene til alle 4-grammer som går over delingspunktene i de forskjellge forslagene. Forslaget med den laveste frekvens blir så valgt, siden «[it] has the splits located at the positions most unlikely to not contain a split»\cite{sjobergh2004finding}. Denne metoden fant de ut var den som ga det beste resultatet, med en nøykatighet på 91 \%. 
+
+\subsubsection{Hybridmetoder}
+
+Jonas Sjöberg og Viggo Kann så at metodene ofte ga forskjellige feil, og at en hybrid løsning kunne gi høyere nøyaktighet. De valgte å kombinere metoden med best treffprosen, bokstav-n-grammer, med Part of Speech of Components-metoden, kombinert med to ad-hoc-regler\sidenote{Ad-hov-reglene ble lagt til for blant annet rette opp feil ved tolkninger hvor det var dobbeltskrevet konsonant, som analysen foreslo kunne være en sammenslåing av trippelskrevet konsonant (fotball+lag). Forslag med trippelskrevet konsonant ble svært ofte favorisert på feil grunnlag, og de valgte å konsekvent se bort fra dem.}. Modellen for 4-gram ble stort sett benyttet, med mindre PoS ga et alternativ som hadde en sannsynlighet for korrekthet som var fem ganger større. Denne metoden hadde nøyaktighet på 94 \% for flertydige ordsammensetninger og 97 \% for alle sammensatte ord. 

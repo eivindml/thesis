@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\fs28 \cf0 \\subsection\{Trie\}\
+\\label\{sec:trie\}\
+\
+Tekstinnhold hentet fra Data Structures and Algorithms in Java \\cite\{goodrich2014data\}.\
+\
+Trie (uttales som det engelske ordet \'abtry\'bb, men stammer fra ordet er\\textit\{trie\}val) er en sv\'e6rt effektiv datastruktur for m\'f8nstergjennkjenning. Mens andre algoritmer for m\'f8nstergjennkjenning (som KMP-algoritmen) baserer seg p\'e5 en preprosessering av strengen som skal gjenkjennes i en tekst (for \'f8kt hastighet), baserer trie seg p\'e5 en preprosessering av selve teksten som vi \'f8nsker \'e5 s\'f8ke etter strenger i. Det betyr at en trie-struktur vil ha en dyr oppstarstkost, men som kompenseres med sv\'e6rt effektive oppslag. Dette gj\'f8r at strukturen egner seg godt i tilfeller med en fast tekstmengde der man har behov for \'e5 gj\'f8re mange og raske oppslag av strenger og uttak av informasjon.\
+\
+\\subsubsection\{Oppbygning av en trie-struktur\}\
+\
+En trie representerer et sett $S$ med strenger $s$ fra et definert alfabet $\\sum$. Den bygges opp som en trestruktur $T$ der alle noder, untatt rotnoden, er markert med en bokstav fra alfabetet $\\sum$. Hver barnenode til en intern node av $T$ er markert med en unik bokstav fra $\\sum$. Det er alts\'e5 ikke lov med noder p\'e5 samme niv\'e5 representert av en lik bokstav. Treet $T$ har $s$ antall bladnoder, hver assosiert med en streng fra $S$, slik at vi ved \'e5 kjede sammen alle bokstavene fra nodene langs stien fra rotnoden til bladnoden $v$ danner den orginale stringen fra $S$ assosiert med bladnoden $v$. Si illustrasjon \\ref\{fig:trie\} for et eksempel. \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 \\begin\{figure\}[H]\
+\\centering\
+\\input\{content/figures/trie.tex\}\
+\\label\{fig:trie\}\
+\\caption\{Triestruktur som representerer ordene \'aband\'bb, \'abane\'bb, \'abokse\'bb, \'aboktan\'bb, \'aboktav\'bb, \'abos\'bb, \'abost\'bb og \'aboster\'bb. Bladnoder er indikert ved en firkant.\}\
+\\end\{figure\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\fs28 \cf0 \
+Et krav for en trie er at ingen strenger er substrenger av andre strenger i $S$. For \'e5 kunne tillate dette, at strukturen skal kunne representere for eksempel b\'e5de \'abos\'bb og \'abost\'bb, kan vi legge til en bokstav som bladnode som ikke eksisterer i $\\sum$. Slik vil vi kunne representere substringer, men fortsatt tilfredstillet kravet. I figuren over er dette representert med tomme bladnoder. Se for eksempel \'abos\'bb og \'abost\'bb, som begge er substrenger av \'aboster\'bb.\
+\
+Ved s\'f8k etter en streng i en triestruktur traverserer vi nedover i nodene etter bokstavene som representerer v\'e5res streng $x$. Hvis traveseringen av streng $x$ ender i en bladnode (indikert ved en firkantnode i illustrasjonen over) har vi et treff. Ut i fra dette kan vi se at s\'f8ketiden for en streng med lengde $m$ gir en \'f8vre grense p\'e5 $O(m\\cdot |\\sum|)$. Alts\'e5, for hver bokstav i streng $x$ av lengde $m$, m\'e5 vi se gjennom alle barnenodene til en gitt node i stien, som i v\'e6rste tilfelle kan v\'e6re $|\\sum|$ antall noder, p\'e5 hvert niv\'e5. Ved optimalisering av s\'f8k i barnenoder, for eksempel via en hashtabell, kan s\'f8k p\'e5 hver niv\'e5 reduseres til $O(1)$, og den totale kompleksiteten blir $O(m)$. }

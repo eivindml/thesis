@@ -1,0 +1,50 @@
+\section{Problemer ved automatisk orddeling}
+
+\subsection{Orddeling er vanskelig} % Orddeling er prob-lemfylt
+
+Vi mennesker opplever stort sett orddeling som et lite vanskelig eller ikke-eksisterende problem. Selv om vi kanskje ikke har full kjennskap til alle de gjeldene reglene for orddeling har vi en viss følelse for hvordan det skal gjøres. Vi har i hvertfall en forståelse for hva som er feil deling av et ord! Vi har kjennskap til konteksten som ordet opptrer i og vil derfor ikke dele et ord slik at ordet kan endre betydning i seg selv og dermed betydningen av setningen. I tillegg så er vi stort sett fornøyd med å finne ett delingspunkt i et ord, det er sjeldent vi trenger flere. Det er noe som gjør at om vi ikke kjenner til alle reglene, så vil vi stort sett dele ordet i et punkt vi hvertfall vet er riktig. 
+
+For datamaskiner er denne virkeligheten litt annerledes. Det er veldig vanskelig for en datamaskin å forstå konteksten hvor et ord dukker opp, noe som kan føre til uheldige og misvisende eller komiske ordbilder. Kristiansand Avis hadde en slik uheldig overskrift der ordet bokskatter ble delt i overskriten som: «i kø for boks-katter på salg». Avisutklippet kan sees i figur~\ref{fig:boks-katter}.
+
+
+
+\begin{SCfigure}
+\includegraphics[width=\textwidth]{content/figures/boks-katter.jpg}
+\caption{Problematisk orddeling i Kristiansand Avis.}
+\label{fig:boks-aktter}
+\end{SCfigure}
+
+Selv om datamaskinen har tilgang til informasjon om å finne delepunktet i sammensatte ord, så vil det for den være sidestilt med sammensetningen bok-skatter og boks-katter. Den har ingen kunnskap om at sistnevnte er en mindre vanlig og uheldig sammensetning og at det heller var førstnevnte deling som passet i konteksten. For et menneske er dette umiddelbart gjennkjennelig.
+
+Eksempelet over viser hvordan ordet endrer betydning ut i fra hvordan det deles. Men vi har også tilfeller hvor ord deles som lei-ebil (finne eget eksempel, er fra Gunnar), som ikke gir ny betydning til ordet, men som er en ikke spesielt pen eller heldig deling. Dette er ikke delinger som er direkte feil i henhold til de gjeldene reglene for orddeling, men det er en deling som folk vil syntes er noe merkelig. Vi ønsker i størst mulig grad delinger som gjør lesingen lett og i minst mulig grad distraherer lesere vekk fra innholdet i teksten. Dette bildet er dog ikke helt sort-hvitt og vi mennesker kan bruke ukonvensjonell orddeling til å bevisst skape morsomme og/eller iøyenfallende ordbilder, slik IKEA ganske effektivt gjorde i sin kampanje for deres juletallerken (se figur~\ref{fig:ikea}).
+
+
+\begin{figure}
+\includegraphics[width=\textwidth]{content/figures/jul-etallerken.pdf}
+\caption{IKEAs juletallerken-kampanje.}
+\label{fig:ikea}
+\end{figure}
+
+Homografer, ord som skrives likt, men med forskjellig betydning, byr også på problemer for en datamaskin som skal prøve å dele dem. Igjen er det viktig med en forståelse av konteksten til ordet for å kunne dele det riktig. Et eksempel på et slikt ord er snekker som skal deles som snek-k-er om vi snakker om båten, og snek-ker om vi snakker om håndtverkeren. [TODO: Annet eksempel, er fra Gunnar]
+
+\subsection{Dagens løsninger har mangler}
+
+Løsningene som eksisterer i dag fungerer stort sett godt, spesielt hvis man ser på amerikansk-engelsk, hvor reglene for orddeling er av annen karakter enn i norsk. Der ser en heller på utalle av ord når man velger delepunkt, og man ønsker at uttalen av ordet ikke skal endre karakter om det må deles. De første systemene som ble utviklet for å løse dette problemet er basert på amerikansk-engelsk orddeling, og mye av det vi ser i dag av komersielle produkter er varianter av disse metodene som ble utviklet den gang.
+
+Typsettingssystemet \TeX{}, utviklet av Donal Knuth, var tidlig ute med å inkludere en velfungerende algoritme for automatisk orddeling. I første omgang, i TeX78, var det en såkalt regelbasert algoritme. Den fant 40 \% av orddelingene med 1 \% feil. [TeX-quo-vadis;] Senere utviklet Liang en ny mønsterbasert løsning, patgen, som fungerte sammen med Knuths algoritme for å brekke paragrafer inn i linjer. Denne nye algoritmen fant nå X \% riktig med Y \% feil. [TODO: Finne teksten med tallene] Algoritmen for automatisk orddeling som disse to kom frem til viste seg å være så vellykket at varianter av deres løsning fortsatt brukes i stor skala i andre applikasjoner fra komersielle produkter som InDesign [Liang] til åpen kildekode-løsninger som OpenOffice [open-office]. Problemet, spesielt for TeX sin del er at løsningen ble utviklet med det amerikansk-engelsk språket i tankene, hvor hensyn til andre språk med andre og mer kompliserte regler ble tilsidesatt.
+
+Artikkelen \textit{New hyphenation techniques in Omega} \cite{omega} lister opp noen av\TeX{} sine feil og mangler når det kommer til andre språk, samt funksjonalitet som ville vært å foretrekke. Her kommer en rask gjengivelse.
+
+\begin{items}
+\item Ingen automatisk støtte for orddeling som fører til endring eller innsett av ny bokstav. For eksempel det norske ordet fotballag som blir til fotball-lag, eller det tyske ordet backen som blir til bak-ken.
+\item Endring av farge eller font av ordet vil føre til at orddeling ikke lar seg gjøre. Dette skyldes den tekniske modellen som brukes for hvordan ord behandles av linjebrekkealgoritmen til TeX.
+\item TeX trenger å vite på forhånd hvilke språk som skal benyttes for å kunne dele ordene riktig. Orddelingsmønsterene tilbredes og lagres i en fil som må defineres for TeX og lastes inn på forhånd, som gjør det vanskelig med flere språk i en tekst.
+\end{items}
+
+Funksjonalitet som er ønsket:
+
+\begin{items}
+\item Prioriteringer av delingspunkter i et ord. I de norske reglene for orddeling har vi ikke definert prioriteringer for hvor ord bør deles, de er alle likestilte. Men det kan for eksempel være ønskelig å først prioritere å dele i hovedbindeleddet i et sammensatt ord, fremfor for eksempel prefikset. Tysk derimot har slike prioriteringer der man a) først ønsker å dele mellom hovedbindeleddet i et sammensatt ord, dernest b) inne i siste komponent av et sammensatt ord, eller sist c) inne i en av de andre komponentene av ordet.
+\item Vekting av orddelingspunkter. For eksempel fransk har en slik vekting av hvor ord burde deles. Man skal aldri dele etter prefikset con, med mindre ordet ikke kan deles andre steder.
+\item En form for brukerinteraksjon ved homografer som skal deles. Som i eksempelet beskrevet tidligere, bokskatter, hvor det er vanskelig for datamaskinen å vite hvor ordet skal deles, kunne bruker blitt spurt hvor en ønsker delingen.
+\end{items}

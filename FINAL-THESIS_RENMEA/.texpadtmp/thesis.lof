@@ -1,0 +1,28 @@
+\select@language {norsk}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {1}{\ignorespaces Uheldig orddeling}}{xi}{figure.0.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Uheldig bruk av enkonsonantregelen}}{xi}{figure.0.2}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Eksempel p\IeC {\r a} hengende punktuering.\relax }}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces F\IeC {\o }rste kolonne viser en spalte med tillatt orddeling og noe rom for justering av mellomrom mellom ord. Andre kolonne tillater justering mellom ord, men ingen orddeling. I siste kolonne er ogs\IeC {\r a} justeringsmulighetene tatt bort. Alle kolonnene er typsatt med med T\kern -.1667em\lower .4ex\hbox {E}\kern -.125emX\spacefactor \@m {}.\relax }}{4}{figure.caption.8}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Trestruktur som viser hvordan ord dannes gjennom avledningsaffikser og b\IeC {\o }yningsendelser.\relax }}{9}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Syntakstre som viser hvordan ordet \IeC {\guillemotleft }r\IeC {\o }dvinsglass\IeC {\guillemotright } er satt sammen.\relax }}{9}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Syntakstre som viser hvordan ordet \IeC {\guillemotleft }krystallvinglass\IeC {\guillemotright } er satt sammen.\relax }}{9}{figure.2.3}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Problematisk orddeling i Kristiansand Avis.\relax }}{33}{figure.caption.10}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces IKEAs juletallerken-kampanje.\relax }}{34}{figure.caption.11}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Triestruktur som representerer ordene \IeC {\guillemotleft }and\IeC {\guillemotright }, \IeC {\guillemotleft }ane\IeC {\guillemotright }, \IeC {\guillemotleft }okse\IeC {\guillemotright }, \IeC {\guillemotleft }oktan\IeC {\guillemotright }, \IeC {\guillemotleft }oktav\IeC {\guillemotright }, \IeC {\guillemotleft }os\IeC {\guillemotright }, \IeC {\guillemotleft }ost\IeC {\guillemotright } og \IeC {\guillemotleft }oster\IeC {\guillemotright }. Bladnoder er indikert ved en firkant.\relax }}{40}{figure.caption.13}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Programflyt.\relax }}{53}{figure.caption.15}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Filstrukturen i Hyphenator-prosjektet}}{64}{figure.caption.16}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Oppstilling av resultater fra den enkle testen av orddelingsalgoritmen gjort p\IeC {\r a} en liste over ikke-sammensatte ord.\relax }}{71}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Sammenstilling av resultater fra Hyphenator (\ref {meg}) og T\kern -.1667em\lower .4ex\hbox {E}\kern -.125emX\spacefactor \@m {}-algoritmen (\ref {gunnar}) med m\IeC {\o }nstere fra Lars Gunnar Thoresen. Good, antall positiver funnet, \IeC {\o }nsker vi h\IeC {\o }yest mulig, mens Bad, antall falske negativer og Missed, antall falske positiver, \IeC {\o }nsker vi lavest mulig.\relax }}{71}{figure.caption.20}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Faksimile, Dagbladet Nett 25. september 2013. Eksempel p\IeC {\r a} uheldig orddeling som f\IeC {\o }rer til et komisk ordbilde. Trolig en feil ved ordleddsregelen og en feiltolkning at ordet er satt sammen av \IeC {\guillemotleft }do\IeC {\guillemotright } og \IeC {\guillemotleft }plager\IeC {\guillemotright }. Kilde: \url {http://www.dagbladet.no/2013/09/25/nyheter/utdanning/narkotika/innenriks/29445603/}\relax }}{71}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Faksimile \IeC {\O }stlandets Blad. Nok et eksempel p\IeC {\r a} en uheldig orddeling. Muligens siden \IeC {\guillemotleft }fresk\IeC {\guillemotright } eller \IeC {\guillemotleft }freskukens\IeC {\guillemotright } var et ukjent ord for orddelingsprogrammet, og ordet ble delt etter enkonsonantregelen. Dette er en lovlig, men sv\IeC {\ae }rt uheldig orddeling.\relax }}{71}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Oppstilling av resultater fra test av ordleddsregelen.\relax }}{72}{figure.caption.21}
+\addvspace {10pt}

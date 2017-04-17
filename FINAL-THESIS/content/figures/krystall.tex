@@ -1,0 +1,19 @@
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered},
+  arn_n/.style = {treenode},% arbre rouge noir, noeud noir
+  arn_r/.style = {treenode, red},% arbre rouge noir, noeud rouge
+}
+\begin{tikzpicture}[->,>=stealth',level/.style={sibling distance = 2.4cm/#1,
+  level distance = 1.1cm,   text height=1.5ex,
+    text depth=.25ex},font=\footnotesize\sffamily] 
+\node [arn_r] {krystallvinglass}
+    child{ node [arn_r, left of = 1,xshift=0.5cm] {krystall}
+		}
+    child{ node [arn_r] {vinglass} 
+            child{ node (1) [arn_r] {vin} 
+            }
+            child{ node [arn_r] {glass}
+            } 
+    }
+; 
+\end{tikzpicture}

@@ -1,0 +1,6 @@
+❌  Input: arbeid | Should be: ar-be-id | Got: ar-beid 1 (G) 0 (B) 1 (M)
+❌  Input: visste | Should be: vis-s-te | Got: viss-te 1 (G) 0 (B) 1 (M)
+❌  Input: angre | Should be: ang-re | Got: an-g-re 1 (G) 1 (B) 0 (M)
+94 tests took 0.265106 s
+91 passed 3 failed / 94
+100 (G) 1 (B) 2 (M)

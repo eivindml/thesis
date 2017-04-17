@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Cochin;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\fi360\sl288\slmult1\pardirnatural
+
+\f0\fs28 \cf0 # Ordlister\
+\
+Tilgang til ordlister som viser delepunkter i ord, er viktig n\'e5r man jobber med problemer rundt automatisk orddeling ved linjeskift. De fleste prosedyrer for automatisk orddeling som er i bruk i dag har behov for en tilstrekkelig stor liste med ord og ordenes lovlige delepunkter. Enten som en direkte oppslagsliste til enordlistebasert algoritme, eller som data til en m\'f8nsterbasert algoritme som produserer en mer generell liste over orddelingsm\'f8nstere. \
+\
+I det f\'f8rste tilfellet er vi avhengig av veldig store lister. De b\'f8r v\'e6re mest mulig utfyllende -- det er kun ord som eksplisitt er oppgitt i listen som kan deles. Det betyr at man ogs\'e5 m\'e5 oppgi alle b\'f8yningsformer for ett og samme ord, som vil skape veldig store lister. IBM utviklet for Aftenposten p\'e5 90-tallet en prosedyre for \'e5 automatiske dele ord, som var hovedsakelig ordlistebasert. De hadde en ordliste som inneholdt p\'e5 det meste over 1,1 millioner ord[TODO: Sjekk opp]. N\'e5r et ord skulle deles ville ordet bli sl\'e5tt opp i ordlisten og delt etter beskrivelsen der. Om ordet ikke fantes i listen vil det bli delt av en mer regelbasert prosedyre, for s\'e5 \'e5 bli sjekket av en korrekturleser [TODO: Stemmer dette?]. Om samme ord har blitt bedt om \'e5 bli delt mer enn tre ganger vil det bli delt opp i alle lovlige punkter og lagt til i den store ordlisten. \
+\
+I det andre tilfellet trenger ikke ordlistene v\'e6re like store. Der \'f8nsker man kun et tilstrekkelig og representativt utvalg av delte ord, som s\'e5 kan gi grunnlag for \'e5 generere mer generelle orddelingsm\'f8nstere. Lars Gunnar Thoresen viste i sin oppgave at med en liste over 1100 [TODO], for\'f8vrig delt for h\'e5nd, var tilstrekkelig for \'e5 generere m\'f8nstere med patgen, til bruk i TeX sin orddelingsalgoritme, som har en treffprosent p\'e5 90% treff, 0% bom etc. [TODO: Sjekk opp alle tall i dette avsnittet]\
+\
+Det tredje tilfellet vi trenger slike lister til er for \'e5 kunne sjekke kvaliteten til de forskjellige metodene for automatisk orddeling. En slik test vil typisk foreg\'e5 ved at man velger ut en tilstrekkelig stor mengde tilfeldig valgte ord, som man har i to lister: en delt opp, en ikke delt. Listen med ikke-delte ord kj\'f8res gjennom programmet, som s\'e5 spytter ut en liste med alle ordene, fors\'f8kt automatisk delt. Denne listen sammenlignes s\'e5 med den orginale listen som viser alle korrekte delepunkter. \
+\
+I andre land, som [TODO: Sjekk opp hvilke] , har man tilgang til store, offisielle ordlister som viser alle lovlige delepunkter i ordene. Dette har vi desverre ikke i Norge. Men noe har vi tilgang til, og jeg vil her kort beskrive de ordlistene som meg bekjent er tilgjengelig, og hva de kan tilby i denne konteksten.\
+\
+- Nynorsk og Bokm\'e5lsordboka\
+- NST Uttaleleksikon\
+- Norsk landbruksordbok\
+- IBM \
+- Edd\
+- Lars Gunnar Thoresen}

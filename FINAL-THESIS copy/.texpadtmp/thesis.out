@@ -1,0 +1,46 @@
+\BOOKMARK [0][-]{chapter*.1}{Sammendrag}{}% 1
+\BOOKMARK [0][-]{section*.2}{Innhold}{}% 2
+\BOOKMARK [0][-]{section*.3}{Figurer}{}% 3
+\BOOKMARK [0][-]{section*.4}{Tabeller}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduksjon}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Typografi, Gutenberg og orddeling}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Typografen erstattes av datamaskiner}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Oppgavens struktur}{chapter.1}% 8
+\BOOKMARK [-1][-]{part.1}{En innf\370ring i dannelse og deling \(for ord\)}{}% 9
+\BOOKMARK [0][-]{chapter.2}{Orddanning}{part.1}% 10
+\BOOKMARK [1][-]{section.2.1}{Avledninger}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{B\370yninger}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Ordsammensettning}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{Bindebokstaver}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.5}{Ordklasser}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Orddeling}{part.1}% 16
+\BOOKMARK [1][-]{section.3.1}{Reglene}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Tolkning av reglene}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Automatisk orddeling}{part.1}% 19
+\BOOKMARK [1][-]{section.4.1}{Ordlistebaserte metoder}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Regelbaserte metoder}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{M\370nsterbaserte metoder}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{Problemer ved automatisk orddeling}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Tidligere arbeid}{part.1}% 24
+\BOOKMARK [1][-]{section.5.1}{Orddeling}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.2}{Trie}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.3}{Analyse av sammensatte ord}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Ressurser}{part.1}% 28
+\BOOKMARK [1][-]{section.6.1}{Ordelingslister}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.2}{Norsk ordbank}{chapter.6}% 30
+\BOOKMARK [-1][-]{part.2}{Regelbasert automatisk orddeling}{}% 31
+\BOOKMARK [0][-]{chapter.7}{Implementasjon av en regelbasert orddeler}{part.2}% 32
+\BOOKMARK [1][-]{section.7.1}{Arkitektur}{chapter.7}% 33
+\BOOKMARK [1][-]{section.7.2}{Ytelse}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.3}{Kildekode}{chapter.7}% 35
+\BOOKMARK [0][-]{chapter.8}{Empirisk studie av regelbasert orddeler}{part.2}% 36
+\BOOKMARK [1][-]{section.8.1}{Problemstilling}{chapter.8}% 37
+\BOOKMARK [1][-]{section.8.2}{Metode}{chapter.8}% 38
+\BOOKMARK [1][-]{section.8.3}{Resultater}{chapter.8}% 39
+\BOOKMARK [1][-]{section.8.4}{Diskusjon}{chapter.8}% 40
+\BOOKMARK [1][-]{section.8.5}{Svakheter}{chapter.8}% 41
+\BOOKMARK [-1][-]{part.3}{Oppsummering}{}% 42
+\BOOKMARK [0][-]{chapter.9}{Konklusjon}{part.3}% 43
+\BOOKMARK [1][-]{section.9.1}{Hva har vi l\346rt?}{chapter.9}% 44
+\BOOKMARK [1][-]{section.9.2}{Videre arbeid}{chapter.9}% 45
+\BOOKMARK [0][-]{section*.24}{Bibliografi}{part.3}% 46

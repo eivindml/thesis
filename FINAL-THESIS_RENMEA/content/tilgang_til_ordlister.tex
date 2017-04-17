@@ -1,0 +1,56 @@
+\chapter{Ressurser}
+
+Tilgang til ordlister som viser delepunkter i ord, er viktig når man jobber med problemer rundt automatisk orddeling ved linjeskift. De fleste prosedyrer for automatisk orddeling som er i bruk i dag har behov for en tilstrekkelig stor liste med ord og ordenes lovlige delepunkter. Enten som en direkte oppslagsliste til en ordlistebasert algoritme, eller som data til en mønsterbasert algoritme som produserer en mer generell liste over orddelingsmønstere. 
+
+I det første tilfellet er vi avhengig av veldig store lister. De bør være mest mulig utfyllende -- det er kun ord som eksplisitt er oppgitt i listen som kan deles. Det betyr at man også må oppgi alle bøyningsformer for ett og samme ord, som vil skape veldig store lister. IBM utviklet for Aftenposten på 90-tallet en prosedyre for å automatiske dele ord, som var hovedsakelig ordlistebasert. De hadde en ordliste som inneholdt på det meste over 1,2 millioner \cite{epost-orddeling,thoresen1993virtuelle} . Når et ord skulle deles ville ordet bli slått opp i ordlisten og delt etter beskrivelsen der. Om ordet ikke fantes i listen vil det bli delt av en mer regelbasert prosedyre, for så å bli sjekket av en korrekturleser. Om samme ord har blitt bedt om å bli delt mer enn tre ganger vil det bli delt opp i alle lovlige punkter og lagt til i den store ordlisten. 
+
+I det andre tilfellet trenger ikke ordlistene være like store. Der ønsker man kun et tilstrekkelig og representativt utvalg av delte ord, som så kan gi grunnlag for å generere mer generelle orddelingsmønstere. Lars Gunnar Thoresen viste i sin oppgave at med en liste over 1100 [TODO], forøvrig delt for hånd, var tilstrekkelig for å generere mønstere med patgen, til bruk i TeX sin orddelingsalgoritme, som har en treffprosent på 90 \% treff, 0 \% bom etc. [TODO: Sjekk opp alle tall i dette avsnittet]
+
+Det tredje tilfellet vi trenger slike lister til er for å kunne sjekke kvaliteten til de forskjellige metodene for automatisk orddeling. En slik test vil typisk foregå ved at man velger ut en tilstrekkelig stor mengde tilfeldig valgte ord, som man har i to lister: en delt opp, en ikke delt. Listen med ikke-delte ord kjøres gjennom programmet, som så spytter ut en liste med alle ordene, forsøkt automatisk delt. Denne listen sammenlignes så med den orginale listen som viser alle korrekte delepunkter. 
+
+I andre land, som [TODO: Sjekk opp hvilke] , har man tilgang til store, offisielle ordlister som viser alle lovlige delepunkter i ordene. Dette har vi desverre ikke i Norge. Men noe har vi tilgang til, og jeg vil her kort beskrive de ordlistene som meg bekjent er tilgjengelig, og hva de kan tilby i denne konteksten.
+
+TODO: Husk å nevne hvem som står bak ordlistene.
+
+\section{Ordelingslister}
+
+\begin{description}
+\item[Nynorsk og Bokmålsordboka]	Nynorsk- og Bokmålsordboka er søkbare digitalt tilgjengelige ordbøker på nett\footnote{http://www.nob-ordbok.uio.no/}. I likhet med EDD-søkemotoren bygger disse ordbøkene på data fra Norsk Ordbank, men inneholder mindre informasjon om hvert enkelt ord samt inneholder kun et subset av ordene tilgjengelig i Norsk Ordbank. EDD-søket inneholder alle tilgjengelige ord. [Kilde epost og nettsiden deres]
+\item[NST Uttaleleksikon]	NST (Nordisk Språkteknologi AS) sto bak utviklingen av et språkleksikon. NST gikk konkurs i 2003 og i 2006 ble resursene derfra kjøpt opp av et sameie av Universitetet i Oslo, Universitetet i Bergen, Noregs teknisk-naturvitskaplege universitet, Språkrådet og IBM for å kunne videreføre dette. I 2009 fikk Nasjonalbiblioteket oppdraget av Kulturdepartementet å videreføre dette arbeidet for å bygge opp en språkbank og tilgjengeliggjøre dette. I dag er dette tilgjengelig under navnet Språkbanken. Dette leksikonet inneholder blant annet informasjon om dekomponering av sammensatte ord. [Kilde NST Taledata PDF og epost fra Arne Martinus Lindstad]
+\item[Norsk landbruksordbok]	Norsk landbruksordbok er en ordbok over falige uttrykk fra norsk landbruk, utgitt på det Norske samlaget i 1979. Av korrespondanse med Språkrådet ble jeg opplyst om at denne ordlisten beskrev alle delepunkter i ordene. [TODO: kilde] Ordlisten er nå fritt tilgjengelig i wiki-form på nettet\footnote{https://wiki.umb.no/NLO/index.php/Hovudside}, men denne inneholder ikke informasjon om delepunkter. Jeg har ikke lykkes med å få svar fra kontaktperson for wiki-prosjektet om dataen over delepunkter er tilgjengelig. 
+\item[IBM] 	På 1980-tallet stod IBM for produksjon av ordlister med delepunkter for både nynorsk og bokmål. Disse var tiltenkt bruk i stavekontroll og for systemer for orddeling. Aftenposten benyttet seg av disse listene, og når prosjektet ble avsluttet i årskiftet 1991/1992 var listen på hele 1 200 000 ord. [TODO: Kilde, epost Jan Engh] Jeg forhørte meg om disse listene, men disse ble lagret på teip den gangen og som Jan Engh sa til meg: «men evig eies ei det teipte».
+\item [Edd]	Eining for digital dokumentasjon skriver på sine nettsider at de er «[…] oppretta for å vedlikehalde og vidareutvikle databasane og dei elektroniske samlingane frå Dokumentasjonsprosjektet.». De tilbyr flere ulike søkbare databaser\footnote{http://www.edd.uio.no/}, som blant annet inneholder informasjon om delepunkt i sammensatte ord og informasjon om komposisjonsfuger. Som med Bokmål- og Nynorskordboka bygger disse databasene og søkemotorene på data fra Norsk Ordbank. [Kilde epost og nettsiden deres] 
+\item[Lars Gunnar Thoresen]		Lars Gunnar Thoresen skrev i 1993 en todelt masteroppgave med tittelen «Virtuelle fonter og norsk orddeling i LATEX». Han beskriver også vanskeligheter med tilgangen til tilstrekkelig store lister med ferdigdelte ord og endte opp med å dele en liste med ord for hånd. Han valgte ut en mengde med ord han mente var representative for det norske språk gjennom en frekvensanalyse av en utvalgt korpus. Han valgte så videre ut ord med en viss gjennomsnittslengde. Disse ordene ble så delt manuelt etter de gjeldene reglene. Til slutt endte han opp med en liste på 11 249 ord. \cite{thoresen1993virtuelle} Listen er tilgjengelig som et vedlegg i hans masteroppgave\footnote{https://www.duo.uio.no/handle/10852/8875}.
+\end{description}
+
+\section{Norsk ordbank}
+
+Norsk ordbank er en ordliste utviklet ved Universitetet i Oslo og finnes både for bokmål og nynorsk, tilgjengelig med en GPLv3-lisens\footnote{Ordbanken er tilgjengelig for nedlasting ved å signere skjemaet her http://www.edd.uio.no/prosjekt/ordbanken/}. Listen er laget ved en grunnordliste og bøyningsmønstere. Informasjonen er fordelt i to filer, \texttt{fullform\_bm.txt} og \texttt{paradigme\_bm.txt}.
+
+\subsection{fullform\_bm.txt}
+
+\texttt{fullform\_bm.txt} inneholder seks kolonner for hver oppføring:
+
+\begin{description}
+\item[Første kolonne] Unikt identifikasjonsnummer for oppføringen.
+\item[Andre kolonne] Grunnformen av ordet, eksempelvis \textit{bil} for oppføringen \textit{bilene}.
+\item[Tredje kolonne] Fullform av ordet, \textit{bilene}.
+\item[Fjerde kolonne] Morfologisk beskrivelse av ordet, eksempelvis \textit{subst mask appell ent ub normert} for oppføringen \textit{bil}.
+\item[Femte kolonne] Paradigmekode som linkes opp til oppføring i \texttt{paradigme\_bm.txt}. 
+\item[Sjette kolonne] Konkrete nummeret i oppføringen i \texttt{paradigme\_bm.txt}. For å slå opp en oppføring trenger man både dette nummeret og paradigmekoden.
+\end{description}
+
+\subsection{paradigme\_bm.txt}
+
+\texttt{paradigme\_bm.txt} inneholder åtte kolonner for hver oppføring.
+
+\begin{description}
+\item[Første kolonne] Paradigmekode.
+\item[Andre kolonne] Ordklasse og eventuell del av morfologisk beskrivelse.
+\item[Tredje kolonne] Eventuell beskrivelse av paradigmet. 
+\item[Fjerde kolonne] 
+\item[Femte kolonne] Eksempel på ord med paradigmet.
+\item[Sjette kolonne] 
+\item[Sjuende kolonne] Morfologisk beskrivelse.
+\item[Åttende kolonne] Bøyning/bøyningsendelse som tillegges stammen av ordet ved bøyning. 
+\end{description}

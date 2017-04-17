@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ScrivenerProject Version="1.0" Creator="SCRMAC-2.6-25480" Modified="2015-04-26 16:53:00 +0200">
+    <Binder>
+        <BinderItem ID="0" Type="DraftFolder" Created="2015-02-10 15:14:10 +0100" Modified="2015-02-10 15:14:10 +0100">
+            <Title>Manuscript</Title>
+            <MetaData>
+                <PageBreakBefore>Yes</PageBreakBefore>
+            </MetaData>
+            <Children>
+                <BinderItem ID="115" Type="Text" Created="2015-04-25 12:41:06 +0200" Modified="2015-04-25 17:30:16 +0200">
+                    <Title>sammendrag.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>59,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="116" Type="Text" Created="2015-04-25 12:41:24 +0200" Modified="2015-04-25 17:58:43 +0200">
+                    <Title>forord.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>378,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="6" Type="Text" Created="2015-02-10 15:14:10 +0100" Modified="2015-04-25 18:30:27 +0200">
+                    <Title>introduksjon.tex</Title>
+                    <MetaData>
+                        <LabelID>9</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>4209,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="70" Type="Text" Created="2015-02-23 18:52:43 +0100" Modified="2015-04-26 16:23:43 +0200">
+                    <Title>orddanning.tex</Title>
+                    <MetaData>
+                        <LabelID>9</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>9362,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="102" Type="Text" Created="2015-03-05 14:47:51 +0100" Modified="2015-03-12 11:43:55 +0100">
+                    <Title>ordklasser_og_boyninger.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>3671,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="93" Type="Text" Created="2015-03-02 19:36:21 +0100" Modified="2015-04-22 00:46:04 +0200">
+                    <Title>regler_for_bindebokstaver.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>719,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="65" Type="Text" Created="2015-02-12 13:18:40 +0100" Modified="2015-04-26 14:46:21 +0200">
+                    <Title>regler_for_orddeling.tex</Title>
+                    <MetaData>
+                        <LabelID>9</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>685,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="64" Type="Text" Created="2015-02-11 11:15:01 +0100" Modified="2015-04-25 22:57:07 +0200">
+                    <Title>metoder_for_automatisk_orddeling.tex</Title>
+                    <MetaData>
+                        <LabelID>9</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>4908,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="63" Type="Text" Created="2015-02-10 19:42:10 +0100" Modified="2015-04-21 17:47:48 +0200">
+                    <Title>problemer_med_automatisk_orddeling.tex</Title>
+                    <MetaData>
+                        <LabelID>9</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>2877,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="66" Type="Text" Created="2015-02-12 15:53:32 +0100" Modified="2015-04-25 17:54:57 +0200">
+                    <Title>tilgang_til_ordlister.tex</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>2301,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="107" Type="Text" Created="2015-03-10 20:34:51 +0100" Modified="2015-03-10 21:16:42 +0100">
+                    <Title>norsk_ordbank.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1170,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="82" Type="Text" Created="2015-02-24 18:45:16 +0100" Modified="2015-04-26 16:40:38 +0200">
+                    <Title>frekvens_av_fugebokstaver.tex</Title>
+                    <MetaData>
+                        <LabelID>9</LabelID>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>2657,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="86" Type="Text" Created="2015-02-26 11:22:35 +0100" Modified="2015-04-26 01:19:55 +0200">
+                    <Title>tidligere_arbeid.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>12621,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="119" Type="Text" Created="2015-04-25 14:11:12 +0200" Modified="2015-04-26 02:06:27 +0200">
+                    <Title>trie_struktur.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>2057,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="96" Type="Text" Created="2015-03-04 13:13:05 +0100" Modified="2015-04-25 17:54:03 +0200">
+                    <Title>nevrale_nettverk.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>7218,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="94" Type="Text" Created="2015-03-03 20:21:18 +0100" Modified="2015-04-26 16:52:48 +0200">
+                    <Title>applikasjon.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>40167,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="117" Type="Text" Created="2015-04-25 13:32:36 +0200" Modified="2015-04-25 18:19:55 +0200">
+                    <Title>vurdering_og_konklusjon.tex</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>616,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="28" Type="Folder" Created="2015-02-10 15:14:10 +0100" Modified="2015-02-23 20:56:12 +0100">
+            <Title>Notater</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+                <NotesTextSelection>0,0</NotesTextSelection>
+                <IconFileName>Notes (Blue Notepad).tiff</IconFileName>
+            </MetaData>
+            <TextSettings>
+                <TextSelection>0,0</TextSelection>
+            </TextSettings>
+            <Children>
+                <BinderItem ID="114" Type="Text" Created="2015-04-20 17:02:10 +0200" Modified="2015-04-20 17:07:01 +0200">
+                    <Title>Gjenstående</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>79,181</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="81" Type="Text" Created="2015-02-24 11:37:34 +0100" Modified="2015-02-24 18:44:29 +0100">
+                    <Title>Sammensatte ord og fuger</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>3730,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="104" Type="Text" Created="2015-03-08 18:05:16 +0100" Modified="2015-03-08 18:05:43 +0100">
+                    <Title>SIBLIANTER</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,235</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="105" Type="Text" Created="2015-03-08 19:40:28 +0100" Modified="2015-03-10 20:34:16 +0100">
+                    <Title>Norsk ordbank</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>285,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="103" Type="Text" Created="2015-03-06 12:39:24 +0100" Modified="2015-03-06 15:46:20 +0100">
+                    <Title>Testing av moduler</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1631,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="113" Type="Text" Created="2015-04-06 15:50:18 +0200" Modified="2015-04-15 17:25:08 +0200">
+                    <Title>Kjøring av tester</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>44456,63</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="98" Type="Text" Created="2015-03-04 15:56:56 +0100" Modified="2015-03-05 13:39:46 +0100">
+                    <Title>Bøyninger</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>774,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="100" Type="Text" Created="2015-03-05 13:40:17 +0100" Modified="2015-03-05 14:07:30 +0100">
+                    <Title>Ordklasser</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1244,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="97" Type="Text" Created="2015-03-04 14:28:14 +0100" Modified="2015-03-11 12:26:41 +0100">
+                    <Title>Nevrale nettverk</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>4818,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="61" Type="Text" Created="2015-02-04 21:34:37 +0100" Modified="2015-02-04 21:57:52 +0100">
+                    <Title>Mikrotypografi</Title>
+                    <MetaData>
+                        <StatusID>7</StatusID>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>104,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="60" Type="Text" Created="2015-02-04 21:34:55 +0100" Modified="2015-02-04 21:57:59 +0100">
+                    <Title>Tilgang på ordlister</Title>
+                    <MetaData>
+                        <StatusID>1</StatusID>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1329,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="39" Type="Text" Created="2015-02-04 21:33:49 +0100" Modified="2015-02-10 19:35:19 +0100">
+                    <Title>Orddeling</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>795,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="38" Type="Text" Created="2015-02-04 21:45:50 +0100" Modified="2015-02-04 21:56:43 +0100">
+                    <Title>Metoder for automatisk orddeling</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>5537,52</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="37" Type="Text" Created="2015-02-04 21:44:06 +0100" Modified="2015-02-12 15:55:44 +0100">
+                    <Title>Orddeling på norsk</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1847,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="51" Type="Text" Created="2014-12-16 17:28:45 +0100" Modified="2014-12-16 17:28:45 +0100">
+                    <Title>Regler for orddeling</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="53" Type="Text" Created="2015-02-04 21:35:20 +0100" Modified="2015-02-04 21:35:25 +0100">
+                    <Title>Hyphenation in the norwegian language</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1759,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="62" Type="Text" Created="2015-02-04 21:49:17 +0100" Modified="2015-02-05 22:43:36 +0100">
+                    <Title>Digital typogafi</Title>
+                    <MetaData>
+                        <StatusID>7</StatusID>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                        <Target Type="Words" Notify="Yes">1000</Target>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="83" Type="Text" Created="2015-02-25 09:57:07 +0100" Modified="2015-02-25 11:46:47 +0100">
+                    <Title>Tolkninger og problemer ved reglene</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>346,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="87" Type="Text" Created="2015-02-26 11:23:35 +0100" Modified="2015-03-02 18:28:16 +0100">
+                    <Title>Tidligere arbeid</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1217,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="88" Type="Text" Created="2015-02-26 11:55:52 +0100" Modified="2015-02-26 11:58:15 +0100">
+                    <Title>Analyse av sammensatte ord</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>3,105</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="27" Type="Folder" Created="2015-02-10 15:14:10 +0100" Modified="2015-02-23 20:56:33 +0100">
+            <Title>Idéer og huskelister</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+                <NotesTextSelection>0,0</NotesTextSelection>
+                <IconFileName>Light Bulb.tiff</IconFileName>
+            </MetaData>
+            <TextSettings>
+                <TextSelection>0,0</TextSelection>
+            </TextSettings>
+            <Children>
+                <BinderItem ID="77" Type="Text" Created="2015-02-23 20:47:59 +0100" Modified="2015-03-17 13:47:36 +0100">
+                    <Title>Idéark</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1639,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="95" Type="Text" Created="2015-03-03 21:03:29 +0100" Modified="2015-03-03 21:03:51 +0100">
+                    <Title>LaTeX-idéer</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>35,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="90" Type="Text" Created="2015-03-02 19:06:32 +0100" Modified="2015-03-12 11:46:47 +0100">
+                    <Title>Tekster å skrive</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>559,1042</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="108" Type="Text" Created="2015-03-12 11:35:44 +0100" Modified="2015-03-12 11:36:25 +0100">
+                    <Title>Omskrivininger</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>127,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="68" Type="Other" Created="2015-02-19 17:32:37 +0100" Modified="2015-02-19 17:38:38 +0100">
+                    <Title>Kapitteloversikt</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pages</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                </BinderItem>
+                <BinderItem ID="36" Type="Other" Created="2015-02-09 02:50:04 +0100" Modified="2015-02-10 17:23:25 +0100">
+                    <Title>Outline</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pages</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <PreferredExternalApplication>/Applications/Pages.app</PreferredExternalApplication>
+                    </MetaData>
+                </BinderItem>
+                <BinderItem ID="106" Type="Text" Created="2015-03-08 20:06:39 +0100" Modified="2015-03-08 20:06:52 +0100">
+                    <Title>Programmeringsidéer</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>121,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="78" Type="Text" Created="2015-02-23 20:52:27 +0100" Modified="2015-02-25 12:32:07 +0100">
+                    <Title>Sjekkliste for skrivning</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>706,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="1" Type="ResearchFolder" Created="2015-02-10 15:14:10 +0100" Modified="2015-02-10 15:14:10 +0100">
+            <Title>Research</Title>
+            <MetaData>
+                <PageBreakBefore>Yes</PageBreakBefore>
+            </MetaData>
+            <Children>
+                <BinderItem ID="101" Type="Image" Created="2015-03-05 14:06:58 +0100" Modified="2015-03-05 14:06:58 +0100">
+                    <Title>verbformer</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>png</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="74" Type="Folder" Created="2015-02-23 19:04:05 +0100" Modified="2015-02-23 19:04:28 +0100">
+                    <Title>Sammensatte ord og fuger</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="76" Type="PDF" Created="2015-02-23 19:04:46 +0100" Modified="2015-02-23 19:04:46 +0100">
+                            <Title>SammensatteOrd</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>pdf</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <MediaSettings>
+                                <CurrentPDFPage>0</CurrentPDFPage>
+                            </MediaSettings>
+                            <References>
+                                <Reference Destination="http://grammatikk.com/pdf/SammensatteOrd.pdf">Original URL</Reference>
+                            </References>
+                        </BinderItem>
+                        <BinderItem ID="72" Type="WebArchive" Created="2015-02-23 19:03:54 +0100" Modified="2015-02-23 19:03:54 +0100">
+                            <Title>Språkvett, Bindebokstaver - ordnett.no</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>webarchive</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <MediaSettings>
+                                <OriginalURL>http://www.ordnett.no/spr%C3%A5kverkt%C3%B8y/spr%C3%A5kvett.bindebokstaver</OriginalURL>
+                            </MediaSettings>
+                        </BinderItem>
+                        <BinderItem ID="80" Type="PDF" Created="2015-02-23 22:39:33 +0100" Modified="2015-02-23 22:39:33 +0100">
+                            <Title>Hovedoppgave_Eirik_Backlund</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>pdf</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <MediaSettings>
+                                <CurrentPDFPage>128</CurrentPDFPage>
+                            </MediaSettings>
+                            <References>
+                                <Reference Destination="https://www.duo.uio.no/bitstream/handle/10852/26360/Hovedoppgave_Eirik_Backlund.pdf">Original URL</Reference>
+                            </References>
+                        </BinderItem>
+                        <BinderItem ID="71" Type="WebArchive" Created="2015-02-23 19:03:42 +0100" Modified="2015-02-23 19:03:42 +0100">
+                            <Title>Språkvett, Sammensatte ord - ordnett.no</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>webarchive</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <MediaSettings>
+                                <OriginalURL>http://www.ordnett.no/spr%C3%A5kverkt%C3%B8y/spr%C3%A5kvett.sammensatteord</OriginalURL>
+                            </MediaSettings>
+                        </BinderItem>
+                        <BinderItem ID="79" Type="WebArchive" Created="2015-02-23 22:37:04 +0100" Modified="2015-02-23 22:37:04 +0100">
+                            <Title>Presentasjon "ORDKLASSER Janne Bondi Johannessen Tekstlaboratoriet Universitetet i Oslo."</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>webarchive</FileExtension>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <MediaSettings>
+                                <OriginalURL>http://slideplayer.no/slide/2191446/</OriginalURL>
+                            </MediaSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="41" Type="Image" Created="2014-11-20 23:59:10 +0100" Modified="2014-11-20 23:59:10 +0100">
+                    <Title>turk_4768</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="69" Type="Image" Created="2015-02-16 13:44:59 +0100" Modified="2015-02-16 13:44:59 +0100">
+                    <Title>Screen Shot 2015-02-16 at 13.44.58</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>png</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="42" Type="Image" Created="2015-02-04 17:07:08 +0100" Modified="2015-02-04 17:07:08 +0100">
+                    <Title>Screen Shot 2015-02-04 at 17.07.06</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>png</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="109" Type="Image" Created="2015-03-11 16:48:40 +0100" Modified="2015-03-11 16:48:40 +0100">
+                    <Title>11044632_10203031249375817_7277144586195819547_n</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="110" Type="PDF" Created="2015-03-09 14:15:50 +0100" Modified="2015-03-09 14:15:50 +0100">
+                    <Title>scarrie_lesmeg</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>1</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="43" Type="Text" Created="2014-12-04 21:02:02 +0100" Modified="2014-12-04 21:02:02 +0100">
+                    <Title>G_3_Forstavelser</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>982,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="44" Type="Image" Created="2015-02-08 18:32:03 +0100" Modified="2015-02-08 18:32:03 +0100">
+                    <Title>IMG_7556</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.16</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="45" Type="Image" Created="2015-02-08 18:32:23 +0100" Modified="2015-02-08 18:32:23 +0100">
+                    <Title>IMG_7575</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.1</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="111" Type="PDF" Created="2015-02-26 14:34:43 +0100" Modified="2015-02-26 14:34:43 +0100">
+                    <Title>CCE26022015_00002</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="112" Type="PDF" Created="2015-02-26 14:35:11 +0100" Modified="2015-02-26 14:35:11 +0100">
+                    <Title>CCE26022015_00001</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="46" Type="Image" Created="2015-02-08 18:32:29 +0100" Modified="2015-02-08 18:32:29 +0100">
+                    <Title>IMG_7574</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.23</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="47" Type="Image" Created="2015-02-08 18:32:36 +0100" Modified="2015-02-08 18:32:36 +0100">
+                    <Title>IMG_7560</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.28</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="48" Type="Image" Created="2015-02-08 18:32:41 +0100" Modified="2015-02-08 18:32:41 +0100">
+                    <Title>IMG_7557</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.1</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="49" Type="Image" Created="2015-02-08 18:33:45 +0100" Modified="2015-02-08 18:33:45 +0100">
+                    <Title>IMG_7438</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.1</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="50" Type="Image" Created="2015-02-08 18:34:02 +0100" Modified="2015-02-08 18:34:02 +0100">
+                    <Title>IMG_7437</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>0.15</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="52" Type="Text" Created="2015-01-20 14:38:55 +0100" Modified="2015-01-20 14:38:55 +0100">
+                    <Title>språkrådet regler for orddeling</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1174,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="54" Type="Text" Created="2014-12-15 23:03:55 +0100" Modified="2014-12-15 23:03:55 +0100">
+                    <Title>Svar om orddelingsregler 01</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="55" Type="Other" Created="2015-01-13 18:54:08 +0100" Modified="2015-02-04 20:29:12 +0100">
+                    <Title>Oversikt over ordlister</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>numbers</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                </BinderItem>
+                <BinderItem ID="56" Type="Text" Created="2014-12-15 23:04:06 +0100" Modified="2014-12-15 23:04:06 +0100">
+                    <Title>Svar om orddelingsregler 02</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="57" Type="Image" Created="2014-12-08 19:56:00 +0100" Modified="2015-02-04 21:46:32 +0100">
+                    <Title>jul-etallerken 02</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="58" Type="Image" Created="2014-12-04 19:55:49 +0100" Modified="2015-02-04 21:37:03 +0100">
+                    <Title>Boks-katter</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>jpg</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="59" Type="PDF" Created="2015-01-19 10:55:32 +0100" Modified="2015-02-04 21:37:32 +0100">
+                    <Title>Jul-etallerken</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>pdf</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <MediaSettings>
+                        <CurrentPDFPage>0</CurrentPDFPage>
+                    </MediaSettings>
+                </BinderItem>
+                <BinderItem ID="99" Type="Image" Created="2015-03-04 17:38:47 +0100" Modified="2015-03-04 17:38:47 +0100">
+                    <Title>morfologisk-analyse</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>png</FileExtension>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <ShowSynopsisImage>Yes</ShowSynopsisImage>
+                    </MetaData>
+                    <MediaSettings>
+                        <ImageScaleFactor>1.0</ImageScaleFactor>
+                        <ImageRotation>None</ImageRotation>
+                        <ImageScalesProportionally>No</ImageScalesProportionally>
+                    </MediaSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="2" Type="TrashFolder" Created="2015-02-10 15:14:10 +0100" Modified="2015-02-10 15:14:10 +0100">
+            <Title>Trash</Title>
+            <MetaData>
+                <PageBreakBefore>Yes</PageBreakBefore>
+            </MetaData>
+            <Children>
+                <BinderItem ID="92" Type="Text" Created="2015-03-02 19:06:44 +0100" Modified="2015-03-02 19:06:44 +0100">
+                    <Title>Untitled</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="118" Type="Text" Created="2015-04-25 14:02:09 +0200" Modified="2015-04-25 14:02:09 +0200">
+                    <Title>Untitled</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+    </Binder>
+    <Collections>
+        <Collection Type="RecentSearch" ID="2655DDF6-4AB8-42CB-A433-1CD76FC351D2" Color="0.922 0.91 0.98">
+            <Title>Search Results</Title>
+            <SearchSettings Operator="Exact" Type="All" CaseSensitive="No">non-fiction format</SearchSettings>
+        </Collection>
+        <Collection Type="Binder" ID="48DE1CBF-217F-4B94-944D-6D8C97396DCF" Color="0.784753 0.815752 0.848702">
+            <Title>Binder</Title>
+        </Collection>
+    </Collections>
+    <LabelSettings>
+        <Title></Title>
+        <DefaultLabelID>-1</DefaultLabelID>
+        <Labels>
+            <Label ID="-1">No Label</Label>
+            <Label ID="9" Color="0.708612 0.873576 0.202663">Korrekturlest av Dag</Label>
+            <Label ID="10" Color="0.071476 0.468243 0.372328">Sendt til Dag</Label>
+            <Label ID="11" Color="0.865084 0.1401 0.56741">Rettet Dags tilbakemeldinger</Label>
+        </Labels>
+    </LabelSettings>
+    <StatusSettings>
+        <Title>Status</Title>
+        <DefaultStatusID>-1</DefaultStatusID>
+        <StatusItems>
+            <Status ID="-1">No Status</Status>
+            <Status ID="1">To Do</Status>
+            <Status ID="2">First Draft</Status>
+            <Status ID="3">Revised Draft</Status>
+            <Status ID="4">Final Draft</Status>
+            <Status ID="6">Title Page</Status>
+            <Status ID="5">Done</Status>
+            <Status ID="7">Oversettes</Status>
+        </StatusItems>
+    </StatusSettings>
+    <ProjectProperties>
+        <ProjectTitle></ProjectTitle>
+        <AbbreviatedTitle></AbbreviatedTitle>
+        <FullName></FullName>
+        <LastName></LastName>
+        <FirstName></FirstName>
+    </ProjectProperties>
+    <ProjectTargets Notify="Yes">
+        <DraftTarget Type="Words" CountIncludedOnly="No" CurrentCompileGroupOnly="No" Deadline="2015-04-26 14:24:39 +0200" IgnoreDeadline="No">27000</DraftTarget>
+        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="Yes" WritingDays="1-7" CanWriteOnDeadlineDate="Yes">8665</SessionTarget>
+        <PreviousSession Words="1110" Characters="7474" Date="2015-04-26 01:12:36 +0200"></PreviousSession>
+    </ProjectTargets>
+    <PrintSettings PaperSize="595.0,842.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="iso-a4" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScrivenerProject>

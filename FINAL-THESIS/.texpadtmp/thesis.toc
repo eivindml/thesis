@@ -1,0 +1,118 @@
+\select@language {norsk}
+\contentsline {chapter}{Sammendrag}{i}{chapter*.1}
+\contentsline {chapter}{Innhold}{iii}{section*.2}
+\contentsline {chapter}{Figurer}{v}{section*.3}
+\contentsline {chapter}{Tabeller}{vi}{section*.4}
+\contentsline {chapter}{\chapternumberline {1}Introduksjon}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Typografi, Gutenberg og orddeling}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Typografen erstattes av datamaskiner}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Oppgavens struktur}{4}{section.1.3}
+\contentsline {part}{\partnumberline {I}Orddanning og orddeling}{5}{part.1}
+\contentsline {chapter}{\chapternumberline {2}Orddanning}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Ordklasser}{8}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Ordklasseinndeling}{8}{subsection.2.1.1}
+\contentsline {paragraph}{Substantiv}{8}{subsection.2.1.1}
+\contentsline {paragraph}{Verb}{8}{subsection.2.1.1}
+\contentsline {paragraph}{Adjektiv}{9}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Avledninger}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}B\IeC {\o }yninger}{9}{section.2.3}
+\contentsline {paragraph}{Genus}{10}{section.2.3}
+\contentsline {paragraph}{Tall}{10}{section.2.3}
+\contentsline {paragraph}{Bestemthet}{10}{section.2.3}
+\contentsline {paragraph}{Grad}{10}{section.2.3}
+\contentsline {paragraph}{Tempus}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Ordsammensettning}{10}{section.2.4}
+\contentsline {section}{\numberline {2.5}Bindebokstaver}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Binde-s}{12}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Binde-e}{13}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Regler for bindebokstaver}{13}{subsection.2.5.3}
+\contentsline {chapter}{\chapternumberline {3}Orddeling}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Reglene}{17}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Ord og uttrykk som ikke skal deles}{18}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Unntak fra enkonsonantregelen}{18}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Usammensatte ord}{18}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Sammensatte ord}{18}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}B\IeC {\o }yninger}{19}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Avledninger}{19}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Tolkning av reglene}{19}{section.3.2}
+\contentsline {chapter}{\chapternumberline {4}Automatisk orddeling}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Ordlistebaserte metoder}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}M\IeC {\o }nsterbaserte metoder}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Kunstige nevrale nettverk}{23}{subsection.4.2.1}
+\contentsline {subsubsection}{Feed forward-nettverk}{24}{equation.4.2.3}
+\contentsline {paragraph}{Single layer feed forward}{24}{equation.4.2.3}
+\contentsline {paragraph}{Multi layer feed forward}{24}{equation.4.2.3}
+\contentsline {subsubsection}{L\IeC {\ae }ringsfasen}{24}{equation.4.2.3}
+\contentsline {paragraph}{Back propagation}{25}{equation.4.2.3}
+\contentsline {paragraph}{Strukturering av nettverket}{25}{equation.4.2.4}
+\contentsline {subsubsection}{Hvordan brukes kunstige nevrale nettverk til orddeling?}{25}{equation.4.2.4}
+\contentsline {subsubsection}{Orddeling via nevrale nettverk}{26}{figure.caption.10}
+\contentsline {section}{\numberline {4.3}Regelbaserte metoder}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Problemer ved automatisk orddeling}{29}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Automatisk orddeling er vanskelig}{29}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Dagens l\IeC {\o }sninger har mangler}{30}{subsection.4.4.2}
+\contentsline {chapter}{\chapternumberline {5}Tidligere arbeid}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Orddeling}{33}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Orddelingsalgoritmen i T\kern -.1667em\lower .4ex\hbox {E}\kern -.125emX\spacefactor \@m {}}{33}{subsection.5.1.1}
+\contentsline {subsubsection}{M\IeC {\o }nstergenerering}{34}{subsection.5.1.1}
+\contentsline {subsubsection}{Norske m\IeC {\o }nsterlister}{35}{equation.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Sammenligning av T\kern -.1667em\lower .4ex\hbox {E}\kern -.125emX\spacefactor \@m {}-algoritmen og nevrale nettverk}{36}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Trie}{36}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Oppbygning av en trie-struktur}{37}{subsection.5.2.1}
+\contentsline {subsubsection}{Kompleksitet}{38}{figure.caption.14}
+\contentsline {section}{\numberline {5.3}Analyse av sammensatte ord}{38}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Finne alle dekomponeringer av et sammensatt ord}{38}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Valg av riktig tolkning}{39}{subsection.5.3.2}
+\contentsline {subsubsection}{Antall komponenter}{39}{subsection.5.3.2}
+\contentsline {subsubsection}{Semantisk kontekst}{39}{subsection.5.3.2}
+\contentsline {subsubsection}{Komponent-frekvens}{39}{subsection.5.3.2}
+\contentsline {subsubsection}{Syntaktisk kontekst}{40}{subsection.5.3.2}
+\contentsline {subsubsection}{Part of Speech of Components}{40}{subsection.5.3.2}
+\contentsline {subsubsection}{Bokstav-n-grammer}{40}{subsection.5.3.2}
+\contentsline {subsubsection}{Hybridmetoder}{40}{subsection.5.3.2}
+\contentsline {chapter}{\chapternumberline {6}Ressurser}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Ordelingslister}{43}{section.6.1}
+\contentsline {section}{\numberline {6.2}Norsk ordbank}{45}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}fullform\_bm.txt}{46}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}paradigme\_bm.txt}{46}{subsection.6.2.2}
+\contentsline {part}{\partnumberline {II}Regelbasert automatisk orddeling}{47}{part.2}
+\contentsline {chapter}{\chapternumberline {7}Implementasjon av en regelbasert orddeler}{49}{chapter.7}
+\contentsline {section}{\numberline {7.1}Arkitektur}{50}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Dictionary}{50}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}CompoundSplitter}{52}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}CoumpoundInterpreter}{54}{subsection.7.1.3}
+\contentsline {subsubsection}{Valg av korrekt tolkning}{54}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}EphenthesisAnalyser}{55}{subsection.7.1.4}
+\contentsline {subsubsection}{Frekvens av fugebokstaver}{56}{subsection.7.1.4}
+\contentsline {subsubsection}{Hvordan fungerer modulen?}{57}{table.7.1}
+\contentsline {subsection}{\numberline {7.1.5}HyphenationRules}{59}{subsection.7.1.5}
+\contentsline {section}{\numberline {7.2}Ytelse}{60}{section.7.2}
+\contentsline {section}{\numberline {7.3}Kildekode}{61}{section.7.3}
+\contentsline {chapter}{\chapternumberline {8}Empirisk studie av regelbasert orddeler}{63}{chapter.8}
+\contentsline {section}{\numberline {8.1}Problemstilling}{63}{section.8.1}
+\contentsline {section}{\numberline {8.2}Metode}{63}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}PS1}{64}{subsection.8.2.1}
+\contentsline {subsubsection}{CompoundSplitter}{64}{subsection.8.2.1}
+\contentsline {paragraph}{M\IeC {\r a}l}{64}{subsection.8.2.1}
+\contentsline {subsubsection}{CoumpoundInterpreter}{64}{subsection.8.2.1}
+\contentsline {paragraph}{M\IeC {\r a}l}{65}{subsection.8.2.1}
+\contentsline {subsubsection}{HyphenationRules}{65}{subsection.8.2.1}
+\contentsline {paragraph}{M\IeC {\r a}l}{65}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}PS2}{65}{subsection.8.2.2}
+\contentsline {paragraph}{M\IeC {\r a}l}{66}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Resultater}{66}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}PS1}{66}{subsection.8.3.1}
+\contentsline {subsubsection}{CompoundSplitter}{66}{table.caption.18}
+\contentsline {subsubsection}{CompoundInterpreter}{66}{table.caption.18}
+\contentsline {subsubsection}{HyphenationRules}{67}{table.caption.18}
+\contentsline {subsection}{\numberline {8.3.2}PS2}{67}{subsection.8.3.2}
+\contentsline {section}{\numberline {8.4}Diskusjon}{68}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}PS1: Hvor godt utf\IeC {\o }rer modulene oppgavene sine hver for seg?}{68}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}PS2: Hvor god kvalitet og kontroll f\IeC {\r a}r vi for orddelingen?}{69}{subsection.8.4.2}
+\contentsline {section}{\numberline {8.5}Svakheter}{70}{section.8.5}
+\contentsline {part}{\partnumberline {III}Oppsummering}{73}{part.3}
+\contentsline {chapter}{\chapternumberline {9}Konklusjon}{75}{chapter.9}
+\contentsline {section}{\numberline {9.1}Hva har vi l\IeC {\ae }rt?}{75}{section.9.1}
+\contentsline {section}{\numberline {9.2}Videre arbeid}{76}{section.9.2}
+\contentsline {chapter}{Bibliografi}{79}{section*.25}
+\contentsline {appendix}{\chapternumberline {A}Hyphenator}{83}{appendix.A}

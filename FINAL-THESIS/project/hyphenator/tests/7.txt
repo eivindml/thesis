@@ -1,0 +1,10 @@
+❌  Input: helvetesild | Should be: helvetes-ild | Got: helvete-sild 0 (G) 1 (B) 1 (M)
+❌  Input: kjøpslå | Should be: kjøp-slå | Got: kjøps-lå 0 (G) 1 (B) 1 (M)
+❌  Input: likhetstanken | Should be: likhets-tanken | Got: likhet-stanken 0 (G) 1 (B) 1 (M)
+❌  Input: sparebankforeningen | Should be: sparebank-foreningen | Got: spare-bankforeningen 0 (G) 1 (B) 1 (M)
+❌  Input: forbindelser | Should be: for-bindelser | Got: forbind-el-ser 0 (G) 2 (B) 1 (M)
+❌  Input: hviterussland | Should be: hvite-russland | Got: hvite-russ-land 1 (G) 1 (B) 0 (M)
+❌  Input: undersøkelser | Should be: under-søkelser | Got: undersøk-el-ser 0 (G) 2 (B) 1 (M)
+30 tests took 0.139707 s
+23 passed 7 failed / 30
+24 (G) 9 (B) 6 (M)
