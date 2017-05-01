@@ -1,6 +1,6 @@
-# Master thesis: Automatic hyphenation—A rule-based approach to hyphenation
+# Automatic hyphenation—A rule-based approach to hyphenation
 
-Also available through [DUO](https://www.duo.uio.no/handle/10852/44768?show=full). The implementation of the hyphenation algorithm can be found in the [`hyphenator`](https://github.com/eivindml/hyphenator) repository.
+Master thesis also available through [DUO](https://www.duo.uio.no/handle/10852/44768?show=full). The implementation of the hyphenation algorithm can be found in the [`hyphenator`](https://github.com/eivindml/hyphenator) repository.
 
 ## Abstract
 
